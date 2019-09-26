@@ -19,79 +19,81 @@ GO
 
 USE BDDCRr
 /* ---------------------------------------------------------------------- */
-/* Add table "Tema"                                                       */
+/* Add table "Temas"                                                       */
 /* ---------------------------------------------------------------------- */
 GO
 
 
-CREATE TABLE [Tema] (
+CREATE TABLE [Temas] (
     [id] INTEGER IDENTITY(1,1) NOT NULL,
     [descripcion] VARCHAR(100) NOT NULL,
     [precio] DECIMAL NOT NULL,
-    CONSTRAINT [PK_Tema] PRIMARY KEY ([id])
+    CONSTRAINT [PK_Temas] PRIMARY KEY ([id])
 )
 GO
 
 
 /* ---------------------------------------------------------------------- */
-/* Add table "Participante"                                               */
+/* Add table "Participantes"                                               */
 /* ---------------------------------------------------------------------- */
 
 GO
 
 
-CREATE TABLE [Participante] (
+CREATE TABLE [Participantes] (
     [id] INTEGER IDENTITY(1,1) NOT NULL,
     [nombre] VARCHAR(100) NOT NULL,
     [apellido] VARCHAR(100) NOT NULL,
-    CONSTRAINT [PK_Participante] PRIMARY KEY ([id])
+    [dui] VARCHAR(10),
+    [correo] VARCHAR(150),
+    CONSTRAINT [PK_Participantes] PRIMARY KEY ([id])
 )
 GO
 
 
 /* ---------------------------------------------------------------------- */
-/* Add table "Tipo_nota"                                                  */
+/* Add table "Tiposnotas"                                                  */
 /* ---------------------------------------------------------------------- */
 
 GO
 
 
-CREATE TABLE [Tipo_nota] (
+CREATE TABLE [TiposNotas] (
     [id] INTEGER NOT NULL,
     [porcentaje] DECIMAL NOT NULL,
     [descripcion] VARCHAR(100) NOT NULL,
-    CONSTRAINT [PK_Tipo_nota] PRIMARY KEY ([id])
+    CONSTRAINT [PK_Tipos_Notas] PRIMARY KEY ([id])
 )
 GO
 
 
 /* ---------------------------------------------------------------------- */
-/* Add table "Tipo_usuario"                                               */
+/* Add table "TiposUsuarios"                                               */
 /* ---------------------------------------------------------------------- */
 
 GO
 
 
-CREATE TABLE [Tipo_usuario] (
+CREATE TABLE [Tipos_Usuarios] (
     [id] INTEGER IDENTITY(1,1) NOT NULL,
     [descripcion] VARCHAR(100) NOT NULL,
-    CONSTRAINT [PK_Tipo_usuario] PRIMARY KEY ([id])
+    CONSTRAINT [PK_TiposUsuario] PRIMARY KEY ([id])
 )
 GO
 
 
 /* ---------------------------------------------------------------------- */
-/* Add table "Numero_telefono"                                            */
+/* Add table "NumerosTelefonos"                                            */
 /* ---------------------------------------------------------------------- */
 
 GO
 
 
-CREATE TABLE [Numero_telefono] (
+CREATE TABLE [NumerosTelefonos] (
     [id] INTEGER IDENTITY(1,1) NOT NULL,
     [numero] VARCHAR(20) NOT NULL,
-    [extencion] VARCHAR(10) NOT NULL,
-    CONSTRAINT [PK_Numero_telefono] PRIMARY KEY ([id])
+    [extension] VARCHAR(10) NOT NULL,
+    CONSTRAINT [PK_NumerosTelefonos] PRIMARY KEY ([id])
 )
 GO
 
@@ -103,135 +105,130 @@ GO
 GO
 
 
-CREATE TABLE [Empresa] (
+CREATE TABLE [Empresas] (
     [id] INTEGER IDENTITY(1,1) NOT NULL,
     [nombre_empresa] VARCHAR(100) NOT NULL,
     [cantidad_empleado] VARCHAR(100) NOT NULL,
     [direccion] VARCHAR(100) NOT NULL,
-    CONSTRAINT [PK_Empresa] PRIMARY KEY ([id])
+    CONSTRAINT [PK_Empresas] PRIMARY KEY ([id])
 )
 GO
 
-
 /* ---------------------------------------------------------------------- */
-/* Add table "Participante_individual"                                    */
-/* ---------------------------------------------------------------------- */
-
-GO
-
-
-CREATE TABLE [Participante_individual] (
-    [id] INTEGER IDENTITY(1,1) NOT NULL,
-    [nombre] VARCHAR(100) NOT NULL,
-    [apellido] VARCHAR(100) NOT NULL,
-    [dui] VARCHAR(10),
-    [correo] VARCHAR(150) NOT NULL,
-    PRIMARY KEY ([id])
-)
-GO
-
-
-/* ---------------------------------------------------------------------- */
-/* Add table "Telefeono"                                                  */
+/* Add table "Telefonos"                                                  */
 /* ---------------------------------------------------------------------- */
 
 GO
 
 
-CREATE TABLE [Telefeono] (
+CREATE TABLE [Telefonos] (
     [id] INTEGER IDENTITY(1,1) NOT NULL,
     [numero] VARCHAR(10),
-    [extencion] VARCHAR(40),
-    [id_participante_individual] INTEGER NOT NULL,
-    CONSTRAINT [PK_Telefeono] PRIMARY KEY ([id])
+    [extension] VARCHAR(40),
+    [id_participante] INTEGER NOT NULL,
+    CONSTRAINT [PK_Telefonos] PRIMARY KEY ([id])
 )
 GO
 
 
 /* ---------------------------------------------------------------------- */
-/* Add table "Usuario"                                                    */
+/* Add table "Usuarios"                                                    */
 /* ---------------------------------------------------------------------- */
 
 GO
 
 
-CREATE TABLE [Usuario] (
+CREATE TABLE [Usuarios] (
     [id] INTEGER IDENTITY(1,1) NOT NULL,
     [nombre_usuario] VARCHAR(100) NOT NULL,
     [password] VARCHAR(256) NOT NULL,
     [estado] BINARY NOT NULL,
     [id_tipo_usuario] INTEGER NOT NULL,
-    CONSTRAINT [PK_Usuario] PRIMARY KEY ([id])
+    CONSTRAINT [PK_Usuarios] PRIMARY KEY ([id])
 )
 GO
 
 
 /* ---------------------------------------------------------------------- */
-/* Add table "Contacto"                                                   */
+/* Add table "Contactos"                                                   */
 /* ---------------------------------------------------------------------- */
 
 GO
 
 
-CREATE TABLE [Contacto] (
+CREATE TABLE [Contactos] (
     [id] INTEGER IDENTITY(1,1) NOT NULL,
     [descripcion] VARCHAR(100),
     [id_numero_telefono] INTEGER NOT NULL,
     [id_empresa] INTEGER NOT NULL,
-    CONSTRAINT [PK_Contacto] PRIMARY KEY ([id])
+    CONSTRAINT [PK_Contactos] PRIMARY KEY ([id])
 )
 GO
 
 
 /* ---------------------------------------------------------------------- */
-/* Add table "Capacitador"                                                */
+/* Add table "Capacitadores"                                                */
 /* ---------------------------------------------------------------------- */
 
 GO
 
 
-CREATE TABLE [Capacitador] (
+CREATE TABLE [Capacitadores] (
     [id] INTEGER IDENTITY(1,1) NOT NULL,
     [nombre] VARCHAR(100) NOT NULL,
     [apellido] VARCHAR(100) NOT NULL,
     [id_usuario] INTEGER NOT NULL,
-    CONSTRAINT [PK_Capacitador] PRIMARY KEY ([id])
+    CONSTRAINT [PK_Capacitadores] PRIMARY KEY ([id])
 )
 GO
 
 
 /* ---------------------------------------------------------------------- */
-/* Add table "Capacitacion"                                               */
+/* Add table "Capacitaciones"                                               */
 /* ---------------------------------------------------------------------- */
 
 GO
 
 
-CREATE TABLE [Capacitacion] (
+CREATE TABLE [Capacitaciones] (
     [id] INTEGER IDENTITY(1,1) NOT NULL,
     [fecha_inicio] DATETIME NOT NULL,
     [fecha_fin] DATETIME NOT NULL,
     [id_empresa] INTEGER NOT NULL,
     [id_capacitador] INTEGER NOT NULL,
     [id_tema] INTEGER NOT NULL,
-    CONSTRAINT [PK_Capacitacion] PRIMARY KEY ([id])
+	[id_tipo_capacitacion] INTEGER NOT NULL,
+    CONSTRAINT [PK_Capacitaciones] PRIMARY KEY ([id])
+)
+GO
+
+/* ---------------------------------------------------------------------- */
+/* Add table "TiposCapacitaciones"                                               */
+/* ---------------------------------------------------------------------- */
+
+GO
+
+CREATE TABLE [TipoCapacitaciones] (
+    [id] INTEGER IDENTITY(1,1) NOT NULL,
+    [tipo_capacitacion] VARCHAR NOT NULL,
+    CONSTRAINT [PK_Tipo_Capacitaciones] PRIMARY KEY ([id])
 )
 GO
 
 
 /* ---------------------------------------------------------------------- */
-/* Add table "Pago"                                                       */
+/* Add table "Pagos"                                                       */
 /* ---------------------------------------------------------------------- */
 
 GO
 
 
-CREATE TABLE [Pago] (
+CREATE TABLE [Pagos] (
     [id] INTEGER IDENTITY(1,1) NOT NULL,
     [fecha_pago] DATETIME NOT NULL,
     [pago] MONEY NOT NULL,
     [id_capacitacion] INTEGER NOT NULL,
-    CONSTRAINT [PK_Pago] PRIMARY KEY ([id])
+    CONSTRAINT [PK_Pagos] PRIMARY KEY ([id])
 )
 GO
 
@@ -243,30 +240,11 @@ GO
 GO
 
 
-CREATE TABLE [Correo] (
+CREATE TABLE [Correos] (
     [id] INTEGER IDENTITY(1,1) NOT NULL,
     [correo] VARCHAR(100) NOT NULL,
     [id_empresa] INTEGER,
-    CONSTRAINT [PK_Correo] PRIMARY KEY ([id])
-)
-GO
-
-
-/* ---------------------------------------------------------------------- */
-/* Add table "Capacitacion_libre"                                         */
-/* ---------------------------------------------------------------------- */
-
-GO
-
-
-CREATE TABLE [Capacitacion_libre] (
-    [id] INTEGER IDENTITY(1,1) NOT NULL,
-    [fecha_inicio] DATETIME NOT NULL,
-    [fecha_fin] DATETIME NOT NULL,
-    [id_tema] INTEGER NOT NULL,
-    [id_capacitador] INTEGER NOT NULL,
-    [id_participante_civil] INTEGER NOT NULL,
-    CONSTRAINT [PK_Capacitacion_libre] PRIMARY KEY ([id])
+    CONSTRAINT [PK_Correos] PRIMARY KEY ([id])
 )
 GO
 
@@ -278,11 +256,11 @@ GO
 GO
 
 
-CREATE TABLE [Detalle_Participante_Capacitacion] (
+CREATE TABLE [DetallesParticipantesCapacitaciones] (
     [id] INTEGER IDENTITY(1,1) NOT NULL,
     [id_participante] INTEGER NOT NULL,
     [id_capacitacion] INTEGER NOT NULL,
-    CONSTRAINT [PK_Detalle_Participante_Capacitacion] PRIMARY KEY ([id])
+    CONSTRAINT [PK_DetallesParticipantesCapacitaciones] PRIMARY KEY ([id])
 )
 GO
 
@@ -294,13 +272,13 @@ GO
 GO
 
 
-CREATE TABLE [Nota] (
+CREATE TABLE [Notas] (
     [id] INTEGER IDENTITY(1,1) NOT NULL,
     [nota] DECIMAL NOT NULL,
     [porcentaje] DECIMAL NOT NULL,
     [id_detalle_participante_capacitacion] INTEGER NOT NULL,
     [id_tipo_nota] INTEGER NOT NULL,
-    CONSTRAINT [PK_Nota] PRIMARY KEY ([id])
+    CONSTRAINT [PK_Notas] PRIMARY KEY ([id])
 )
 GO
 
@@ -312,87 +290,74 @@ GO
 GO
 
 
-ALTER TABLE [Usuario] ADD CONSTRAINT [Tipo_usuario_Usuario] 
-    FOREIGN KEY ([id_tipo_usuario]) REFERENCES [Tipo_usuario] ([id])
+ALTER TABLE [Usuarios] ADD CONSTRAINT [tipos_usuario_Usuarios] 
+    FOREIGN KEY ([id_tipo_usuario]) REFERENCES [Tipos_Usuarios] ([id])
 GO
 
 
-ALTER TABLE [Nota] ADD CONSTRAINT [Tipo_nota_Nota] 
-    FOREIGN KEY ([id_tipo_nota]) REFERENCES [Tipo_nota] ([id])
+ALTER TABLE [Notas] ADD CONSTRAINT [tipos_nota_Notas] 
+    FOREIGN KEY ([id_tipo_nota]) REFERENCES [TiposNotas] ([id])
 GO
 
 
-ALTER TABLE [Nota] ADD CONSTRAINT [Detalle_Participante_Capacitacion_Nota] 
-    FOREIGN KEY ([id_detalle_participante_capacitacion]) REFERENCES [Detalle_Participante_Capacitacion] ([id])
+ALTER TABLE [Notas] ADD CONSTRAINT [Detalles_Participantes_Capacitaciones_Notas] 
+    FOREIGN KEY ([id_detalle_participante_capacitacion]) REFERENCES [DetallesParticipantesCapacitaciones] ([id])
 GO
 
 
-ALTER TABLE [Contacto] ADD CONSTRAINT [Numero_telefono_Contacto] 
-    FOREIGN KEY ([id_numero_telefono]) REFERENCES [Numero_telefono] ([id])
+ALTER TABLE [Contactos] ADD CONSTRAINT [Numeros_Telefonos_Contactos] 
+    FOREIGN KEY ([id_numero_telefono]) REFERENCES [NumerosTelefonos] ([id])
 GO
 
 
-ALTER TABLE [Contacto] ADD CONSTRAINT [Empresa_Contacto] 
-    FOREIGN KEY ([id_empresa]) REFERENCES [Empresa] ([id])
+ALTER TABLE [Contactos] ADD CONSTRAINT [Empresas_Contactos] 
+    FOREIGN KEY ([id_empresa]) REFERENCES [Empresas] ([id])
 GO
 
 
-ALTER TABLE [Detalle_Participante_Capacitacion] ADD CONSTRAINT [Participante_Detalle_Participante_Capacitacion] 
-    FOREIGN KEY ([id_participante]) REFERENCES [Participante] ([id])
+ALTER TABLE [DetallesParticipantesCapacitaciones] ADD CONSTRAINT [ParticipantesDetallesParticipantesCapacitaciones] 
+    FOREIGN KEY ([id_participante]) REFERENCES [Participantes] ([id])
 GO
 
 
-ALTER TABLE [Detalle_Participante_Capacitacion] ADD CONSTRAINT [Capacitacion_Detalle_Participante_Capacitacion] 
-    FOREIGN KEY ([id_capacitacion]) REFERENCES [Capacitacion] ([id])
+ALTER TABLE [DetallesParticipantesCapacitaciones] ADD CONSTRAINT [CapacitacionesDetallesParticipantesCapacitaciones] 
+    FOREIGN KEY ([id_capacitacion]) REFERENCES [Capacitaciones] ([id])
 GO
 
 
-ALTER TABLE [Capacitador] ADD CONSTRAINT [Usuario_Capacitador] 
-    FOREIGN KEY ([id_usuario]) REFERENCES [Usuario] ([id])
+ALTER TABLE [Capacitadores] ADD CONSTRAINT [Usuarios_Capacitadores] 
+    FOREIGN KEY ([id_usuario]) REFERENCES [Usuarios] ([id])
 GO
 
 
-ALTER TABLE [Capacitacion] ADD CONSTRAINT [Tema_Capacitacion] 
-    FOREIGN KEY ([id_tema]) REFERENCES [Tema] ([id])
+ALTER TABLE [Capacitaciones] ADD CONSTRAINT [Temas_Capacitaciones] 
+    FOREIGN KEY ([id_tema]) REFERENCES [Temas] ([id])
 GO
 
 
-ALTER TABLE [Capacitacion] ADD CONSTRAINT [Capacitador_Capacitacion] 
-    FOREIGN KEY ([id_capacitador]) REFERENCES [Capacitador] ([id])
+ALTER TABLE [Capacitaciones] ADD CONSTRAINT [Capacitadores_Capacitaciones] 
+    FOREIGN KEY ([id_capacitador]) REFERENCES [Capacitadores] ([id])
 GO
 
 
-ALTER TABLE [Capacitacion] ADD CONSTRAINT [Empresa_Capacitacion] 
-    FOREIGN KEY ([id_empresa]) REFERENCES [Empresa] ([id])
+ALTER TABLE [Capacitaciones] ADD CONSTRAINT [Empresas_Capacitaciones] 
+    FOREIGN KEY ([id_empresa]) REFERENCES [Empresas] ([id])
 GO
 
 
-ALTER TABLE [Pago] ADD CONSTRAINT [Capacitacion_Pago] 
-    FOREIGN KEY ([id_capacitacion]) REFERENCES [Capacitacion] ([id])
+ALTER TABLE [Pagos] ADD CONSTRAINT [Capacitaciones_Pagos] 
+    FOREIGN KEY ([id_capacitacion]) REFERENCES [Capacitaciones] ([id])
 GO
 
 
-ALTER TABLE [Correo] ADD CONSTRAINT [Empresa_Correo] 
-    FOREIGN KEY ([id_empresa]) REFERENCES [Empresa] ([id])
+ALTER TABLE [Correos] ADD CONSTRAINT [Empresa_Correos] 
+    FOREIGN KEY ([id_empresa]) REFERENCES [Empresas] ([id])
 GO
 
-
-ALTER TABLE [Capacitacion_libre] ADD CONSTRAINT [Capacitador_Capacitacion_libre] 
-    FOREIGN KEY ([id_capacitador]) REFERENCES [Capacitador] ([id])
+ALTER TABLE [Telefonos] ADD CONSTRAINT [Participantes_Telefonos]
+	FOREIGN KEY ([id_participante]) REFERENCES [Participantes] ([id])
 GO
 
-
-ALTER TABLE [Capacitacion_libre] ADD CONSTRAINT [Tema_Capacitacion_libre] 
-    FOREIGN KEY ([id_tema]) REFERENCES [Tema] ([id])
+ALTER TABLE [Capacitaciones] ADD CONSTRAINT [Capacitaicones_TipoCapacitaciones]
+	FOREIGN KEY ([id_tipo_capacitacion]) REFERENCES [TipoCapacitaciones] ([id])
 GO
-
-
-ALTER TABLE [Capacitacion_libre] ADD CONSTRAINT [Participante_individual_Capacitacion_libre] 
-    FOREIGN KEY ([id_participante_civil]) REFERENCES [Participante_individual] ([id])
-GO
-
-
-ALTER TABLE [Telefeono] ADD CONSTRAINT [Participante_individual_Telefeono] 
-    FOREIGN KEY ([id_participante_individual]) REFERENCES [Participante_individual] ([id])
-GO
-
