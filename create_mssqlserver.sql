@@ -275,7 +275,6 @@ GO
 CREATE TABLE [Notas] (
     [id] INTEGER IDENTITY(1,1) NOT NULL,
     [nota] DECIMAL NOT NULL,
-    [porcentaje] DECIMAL NOT NULL,
     [id_detalle_participante_capacitacion] INTEGER NOT NULL,
     [id_tipo_nota] INTEGER NOT NULL,
     CONSTRAINT [PK_Notas] PRIMARY KEY ([id])
