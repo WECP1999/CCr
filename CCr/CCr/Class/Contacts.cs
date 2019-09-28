@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CCr.Class
 {
-    class Contactos
+    class Contacts
     {
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace CCr
 {
-    partial class Form1
+    partial class FirstMenu
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -29,11 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
         }
 
         #endregion
     }
 }
-
