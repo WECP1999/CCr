@@ -142,7 +142,7 @@ CREATE TABLE [Usuarios] (
     [id] INTEGER IDENTITY(1,1) NOT NULL,
     [nombre_usuario] VARCHAR(100) NOT NULL,
     [password] VARCHAR(256) NOT NULL,
-    [estado] BINARY NOT NULL,
+    [estado] BIT NOT NULL,
     [id_tipo_usuario] INTEGER NOT NULL,
     CONSTRAINT [PK_Usuarios] PRIMARY KEY ([id])
 )
@@ -360,3 +360,20 @@ GO
 ALTER TABLE [Capacitaciones] ADD CONSTRAINT [Capacitaicones_TipoCapacitaciones]
 	FOREIGN KEY ([id_tipo_capacitacion]) REFERENCES [TipoCapacitaciones] ([id])
 GO
+
+/*------------------------------------*/
+/*--			  INSERTS			--*/
+/*------------------------------------*/
+
+INSERT INTO Tipos_Usuarios VALUES ('Administrador')
+go
+INSERT INTO Tipos_Usuarios VALUES ('Asesor')
+go
+INSERT INTO Tipos_Usuarios VALUES ('Capacitador')
+go
+
+INSERT INTO Empresas VALUES ('Libre', 0, '------')
+go
+
+INSERT INTO Usuarios VALUES ('admin', 'CruzRoja1', 1, 1)
+go
