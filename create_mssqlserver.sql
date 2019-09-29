@@ -27,7 +27,7 @@ GO
 CREATE TABLE [Temas] (
     [id] INTEGER IDENTITY(1,1) NOT NULL,
     [descripcion] VARCHAR(100) NOT NULL,
-    [precio] DECIMAL NOT NULL,
+    [precio] DECIMAL(18,2) NOT NULL,
     CONSTRAINT [PK_Temas] PRIMARY KEY ([id])
 )
 GO
@@ -60,7 +60,7 @@ GO
 
 CREATE TABLE [TiposNotas] (
     [id] INTEGER NOT NULL,
-    [porcentaje] DECIMAL NOT NULL,
+    [porcentaje] DECIMAL(4,2) NOT NULL,
     [descripcion] VARCHAR(100) NOT NULL,
     CONSTRAINT [PK_Tipos_Notas] PRIMARY KEY ([id])
 )
@@ -274,7 +274,7 @@ GO
 
 CREATE TABLE [Notas] (
     [id] INTEGER IDENTITY(1,1) NOT NULL,
-    [nota] DECIMAL NOT NULL,
+    [nota] DECIMAL(3,2) NOT NULL,
     [id_detalle_participante_capacitacion] INTEGER NOT NULL,
     [id_tipo_nota] INTEGER NOT NULL,
     CONSTRAINT [PK_Notas] PRIMARY KEY ([id])
