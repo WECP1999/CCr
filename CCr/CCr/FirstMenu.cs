@@ -14,5 +14,9 @@ namespace CCr
         {
             InitializeComponent();
         }
+        private void FirstMenu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
