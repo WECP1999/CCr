@@ -32,5 +32,8 @@ namespace CCr.Class
         {
             return true;
         }
+        public void generateCertificates (){ 
+        
+        }
     }
 }
