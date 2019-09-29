@@ -77,6 +77,7 @@
             this.Name = "Template";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Template";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Template_FormClosing);
             this.ResumeLayout(false);
 
         }

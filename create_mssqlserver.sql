@@ -197,21 +197,7 @@ CREATE TABLE [Capacitaciones] (
     [id_empresa] INTEGER NOT NULL,
     [id_capacitador] INTEGER NOT NULL,
     [id_tema] INTEGER NOT NULL,
-	[id_tipo_capacitacion] INTEGER NOT NULL,
     CONSTRAINT [PK_Capacitaciones] PRIMARY KEY ([id])
-)
-GO
-
-/* ---------------------------------------------------------------------- */
-/* Add table "TiposCapacitaciones"                                               */
-/* ---------------------------------------------------------------------- */
-
-GO
-
-CREATE TABLE [TipoCapacitaciones] (
-    [id] INTEGER IDENTITY(1,1) NOT NULL,
-    [tipo_capacitacion] VARCHAR NOT NULL,
-    CONSTRAINT [PK_Tipo_Capacitaciones] PRIMARY KEY ([id])
 )
 GO
 
@@ -271,7 +257,6 @@ GO
 
 GO
 
-
 CREATE TABLE [Notas] (
     [id] INTEGER IDENTITY(1,1) NOT NULL,
     [nota] DECIMAL(3,2) NOT NULL,
@@ -280,7 +265,6 @@ CREATE TABLE [Notas] (
     CONSTRAINT [PK_Notas] PRIMARY KEY ([id])
 )
 GO
-
 
 /* ---------------------------------------------------------------------- */
 /* Add foreign key constraints                                            */
@@ -355,10 +339,6 @@ GO
 
 ALTER TABLE [Telefonos] ADD CONSTRAINT [Participantes_Telefonos]
 	FOREIGN KEY ([id_participante]) REFERENCES [Participantes] ([id])
-GO
-
-ALTER TABLE [Capacitaciones] ADD CONSTRAINT [Capacitaicones_TipoCapacitaciones]
-	FOREIGN KEY ([id_tipo_capacitacion]) REFERENCES [TipoCapacitaciones] ([id])
 GO
 
 /*------------------------------------*/
