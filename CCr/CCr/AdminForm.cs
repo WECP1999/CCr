@@ -14,5 +14,35 @@ namespace CCr
         {
             InitializeComponent();
         }
+
+        private void btnhome_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnhome_MouseEnter(object sender, EventArgs e)
+        {
+            btnhome.BackColor = Color.FromArgb(0, 0, 0);
+            pbxhome.BackColor = Color.FromArgb(0, 0, 0);
+        }
+
+        private void btnhome_MouseLeave(object sender, EventArgs e)
+        {
+
+            btnhome.BackColor = Color.FromArgb(37, 37, 37);
+            pbxhome.BackColor = Color.FromArgb(37, 37, 37);
+        }
+
+        private void pbxhome_MouseLeave(object sender, EventArgs e)
+        {
+            btnhome.BackColor = Color.FromArgb(37, 37, 37);
+            pbxhome.BackColor = Color.FromArgb(37, 37, 37);
+        }
+
+        private void pbxhome_MouseEnter(object sender, EventArgs e)
+        {
+            btnhome.BackColor = Color.FromArgb(0, 0, 0);
+            pbxhome.BackColor = Color.FromArgb(0, 0, 0);
+        }
     }
 }

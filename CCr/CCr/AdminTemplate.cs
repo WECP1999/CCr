@@ -14,5 +14,139 @@ namespace CCr
         {
             InitializeComponent();
         }
+
+        private void AdminTemplate_Load(object sender, EventArgs e)
+        {
+        }
+        private void pbxhome_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnhome_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnhome_MouseEnter(object sender, EventArgs e)
+        {
+            btnhome.BackColor = Color.FromArgb(115, 3, 3);
+            pbxhome.BackColor = Color.FromArgb(140, 3, 3);
+        }
+
+        private void btnhome_MouseLeave(object sender, EventArgs e)
+        {
+            btnhome.BackColor = Color.FromArgb(163, 3, 3);
+            pbxhome.BackColor = Color.FromArgb(163, 3, 3);
+        }
+
+        private void pbxhome_MouseLeave(object sender, EventArgs e)
+        {
+            btnhome.BackColor = Color.FromArgb(163, 3, 3);
+            pbxhome.BackColor = Color.FromArgb(163, 3, 3);
+        }
+
+        private void pbxhome_MouseEnter(object sender, EventArgs e)
+        {
+            btnhome.BackColor = Color.FromArgb(140, 3, 3);
+            pbxhome.BackColor = Color.FromArgb(140, 3, 3);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btntemas_MouseEnter(object sender, EventArgs e)
+        {
+            btntemas.BackColor = Color.FromArgb(115, 3, 3);
+            pbxtemas.BackColor = Color.FromArgb(140, 3, 3);
+        }
+
+        private void btntemas_MouseLeave(object sender, EventArgs e)
+        {
+            btntemas.BackColor = Color.FromArgb(163, 3, 3);
+            pbxtemas.BackColor = Color.FromArgb(163, 3, 3);
+        }
+
+        private void pbxtemas_MouseEnter(object sender, EventArgs e)
+        {
+            btntemas.BackColor = Color.FromArgb(115, 3, 3);
+            pbxtemas.BackColor = Color.FromArgb(140, 3, 3);
+        }
+
+        private void pbxtemas_MouseLeave(object sender, EventArgs e)
+        {
+            btntemas.BackColor = Color.FromArgb(163, 3, 3);
+            pbxtemas.BackColor = Color.FromArgb(163, 3, 3);
+        }
+
+        private void btntemas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbxtemas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnusuarios_MouseEnter(object sender, EventArgs e)
+        {
+            btnusuarios.BackColor = Color.FromArgb(115, 3, 3);
+            pbxusuarios.BackColor = Color.FromArgb(140, 3, 3);
+        }
+
+        private void btnusuarios_MouseLeave(object sender, EventArgs e)
+        {
+            btnusuarios.BackColor = Color.FromArgb(163, 3, 3);
+            pbxusuarios.BackColor = Color.FromArgb(163, 3, 3);
+        }
+
+        private void pbxusuarios_MouseLeave(object sender, EventArgs e)
+        {
+            btnusuarios.BackColor = Color.FromArgb(163, 3, 3);
+            pbxusuarios.BackColor = Color.FromArgb(163, 3, 3);
+        }
+
+        private void pbxusuarios_MouseEnter(object sender, EventArgs e)
+        {
+            btnusuarios.BackColor = Color.FromArgb(115, 3, 3);
+            pbxusuarios.BackColor = Color.FromArgb(140, 3, 3);
+        }
+
+        private void pbxusuarios_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnusuarios_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnempresas_MouseEnter(object sender, EventArgs e)
+        {
+            btnempresas.BackColor = Color.FromArgb(115, 3, 3);
+            pbxempresa.BackColor = Color.FromArgb(140, 3, 3);
+        }
+
+        private void btnempresas_MouseLeave(object sender, EventArgs e)
+        {
+            btnempresas.BackColor = Color.FromArgb(163, 3, 3);
+            pbxempresa.BackColor = Color.FromArgb(163, 3, 3);
+        }
+
+        private void pbxempresa_MouseLeave(object sender, EventArgs e)
+        {
+            btnempresas.BackColor = Color.FromArgb(163, 3, 3);
+            pbxempresa.BackColor = Color.FromArgb(163, 3, 3);
+        }
+
+        private void pbxempresa_MouseEnter(object sender, EventArgs e)
+        {
+            btnempresas.BackColor = Color.FromArgb(115, 3, 3);
+            pbxempresa.BackColor = Color.FromArgb(140, 3, 3);
+        }
     }
 }
