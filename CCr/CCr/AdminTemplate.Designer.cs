@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pbxcerrar = new System.Windows.Forms.PictureBox();
             this.btncerrar = new System.Windows.Forms.Button();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pbxpagos = new System.Windows.Forms.PictureBox();
             this.btnpagos = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pbxempresa = new System.Windows.Forms.PictureBox();
@@ -43,8 +43,8 @@
             this.pbxhome = new System.Windows.Forms.PictureBox();
             this.btnhome = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxcerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxpagos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxempresa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxusuarios)).BeginInit();
@@ -65,9 +65,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(3)))), ((int)(((byte)(3)))));
-            this.panel1.Controls.Add(this.pictureBox6);
+            this.panel1.Controls.Add(this.pbxcerrar);
             this.panel1.Controls.Add(this.btncerrar);
-            this.panel1.Controls.Add(this.pictureBox5);
+            this.panel1.Controls.Add(this.pbxpagos);
             this.panel1.Controls.Add(this.btnpagos);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.pbxempresa);
@@ -84,16 +84,19 @@
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // pictureBox6
+            // pbxcerrar
             // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.Image = global::CCr.Properties.Resources.logout;
-            this.pictureBox6.Location = new System.Drawing.Point(3, 413);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(32, 28);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 14;
-            this.pictureBox6.TabStop = false;
+            this.pbxcerrar.BackColor = System.Drawing.Color.Transparent;
+            this.pbxcerrar.Image = global::CCr.Properties.Resources.logout;
+            this.pbxcerrar.Location = new System.Drawing.Point(3, 413);
+            this.pbxcerrar.Name = "pbxcerrar";
+            this.pbxcerrar.Size = new System.Drawing.Size(32, 28);
+            this.pbxcerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxcerrar.TabIndex = 14;
+            this.pbxcerrar.TabStop = false;
+            this.pbxcerrar.Click += new System.EventHandler(this.pbxcerrar_Click);
+            this.pbxcerrar.MouseEnter += new System.EventHandler(this.pbxcerrar_MouseEnter);
+            this.pbxcerrar.MouseLeave += new System.EventHandler(this.pbxcerrar_MouseLeave);
             // 
             // btncerrar
             // 
@@ -108,17 +111,23 @@
             this.btncerrar.TabIndex = 13;
             this.btncerrar.Text = "Cerrar sesión";
             this.btncerrar.UseVisualStyleBackColor = false;
+            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
+            this.btncerrar.MouseEnter += new System.EventHandler(this.btncerrar_MouseEnter);
+            this.btncerrar.MouseLeave += new System.EventHandler(this.btncerrar_MouseLeave);
             // 
-            // pictureBox5
+            // pbxpagos
             // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Image = global::CCr.Properties.Resources.payments;
-            this.pictureBox5.Location = new System.Drawing.Point(3, 339);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(32, 28);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 12;
-            this.pictureBox5.TabStop = false;
+            this.pbxpagos.BackColor = System.Drawing.Color.Transparent;
+            this.pbxpagos.Image = global::CCr.Properties.Resources.payments;
+            this.pbxpagos.Location = new System.Drawing.Point(3, 345);
+            this.pbxpagos.Name = "pbxpagos";
+            this.pbxpagos.Size = new System.Drawing.Size(32, 28);
+            this.pbxpagos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxpagos.TabIndex = 12;
+            this.pbxpagos.TabStop = false;
+            this.pbxpagos.Click += new System.EventHandler(this.pbxpagos_Click);
+            this.pbxpagos.MouseEnter += new System.EventHandler(this.pbxpagos_MouseEnter);
+            this.pbxpagos.MouseLeave += new System.EventHandler(this.pbxpagos_MouseLeave);
             // 
             // btnpagos
             // 
@@ -127,12 +136,15 @@
             this.btnpagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnpagos.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnpagos.ForeColor = System.Drawing.Color.White;
-            this.btnpagos.Location = new System.Drawing.Point(3, 339);
+            this.btnpagos.Location = new System.Drawing.Point(0, 345);
             this.btnpagos.Name = "btnpagos";
             this.btnpagos.Size = new System.Drawing.Size(238, 28);
             this.btnpagos.TabIndex = 11;
             this.btnpagos.Text = "Pagos";
             this.btnpagos.UseVisualStyleBackColor = false;
+            this.btnpagos.Click += new System.EventHandler(this.btnpagos_Click);
+            this.btnpagos.MouseEnter += new System.EventHandler(this.btnpagos_MouseEnter);
+            this.btnpagos.MouseLeave += new System.EventHandler(this.btnpagos_MouseLeave);
             // 
             // pictureBox4
             // 
@@ -155,6 +167,7 @@
             this.pbxempresa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxempresa.TabIndex = 9;
             this.pbxempresa.TabStop = false;
+            this.pbxempresa.Click += new System.EventHandler(this.pbxempresa_Click);
             this.pbxempresa.MouseEnter += new System.EventHandler(this.pbxempresa_MouseEnter);
             this.pbxempresa.MouseLeave += new System.EventHandler(this.pbxempresa_MouseLeave);
             // 
@@ -171,6 +184,7 @@
             this.btnempresas.TabIndex = 8;
             this.btnempresas.Text = "Empresas";
             this.btnempresas.UseVisualStyleBackColor = false;
+            this.btnempresas.Click += new System.EventHandler(this.btnempresas_Click);
             this.btnempresas.MouseEnter += new System.EventHandler(this.btnempresas_MouseEnter);
             this.btnempresas.MouseLeave += new System.EventHandler(this.btnempresas_MouseLeave);
             // 
@@ -278,8 +292,8 @@
             this.Controls.SetChildIndex(this.btnclose, 0);
             this.Controls.SetChildIndex(this.btnminimyze, 0);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxcerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxpagos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxempresa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxusuarios)).EndInit();
@@ -301,9 +315,9 @@
         protected System.Windows.Forms.Button btnusuarios;
         protected System.Windows.Forms.PictureBox pbxtemas;
         protected System.Windows.Forms.Button btntemas;
-        protected System.Windows.Forms.PictureBox pictureBox6;
+        protected System.Windows.Forms.PictureBox pbxcerrar;
         protected System.Windows.Forms.Button btncerrar;
-        protected System.Windows.Forms.PictureBox pictureBox5;
+        protected System.Windows.Forms.PictureBox pbxpagos;
         protected System.Windows.Forms.Button btnpagos;
     }
 }
