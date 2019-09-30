@@ -50,6 +50,7 @@
             this.Name = "Screen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Screen";
+            this.Load += new System.EventHandler(this.Screen_Load);
             this.ResumeLayout(false);
 
         }

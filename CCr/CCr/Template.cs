@@ -31,13 +31,26 @@ namespace CCr
         private void btnclose_MouseLeave(object sender, EventArgs e)
         {
             btnclose.ForeColor = Color.Black;
-            btnclose.BackColor = Color.White;
+            btnclose.BackColor = Color.Transparent;
         }
 
         private void btnminimyze_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
+<<<<<<< HEAD
         
+=======
+
+        private void Template_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Template_Load(object sender, EventArgs e)
+        {
+            this.BackColor = Color.FromArgb(246, 246, 246);
+        }
+>>>>>>> 180df142acd96ad11fabce533e7ac9cdf6034e95
     }
 }

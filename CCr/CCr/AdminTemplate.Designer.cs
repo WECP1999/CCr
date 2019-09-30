@@ -1,6 +1,6 @@
 ﻿namespace CCr
 {
-    partial class FirstMenu
+    partial class AdminTemplate
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -28,16 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // FirstMenu
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(588, 370);
-            this.Name = "FirstMenu";
-            this.Load += new System.EventHandler(this.FirstMenu_Load);
-            this.ResumeLayout(false);
-
+            this.components = new System.ComponentModel.Container();
         }
 
         #endregion

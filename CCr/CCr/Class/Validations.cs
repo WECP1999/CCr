@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -118,6 +119,23 @@ namespace CCr.Class
             return false;
         }
 
+        public bool validateUs(string text)
+        {
+            expresion = @"^[A-Za-z0-9\.\\\$\#_@]+$";
+            if (Regex.IsMatch(text, expresion))
+            {
+                if (Regex.Replace(text, expresion, string.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return false;
+        }
+
         public bool valideteAnotherThing(string regex,string text)
         {
             expresion = regex;
@@ -133,6 +151,17 @@ namespace CCr.Class
                 }
             }
             return false;
+        }
+
+        public static string GetSHA256(string str)
+        {
+            SHA256 sha256 = SHA256Managed.Create();
+            ASCIIEncoding encoding = new ASCIIEncoding();
+            byte[] stream = null;
+            StringBuilder sb = new StringBuilder();
+            stream = sha256.ComputeHash(encoding.GetBytes(str));
+            for (int i = 0; i < stream.Length; i++) sb.AppendFormat("{0:x2}", stream[i]);
+            return sb.ToString();
         }
 
     }

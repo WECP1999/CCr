@@ -69,8 +69,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::CCr.Properties.Resources.fg;
-            this.ClientSize = new System.Drawing.Size(588, 370);
+            this.ClientSize = new System.Drawing.Size(588, 379);
             this.Controls.Add(this.btnminimyze);
             this.Controls.Add(this.btnclose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -83,7 +82,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnclose;
-        private System.Windows.Forms.Button btnminimyze;
+        protected System.Windows.Forms.Button btnclose;
+        protected System.Windows.Forms.Button btnminimyze;
     }
 }
