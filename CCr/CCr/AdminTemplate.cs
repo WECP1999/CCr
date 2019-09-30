@@ -258,26 +258,26 @@ namespace CCr
 
         private void btncontactos_MouseEnter(object sender, EventArgs e)
         {
-            btncerrar.BackColor = Color.FromArgb(115, 3, 3);
-            pbxcerrar.BackColor = Color.FromArgb(140, 3, 3);
+            btncontactos.BackColor = Color.FromArgb(115, 3, 3);
+            pbxcontactos.BackColor = Color.FromArgb(140, 3, 3);
         }
 
         private void btncontactos_MouseLeave(object sender, EventArgs e)
         {
-            btncerrar.BackColor = Color.FromArgb(140, 3, 3);
-            pbxcerrar.BackColor = Color.FromArgb(140, 3, 3);
+            btncontactos.BackColor = Color.FromArgb(163, 3, 3);
+            pbxcontactos.BackColor = Color.FromArgb(163, 3, 3);
         }
 
         private void pbxcontactos_MouseEnter(object sender, EventArgs e)
         {
-            btncerrar.BackColor = Color.FromArgb(140, 3, 3);
-            pbxcerrar.BackColor = Color.FromArgb(140, 3, 3);
+            btncontactos.BackColor = Color.FromArgb(140, 3, 3);
+            pbxcontactos.BackColor = Color.FromArgb(140, 3, 3);
         }
 
         private void pbxcontactos_MouseLeave(object sender, EventArgs e)
         {
-            btncerrar.BackColor = Color.FromArgb(163, 3, 3);
-            pbxcerrar.BackColor = Color.FromArgb(163, 3, 3);
+            btncontactos.BackColor = Color.FromArgb(163, 3, 3);
+            pbxcontactos.BackColor = Color.FromArgb(163, 3, 3);
         }
 
         private void btncontactos_Click(object sender, EventArgs e)
