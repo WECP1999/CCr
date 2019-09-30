@@ -71,7 +71,7 @@ namespace CCr
 
         private void pbxtemas_MouseEnter(object sender, EventArgs e)
         {
-            btntemas.BackColor = Color.FromArgb(115, 3, 3);
+            btntemas.BackColor = Color.FromArgb(140, 3, 3);
             pbxtemas.BackColor = Color.FromArgb(140, 3, 3);
         }
 
@@ -111,7 +111,7 @@ namespace CCr
 
         private void pbxusuarios_MouseEnter(object sender, EventArgs e)
         {
-            btnusuarios.BackColor = Color.FromArgb(115, 3, 3);
+            btnusuarios.BackColor = Color.FromArgb(140, 3, 3);
             pbxusuarios.BackColor = Color.FromArgb(140, 3, 3);
         }
 
@@ -145,8 +145,84 @@ namespace CCr
 
         private void pbxempresa_MouseEnter(object sender, EventArgs e)
         {
-            btnempresas.BackColor = Color.FromArgb(115, 3, 3);
+            btnempresas.BackColor = Color.FromArgb(140, 3, 3);
             pbxempresa.BackColor = Color.FromArgb(140, 3, 3);
+        }
+
+        private void btnempresas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbxempresa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnpagos_MouseLeave(object sender, EventArgs e)
+        {
+            btnpagos.BackColor = Color.FromArgb(163, 3, 3);
+            pbxpagos.BackColor = Color.FromArgb(163, 3, 3);
+        }
+
+        private void btnpagos_MouseEnter(object sender, EventArgs e)
+        {
+            btnpagos.BackColor = Color.FromArgb(115, 3, 3);
+            pbxpagos.BackColor = Color.FromArgb(140, 3, 3);
+        }
+
+        private void pbxpagos_MouseLeave(object sender, EventArgs e)
+        {
+            btnpagos.BackColor = Color.FromArgb(163, 3, 3);
+            pbxpagos.BackColor = Color.FromArgb(163, 3, 3);
+        }
+
+        private void pbxpagos_MouseEnter(object sender, EventArgs e)
+        {
+            btnpagos.BackColor = Color.FromArgb(140, 3, 3);
+            pbxpagos.BackColor = Color.FromArgb(140, 3, 3);
+        }
+
+        private void btnpagos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbxpagos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btncerrar_MouseEnter(object sender, EventArgs e)
+        {
+            btncerrar.BackColor = Color.FromArgb(115, 3, 3);
+            pbxcerrar.BackColor = Color.FromArgb(140, 3, 3);
+        }
+
+        private void btncerrar_MouseLeave(object sender, EventArgs e)
+        {
+            btncerrar.BackColor = Color.FromArgb(163, 3, 3);
+            pbxcerrar.BackColor = Color.FromArgb(163, 3, 3);
+        }
+        private void pbxcerrar_MouseEnter(object sender, EventArgs e)
+        {
+            btncerrar.BackColor = Color.FromArgb(140, 3, 3);
+            pbxcerrar.BackColor = Color.FromArgb(140, 3, 3);
+        }
+        private void pbxcerrar_MouseLeave(object sender, EventArgs e)
+        {
+            btncerrar.BackColor = Color.FromArgb(163, 3, 3);
+            pbxcerrar.BackColor = Color.FromArgb(163, 3, 3);
+        }
+
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbxcerrar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
