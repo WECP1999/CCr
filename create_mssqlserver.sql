@@ -379,7 +379,7 @@ CHECK(fecha_inicio < fecha_fin)
 --Temas
 ALTER TABLE Temas
 ADD CONSTRAINT CK_precio
-CHECK (Precio > 0)
+CHECK (Precio >= 0)
 
 --Telefonos
 ALTER TABLE Telefonos
