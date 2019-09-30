@@ -20,12 +20,17 @@ namespace CCr
         private void timer1_Tick(object sender, EventArgs e)
         {
             time++;
-            FirstMenu frm = new FirstMenu();
+            Login frm = new Login();
             if (time == 5)
             {
                 this.Hide();
                 frm.Show();
             }
+        }
+
+        private void Screen_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

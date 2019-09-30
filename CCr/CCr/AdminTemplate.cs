@@ -8,15 +8,11 @@ using System.Windows.Forms;
 
 namespace CCr
 {
-    public partial class FirstMenu : CCr.Template
+    public partial class AdminTemplate : CCr.Template
     {
-        public FirstMenu()
+        public AdminTemplate()
         {
             InitializeComponent();
-        }
-        private void FirstMenu_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -16,6 +16,7 @@ namespace CCr.Class
         public int Id { get => id; set => id = value; }
         public DateTime StartDay { get => startDay; set => startDay = value; }
         public DateTime EndDay { get => endDay; set => endDay = value; }
+        public string TypeTraining { get => typeTraining; set => typeTraining = value; }
 
         public bool create()
         {

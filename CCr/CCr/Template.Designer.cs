@@ -69,8 +69,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::CCr.Properties.Resources.fg;
-            this.ClientSize = new System.Drawing.Size(588, 370);
+            this.ClientSize = new System.Drawing.Size(588, 379);
             this.Controls.Add(this.btnminimyze);
             this.Controls.Add(this.btnclose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -78,13 +77,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Template";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Template_FormClosing);
+            this.Load += new System.EventHandler(this.Template_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnclose;
-        private System.Windows.Forms.Button btnminimyze;
+        protected System.Windows.Forms.Button btnclose;
+        protected System.Windows.Forms.Button btnminimyze;
     }
 }
