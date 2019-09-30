@@ -380,7 +380,7 @@ UNIQUE (direccion)
 --Tipos_Usuarios
 ALTER TABLE Tipos_Usuarios
 ADD CONSTRAINT CK_descripcion
-CHECK (descripcion LIKE 'Capacitador' OR descripcion LIKE 'Asistente' OR descripcion LIKE 'Administrador')
+CHECK (descripcion LIKE 'Capacitador' OR descripcion LIKE 'Asesor' OR descripcion LIKE 'Administrador')
 
 --Usuarios 
 ALTER TABLE Usuarios
