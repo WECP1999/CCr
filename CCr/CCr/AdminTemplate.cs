@@ -17,6 +17,25 @@ namespace CCr
 
         private void AdminTemplate_Load(object sender, EventArgs e)
         {
+            Class.Users us = new Class.Users();
+            Class.Connection conexionSQL = new Class.Connection();
+            conexionSQL.startConnection();
+            us = us.getUser(1);
+            conexionSQL.closeConnection();
+            lblUsername.Text = us.Username.ToString();
+
+            if (us.Description == "1")
+            {
+                lblType.Text = "Administrador";
+            }
+            else if(us.Description == "2")
+            {
+                lblType.Text = "Asesor";
+            }
+            else if (us.Description == "3")
+            {
+                lblType.Text = "Capacitador";
+            }
         }
         private void pbxhome_Click(object sender, EventArgs e)
         {
@@ -235,6 +254,40 @@ namespace CCr
                 log.Show();
                 this.Hide();
             }
+        }
+
+        private void btncontactos_MouseEnter(object sender, EventArgs e)
+        {
+            btncerrar.BackColor = Color.FromArgb(115, 3, 3);
+            pbxcerrar.BackColor = Color.FromArgb(140, 3, 3);
+        }
+
+        private void btncontactos_MouseLeave(object sender, EventArgs e)
+        {
+            btncerrar.BackColor = Color.FromArgb(140, 3, 3);
+            pbxcerrar.BackColor = Color.FromArgb(140, 3, 3);
+        }
+
+        private void pbxcontactos_MouseEnter(object sender, EventArgs e)
+        {
+            btncerrar.BackColor = Color.FromArgb(140, 3, 3);
+            pbxcerrar.BackColor = Color.FromArgb(140, 3, 3);
+        }
+
+        private void pbxcontactos_MouseLeave(object sender, EventArgs e)
+        {
+            btncerrar.BackColor = Color.FromArgb(163, 3, 3);
+            pbxcerrar.BackColor = Color.FromArgb(163, 3, 3);
+        }
+
+        private void btncontactos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbxcontactos_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

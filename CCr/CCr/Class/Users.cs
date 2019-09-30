@@ -70,5 +70,35 @@ namespace CCr.Class
         {
             return true;
         }
+
+        public Users getUser(int id)
+        {
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+            Users us = new Users();
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.CommandText = "SELECT * FROM Usuarios WHERE id = @p1";
+            comando.Connection = Class.Connection.conexionSQL;
+            try
+            {
+                comando.Parameters.AddWithValue("@p1", id);
+                lector = comando.ExecuteReader();
+                if (lector.Read())
+                {
+                    us.Username = lector["nombre_usuario"].ToString();
+                    us.Description = lector["id_tipo_usuario"].ToString();
+                    lector.Close();
+                    return us;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (SqlException error)
+            {
+                return null;
+            }
+        }
     }
 }
