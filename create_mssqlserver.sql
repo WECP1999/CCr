@@ -341,22 +341,6 @@ ALTER TABLE [Telefonos] ADD CONSTRAINT [Participantes_Telefonos]
 	FOREIGN KEY ([id_participante]) REFERENCES [Participantes] ([id])
 GO
 
-/*------------------------------------*/
-/*--			  INSERTS			--*/
-/*------------------------------------*/
-
-INSERT INTO Tipos_Usuarios VALUES ('Administrador')
-go
-INSERT INTO Tipos_Usuarios VALUES ('Asesor')
-go
-INSERT INTO Tipos_Usuarios VALUES ('Capacitador')
-go
-
-INSERT INTO Empresas VALUES ('Libre', 0, '------')
-go
-
-INSERT INTO Usuarios VALUES ('admin', 'CruzRoja1', 1, 1)
-go
 
 /*------------------------------------*/
 /*--		   CONSTRAINTS			--*/
@@ -385,7 +369,7 @@ CHECK (descripcion LIKE 'Capacitador' OR descripcion LIKE 'Asesor' OR descripcio
 --Usuarios 
 ALTER TABLE Usuarios
 ADD CONSTRAINT CK_estado
-CHECK (estado LIKE 'Activa' OR estado LIKE 'Desactivada')
+CHECK (estado LIKE 1 OR estado LIKE 0)
 
 --Capacitaciones
 ALTER TABLE Capacitaciones
@@ -414,7 +398,7 @@ UNIQUE (dui)
 --Pagos
 ALTER TABLE Pagos
 ADD CONSTRAINT CK_pago
-CHECK (pago > 0)
+CHECK (pago >= 0)
 
 ALTER TABLE Pagos
 ADD CONSTRAINT CK_fecha_pago
@@ -432,3 +416,20 @@ ALTER TABLE Notas
 ADD CONSTRAINT CK_nota
 CHECK (nota >= 0)
 
+
+/*------------------------------------*/
+/*--			  INSERTS			--*/
+/*------------------------------------*/
+
+INSERT INTO Tipos_Usuarios VALUES ('Administrador')
+go
+INSERT INTO Tipos_Usuarios VALUES ('Asesor')
+go
+INSERT INTO Tipos_Usuarios VALUES ('Capacitador')
+go
+
+INSERT INTO Empresas VALUES ('Libre', 0, '------')
+go
+
+INSERT INTO Usuarios VALUES ('admin', '0e80221a93e87a39e7a564048dd5c3b5e422d40ea266d8c006585b8b0d33ad60', 1, 1)
+go

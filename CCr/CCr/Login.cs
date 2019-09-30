@@ -89,6 +89,7 @@ namespace CCr
                     }
                     else
                     {
+                        conexionSQL.closeConnection();
                         MessageBox.Show("Usuario no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     conexionSQL.closeConnection();
