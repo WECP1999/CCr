@@ -43,5 +43,10 @@ namespace CCr
         {
             Application.Exit();
         }
+
+        private void Template_Load(object sender, EventArgs e)
+        {
+            this.BackColor = Color.FromArgb(246, 246, 246);
+        }
     }
 }
