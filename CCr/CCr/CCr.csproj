@@ -95,6 +95,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTemplate.resx">
+      <DependentUpon>AdminTemplate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,6 +151,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-cruz-roja-salvadorena2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\builds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\payments.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\subjects.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contact.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

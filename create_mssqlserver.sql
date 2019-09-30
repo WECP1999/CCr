@@ -9,7 +9,7 @@
 /* ---------------------------------------------------------------------- */
 
 
-/* ---------------------------------------------------------------------- */
+/* ------------------------------------a---------------------------------- */
 /* Add tables                                                             */
 /* ---------------------------------------------------------------------- */
 USE MASTER 
@@ -341,6 +341,82 @@ ALTER TABLE [Telefonos] ADD CONSTRAINT [Participantes_Telefonos]
 	FOREIGN KEY ([id_participante]) REFERENCES [Participantes] ([id])
 GO
 
+
+/*------------------------------------*/
+/*--		   CONSTRAINTS			--*/
+/*------------------------------------*/
+
+--Numeros Telefonos
+ALTER TABLE NumerosTelefonos
+ADD CONSTRAINT CK_numero_empresa
+CHECK (numero NOT LIKE '%[A-Z]%' AND numero NOT LIKE '%[a-z]%')
+
+
+--Empresas
+ALTER TABLE Empresas
+ADD CONSTRAINT CK_CantidadEmpleado
+CHECK (cantidad_empleado NOT LIKE '%[a-z]%' AND cantidad_empleado NOT LIKE '%[A-Z]%')
+
+ALTER TABLE Empresas
+ADD CONSTRAINT U_direccion
+UNIQUE (direccion)
+
+--Tipos_Usuarios
+ALTER TABLE Tipos_Usuarios
+ADD CONSTRAINT CK_descripcion
+CHECK (descripcion LIKE 'Capacitador' OR descripcion LIKE 'Asesor' OR descripcion LIKE 'Administrador')
+
+--Usuarios 
+ALTER TABLE Usuarios
+ADD CONSTRAINT CK_estado
+CHECK (estado LIKE 1 OR estado LIKE 0)
+
+--Capacitaciones
+ALTER TABLE Capacitaciones
+ADD CONSTRAINT CK_fecha_inicio
+CHECK(fecha_inicio < fecha_fin)
+
+--Temas
+ALTER TABLE Temas
+ADD CONSTRAINT CK_precio
+CHECK (Precio > 0)
+
+--Telefonos
+ALTER TABLE Telefonos
+ADD CONSTRAINT CK_numero_participante
+CHECK (numero NOT LIKE '%[A-Z]%' AND numero NOT LIKE '%[a-z]%')
+
+--Participantes
+ALTER TABLE Participantes
+ADD CONSTRAINT CK_dui
+CHECK (dui LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]-[0-9]')
+
+ALTER TABLE Participantes
+ADD CONSTRAINT U_dui
+UNIQUE (dui)
+
+--Pagos
+ALTER TABLE Pagos
+ADD CONSTRAINT CK_pago
+CHECK (pago >= 0)
+
+ALTER TABLE Pagos
+ADD CONSTRAINT CK_fecha_pago
+CHECK (fecha_pago >= getdate())
+
+--Detalle Participantes Capacitaciones - NO se toca porque todas son FK
+
+--Tipos Notas
+ALTER TABLE TiposNotas
+ADD CONSTRAINT CK_porcentaje_tipo
+CHECK (porcentaje > 0)
+
+--Notas
+ALTER TABLE Notas
+ADD CONSTRAINT CK_nota
+CHECK (nota >= 0)
+
+
 /*------------------------------------*/
 /*--			  INSERTS			--*/
 /*------------------------------------*/
@@ -355,5 +431,5 @@ go
 INSERT INTO Empresas VALUES ('Libre', 0, '------')
 go
 
-INSERT INTO Usuarios VALUES ('admin', 'CruzRoja1', 1, 1)
+INSERT INTO Usuarios VALUES ('admin', '0e80221a93e87a39e7a564048dd5c3b5e422d40ea266d8c006585b8b0d33ad60', 1, 1)
 go
