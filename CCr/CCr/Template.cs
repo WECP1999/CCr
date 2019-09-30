@@ -38,5 +38,6 @@ namespace CCr
         {
             this.WindowState = FormWindowState.Minimized;
         }
+        
     }
 }

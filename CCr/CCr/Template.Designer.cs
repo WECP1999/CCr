@@ -38,7 +38,7 @@
             this.btnclose.BackColor = System.Drawing.Color.Transparent;
             this.btnclose.FlatAppearance.BorderSize = 0;
             this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnclose.Font = new System.Drawing.Font("Kufi Extended Outline", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.btnclose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.btnclose.ForeColor = System.Drawing.Color.Black;
             this.btnclose.Location = new System.Drawing.Point(542, -5);
             this.btnclose.Name = "btnclose";
