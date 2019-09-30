@@ -217,12 +217,24 @@ namespace CCr
 
         private void btncerrar_Click(object sender, EventArgs e)
         {
-
+            Login log = new Login();
+            if (MessageBox.Show("¿Estas seguro que deseas cerrar sesion?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Class.Users.id = null;
+                log.Show();
+                this.Hide();
+            }
         }
 
         private void pbxcerrar_Click(object sender, EventArgs e)
         {
-
+            Login log = new Login();
+            if (MessageBox.Show("¿Estas seguro que deseas cerrar sesion?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Class.Users.id = null;
+                log.Show();
+                this.Hide();
+            }
         }
     }
 }
