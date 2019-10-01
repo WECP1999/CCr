@@ -429,17 +429,25 @@ CHECK (nota >= 0)
 /*--			  INSERTS			--*/
 /*------------------------------------*/
 
-
-INSERT INTO Temas (descripcion,precio) VALUES
-('Curso Basico de Primeros Auxilios',56.75),
-('Capacitacion elemental de evacuacion',76.54)
+INSERT INTO Empresas VALUES ('Libre', 0, '------')
+go
 
 --Solo tres tipos de usuarios trabajaran con el programa 
 INSERT INTO Tipos_Usuarios VALUES ('Administrador')
 INSERT INTO Tipos_Usuarios VALUES ('Asesor')
 INSERT INTO Tipos_Usuarios VALUES ('Capacitador')
 
-select * from Tipos_Usuarios 
+INSERT INTO Usuarios(nombre_usuario,password,estado,id_tipo_usuario) VALUES ('admin', '0e80221a93e87a39e7a564048dd5c3b5e422d40ea266d8c006585b8b0d33ad60', 1, 1)
+go
+
+select * from Empresas
+select * from Usuarios
+
+INSERT INTO Temas (descripcion,precio) VALUES
+('Curso Basico de Primeros Auxilios',56.75),
+('Capacitacion elemental de evacuacion',76.54)
+
+select * from Temas
 
 INSERT INTO Usuarios(nombre_usuario,password,estado,id_tipo_usuario) VALUES
 ('Brenda Hidalgo', '123', '1','1'),
@@ -456,11 +464,14 @@ INSERT INTO Capacitadores(nombre,apellido,id_usuario) VALUES
 ('Brenda','Hidalgo','2')
 
 INSERT INTO Empresas (nombre_empresa,cantidad_empleado,direccion) VALUES
-('Concentrix','180','Alameda Franklin Delano Roosevelt, San Salvador'),
+('Concentrix','180','Alameda Roosevelt, San Salvador'),
 ('Toei Animations','300','Casa de Goku')
 
 UPDATE Empresas SET direccion = 'Kamehouse'
 WHERE nombre_empresa = 'Toei Animations'
+
+select * from Empresas
+select * from Capacitadores
 
 INSERT INTO Capacitaciones(fecha_inicio,fecha_fin,id_empresa,id_capacitador,id_tema) VALUES
 ('2019/09/30 13:30:40','2019/10/1 14:50:50',3,1,2),
@@ -480,15 +491,20 @@ INSERT INTO DetallesParticipantesCapacitaciones(id_participante,id_capacitacion)
 (1,1),
 (2,2)
 
+select * from Capacitaciones
+select* from DetallesParticipantesCapacitaciones
+
 INSERT INTO Notas (nota,id_detalle_participante_capacitacion,id_tipo_nota) VALUES
-(10,2,1), --Llenado de notas para participante 1
-(8.00,2,2),
-(9.00,2,3),
-(6.94,2,4),
-(5.00,3,1), --Llenado de notas para participante 2
-(7.00,3,2),
-(3.00,3,3),
-(9.80,3,4)
+(10,1,1), --Llenado de notas para participante 1
+(8.00,1,2),
+(9.00,1,3),
+(6.94,1,4),
+(5.00,2,1), --Llenado de notas para participante 2
+(7.00,2,2),
+(3.00,2,3),
+(9.80,2,4)
+
+select * from Notas
 
 --Busqueda de todos los valores necesarios para mostrar resultados de la capacitacion
 SELECT TEM.descripcion, EMP.nombre_empresa, EMP.direccion, CAPN.fecha_inicio, CAPN.fecha_fin, CAPR.nombre as [cap-nombre], CAPR.apellido as [cap-apellido],  PAR.nombre, PAR.apellido, N.nota,(NT.porcentaje/100) as [porcentaje total], (N.nota*(NT.porcentaje/100)) as [Resultado]
@@ -509,6 +525,7 @@ RIGHT JOIN TiposNotas NT
 ON N.id_tipo_nota = NT.id
 ORDER BY PAR.nombre
 
+SELECT * FROM Usuarios
 select * from Empresas
 select * from Capacitadores
 select * from Temas
