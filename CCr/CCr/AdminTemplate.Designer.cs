@@ -30,7 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblUsername = new System.Windows.Forms.Label();
-            this.lblType = new System.Windows.Forms.Label();
+            this.lblTypeUser = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbxcontactos = new System.Windows.Forms.PictureBox();
             this.btncontactos = new System.Windows.Forms.Button();
@@ -73,7 +73,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(3)))), ((int)(((byte)(3)))));
             this.panel1.Controls.Add(this.lblUsername);
-            this.panel1.Controls.Add(this.lblType);
+            this.panel1.Controls.Add(this.lblTypeUser);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.pbxcontactos);
             this.panel1.Controls.Add(this.btncontactos);
@@ -94,7 +94,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(238, 632);
             this.panel1.TabIndex = 2;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lblUsername
             // 
@@ -107,16 +106,16 @@
             this.lblUsername.TabIndex = 19;
             this.lblUsername.Text = "label2";
             // 
-            // lblType
+            // lblTypeUser
             // 
-            this.lblType.AutoSize = true;
-            this.lblType.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblType.ForeColor = System.Drawing.Color.White;
-            this.lblType.Location = new System.Drawing.Point(93, 548);
-            this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(49, 19);
-            this.lblType.TabIndex = 18;
-            this.lblType.Text = "label1";
+            this.lblTypeUser.AutoSize = true;
+            this.lblTypeUser.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTypeUser.ForeColor = System.Drawing.Color.White;
+            this.lblTypeUser.Location = new System.Drawing.Point(93, 548);
+            this.lblTypeUser.Name = "lblTypeUser";
+            this.lblTypeUser.Size = new System.Drawing.Size(49, 19);
+            this.lblTypeUser.TabIndex = 18;
+            this.lblTypeUser.Text = "label1";
             // 
             // pictureBox1
             // 
@@ -402,6 +401,6 @@
         protected System.Windows.Forms.Button btncontactos;
         protected System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblUsername;
-        private System.Windows.Forms.Label lblType;
+        private System.Windows.Forms.Label lblTypeUser;
     }
 }

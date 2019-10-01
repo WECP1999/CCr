@@ -110,6 +110,7 @@ CREATE TABLE [Empresas] (
     [nombre_empresa] VARCHAR(100) NOT NULL,
     [cantidad_empleado] VARCHAR(100) NOT NULL,
     [direccion] VARCHAR(100) NOT NULL,
+	[correo] VARCHAR(100),
     CONSTRAINT [PK_Empresas] PRIMARY KEY ([id])
 )
 GO
@@ -220,22 +221,6 @@ GO
 
 
 /* ---------------------------------------------------------------------- */
-/* Add table "Correo"                                                     */
-/* ---------------------------------------------------------------------- */
-
-GO
-
-
-CREATE TABLE [Correos] (
-    [id] INTEGER IDENTITY(1,1) NOT NULL,
-    [correo] VARCHAR(100) NOT NULL,
-    [id_empresa] INTEGER,
-    CONSTRAINT [PK_Correos] PRIMARY KEY ([id])
-)
-GO
-
-
-/* ---------------------------------------------------------------------- */
 /* Add table "Detalle_Participante_Capacitacion"                          */
 /* ---------------------------------------------------------------------- */
 
@@ -332,11 +317,6 @@ ALTER TABLE [Pagos] ADD CONSTRAINT [Capacitaciones_Pagos]
     FOREIGN KEY ([id_capacitacion]) REFERENCES [Capacitaciones] ([id])
 GO
 
-
-ALTER TABLE [Correos] ADD CONSTRAINT [Empresa_Correos] 
-    FOREIGN KEY ([id_empresa]) REFERENCES [Empresas] ([id])
-GO
-
 ALTER TABLE [Telefonos] ADD CONSTRAINT [Participantes_Telefonos]
 	FOREIGN KEY ([id_participante]) REFERENCES [Participantes] ([id])
 GO
@@ -379,7 +359,7 @@ CHECK(fecha_inicio < fecha_fin)
 --Temas
 ALTER TABLE Temas
 ADD CONSTRAINT CK_precio
-CHECK (Precio > 0)
+CHECK (Precio >= 0)
 
 --Telefonos
 ALTER TABLE Telefonos
@@ -428,7 +408,7 @@ go
 INSERT INTO Tipos_Usuarios VALUES ('Capacitador')
 go
 
-INSERT INTO Empresas VALUES ('Libre', 0, '------')
+INSERT INTO Empresas VALUES ('Libre', 0, '------', '-------')
 go
 
 INSERT INTO Usuarios VALUES ('admin', '0e80221a93e87a39e7a564048dd5c3b5e422d40ea266d8c006585b8b0d33ad60', 1, 1)
