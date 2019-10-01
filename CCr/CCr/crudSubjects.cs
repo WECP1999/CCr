@@ -24,6 +24,7 @@ namespace CCr
             con.startConnection();
             SR = Subject.read();
             dgvSubjects.DataSource = SR;
+            dgvSubjects.Columns["id"].Visible = false;
             con.closeConnection();
         }
         public crudSubjects()

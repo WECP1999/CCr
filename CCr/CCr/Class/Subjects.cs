@@ -55,6 +55,7 @@ namespace CCr.Class
                     aux.description = lector["descripcion"].ToString();
                     ss.Add(aux);
                 }
+                lector.Close();
                 return ss;
             }
             catch (Exception error)

@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminUsers));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.btningresar = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.txtapellido = new System.Windows.Forms.TextBox();
@@ -47,6 +49,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbtipo = new System.Windows.Forms.ComboBox();
+            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pbxhome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxempresa)).BeginInit();
@@ -58,6 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // btnhome
@@ -121,6 +125,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.btningresar);
             this.groupBox1.Controls.Add(this.panel6);
             this.groupBox1.Controls.Add(this.txtapellido);
@@ -149,18 +154,34 @@
             this.groupBox1.Text = "Datos del usuario";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(451, 178);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(32, 28);
+            this.button1.TabIndex = 28;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btningresar
             // 
             this.btningresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
             this.btningresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btningresar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btningresar.ForeColor = System.Drawing.Color.White;
-            this.btningresar.Location = new System.Drawing.Point(337, 254);
+            this.btningresar.Location = new System.Drawing.Point(285, 255);
             this.btningresar.Name = "btningresar";
             this.btningresar.Size = new System.Drawing.Size(95, 38);
             this.btningresar.TabIndex = 27;
             this.btningresar.Text = "Ingresar";
             this.btningresar.UseVisualStyleBackColor = false;
+            this.btningresar.Click += new System.EventHandler(this.btningresar_Click);
             // 
             // panel6
             // 
@@ -251,6 +272,7 @@
             this.txtVerify.Location = new System.Drawing.Point(12, 228);
             this.txtVerify.MaxLength = 100;
             this.txtVerify.Name = "txtVerify";
+            this.txtVerify.PasswordChar = '*';
             this.txtVerify.Size = new System.Drawing.Size(422, 19);
             this.txtVerify.TabIndex = 19;
             this.txtVerify.Click += new System.EventHandler(this.txtVerify_Click);
@@ -284,6 +306,7 @@
             this.txtPass.Location = new System.Drawing.Point(11, 173);
             this.txtPass.MaxLength = 100;
             this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(422, 19);
             this.txtPass.TabIndex = 16;
             this.txtPass.Click += new System.EventHandler(this.txtPass_Click);
@@ -362,16 +385,30 @@
             this.cmbtipo.TabIndex = 0;
             this.cmbtipo.SelectedIndexChanged += new System.EventHandler(this.cmbtipo_SelectedIndexChanged);
             // 
+            // dgvUsuarios
+            // 
+            this.dgvUsuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.dgvUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsuarios.Location = new System.Drawing.Point(418, 425);
+            this.dgvUsuarios.Name = "dgvUsuarios";
+            this.dgvUsuarios.ReadOnly = true;
+            this.dgvUsuarios.Size = new System.Drawing.Size(361, 173);
+            this.dgvUsuarios.TabIndex = 5;
+            this.dgvUsuarios.DoubleClick += new System.EventHandler(this.dgvUsuarios_DoubleClick);
+            // 
             // AdminUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(966, 610);
+            this.Controls.Add(this.dgvUsuarios);
             this.Controls.Add(this.groupBox1);
             this.Name = "AdminUsers";
             this.Load += new System.EventHandler(this.AdminUsers_Load);
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.btnclose, 0);
             this.Controls.SetChildIndex(this.btnminimyze, 0);
+            this.Controls.SetChildIndex(this.dgvUsuarios, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pbxhome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxempresa)).EndInit();
@@ -384,6 +421,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -409,5 +447,7 @@
         private System.Windows.Forms.TextBox txtVerify;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btningresar;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dgvUsuarios;
     }
 }
