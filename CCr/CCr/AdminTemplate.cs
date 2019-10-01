@@ -17,15 +17,38 @@ namespace CCr
 
         private void AdminTemplate_Load(object sender, EventArgs e)
         {
+            Class.Users us = new Class.Users();
+            Class.Connection conexionSQL = new Class.Connection();
+            conexionSQL.startConnection();
+            us = us.getUser(1);
+            conexionSQL.closeConnection();
+            lblUsername.Text = us.Username.ToString();
+
+            if (us.Description == "1")
+            {
+                lblTypeUser.Text = "Administrador";
+            }
+            else if(us.Description == "2")
+            {
+                lblTypeUser.Text = "Asesor";
+            }
+            else if (us.Description == "3")
+            {
+                lblTypeUser.Text = "Capacitador";
+            }
         }
         private void pbxhome_Click(object sender, EventArgs e)
         {
-
+            AdminForm ac = new AdminForm();
+            ac.Show();
+            this.Hide();
         }
 
         private void btnhome_Click(object sender, EventArgs e)
         {
-
+            AdminForm ac = new AdminForm();
+            ac.Show();
+            this.Hide();
         }
 
         private void btnhome_MouseEnter(object sender, EventArgs e)
@@ -50,11 +73,6 @@ namespace CCr
         {
             btnhome.BackColor = Color.FromArgb(140, 3, 3);
             pbxhome.BackColor = Color.FromArgb(140, 3, 3);
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void btntemas_MouseEnter(object sender, EventArgs e)
@@ -117,12 +135,16 @@ namespace CCr
 
         private void pbxusuarios_Click(object sender, EventArgs e)
         {
-
+            AdminUsers ac = new AdminUsers();
+            ac.Show();
+            this.Hide();
         }
 
         private void btnusuarios_Click(object sender, EventArgs e)
         {
-
+            AdminUsers ac = new AdminUsers();
+            ac.Show();
+            this.Hide();
         }
 
         private void btnempresas_MouseEnter(object sender, EventArgs e)
@@ -151,12 +173,16 @@ namespace CCr
 
         private void btnempresas_Click(object sender, EventArgs e)
         {
-
+            AdminCompany ac = new AdminCompany();
+            ac.Show();
+            this.Hide();
         }
 
         private void pbxempresa_Click(object sender, EventArgs e)
         {
-
+            AdminCompany ac = new AdminCompany();
+            ac.Show();
+            this.Hide();
         }
 
         private void btnpagos_MouseLeave(object sender, EventArgs e)
@@ -235,6 +261,64 @@ namespace CCr
                 log.Show();
                 this.Hide();
             }
+        }
+
+        private void btncontactos_MouseEnter(object sender, EventArgs e)
+        {
+            btncontactos.BackColor = Color.FromArgb(115, 3, 3);
+            pbxcontactos.BackColor = Color.FromArgb(140, 3, 3);
+        }
+
+        private void btncontactos_MouseLeave(object sender, EventArgs e)
+        {
+            btncontactos.BackColor = Color.FromArgb(163, 3, 3);
+            pbxcontactos.BackColor = Color.FromArgb(163, 3, 3);
+        }
+
+        private void pbxcontactos_MouseEnter(object sender, EventArgs e)
+        {
+            btncontactos.BackColor = Color.FromArgb(140, 3, 3);
+            pbxcontactos.BackColor = Color.FromArgb(140, 3, 3);
+        }
+
+        private void pbxcontactos_MouseLeave(object sender, EventArgs e)
+        {
+            btncontactos.BackColor = Color.FromArgb(163, 3, 3);
+            pbxcontactos.BackColor = Color.FromArgb(163, 3, 3);
+        }
+
+        private void btncontactos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbxcontactos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btncapacitaciones_MouseEnter(object sender, EventArgs e)
+        {
+            btncapacitaciones.BackColor = Color.FromArgb(115, 3, 3);
+            pictureBox2.BackColor = Color.FromArgb(140, 3, 3);
+        }
+
+        private void btncapacitaciones_MouseLeave(object sender, EventArgs e)
+        {
+            btncapacitaciones.BackColor = Color.FromArgb(163, 3, 3);
+            pictureBox2.BackColor = Color.FromArgb(163, 3, 3);
+        }
+
+        private void pictureBox2_MouseEnter(object sender, EventArgs e)
+        {
+            btncapacitaciones.BackColor = Color.FromArgb(140, 3, 3);
+            pictureBox2.BackColor = Color.FromArgb(140, 3, 3);
+        }
+
+        private void pictureBox2_MouseLeave(object sender, EventArgs e)
+        {
+            btncapacitaciones.BackColor = Color.FromArgb(163, 3, 3);
+            pictureBox2.BackColor = Color.FromArgb(163, 3, 3);
         }
     }
 }
