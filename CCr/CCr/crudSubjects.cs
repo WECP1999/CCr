@@ -82,6 +82,11 @@ namespace CCr
                         txtdescripcion.Clear();
                         txtprecio.Value = 0;
                         refresh();
+                        accion = 0;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Falta el tema de la capacitacion");
                     }
                     break;
                 case 1:
@@ -96,6 +101,12 @@ namespace CCr
                         txtdescripcion.Clear();
                         txtprecio.Value = 0;
                         refresh();
+                        accion = 0;
+                        btnSubmit.Text = "Crear";
+                    }
+                    else
+                    {
+                        MessageBox.Show("El tema de la capacitacion no puede ser nula");
                     }
                     break;
                 default:

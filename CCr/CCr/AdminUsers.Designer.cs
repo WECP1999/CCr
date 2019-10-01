@@ -355,7 +355,7 @@
             this.cmbtipo.Items.AddRange(new object[] {
             "Administrador",
             "Asesor",
-            "Capactiador"});
+            "Capacitador"});
             this.cmbtipo.Location = new System.Drawing.Point(9, 60);
             this.cmbtipo.Name = "cmbtipo";
             this.cmbtipo.Size = new System.Drawing.Size(368, 26);
