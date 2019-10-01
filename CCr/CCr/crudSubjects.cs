@@ -25,6 +25,8 @@ namespace CCr
             SR = Subject.read();
             dgvSubjects.DataSource = SR;
             dgvSubjects.Columns["id"].Visible = false;
+            dgvSubjects.Columns[1].HeaderText = "Tema";
+            dgvSubjects.Columns[2].HeaderText = "Precio";
             con.closeConnection();
         }
         public crudSubjects()
@@ -101,10 +103,9 @@ namespace CCr
                         con.closeConnection();
                         txtdescripcion.Clear();
                         txtprecio.Value = 0;
-                        btnSubmit.Text = "Crear";
+                        btnSubmit.Text = "Ingresar";
                         refresh();
                         accion = 0;
-                        btnSubmit.Text = "Crear";
                     }
                     else
                     {
@@ -132,5 +133,10 @@ namespace CCr
             btnSubmit.Text = "Modificar"; accion = 1;
         }
         private void dgvSubjects_Click(object sender, EventArgs e){}
+
+        private void dgvSubjects_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

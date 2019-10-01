@@ -156,6 +156,7 @@ namespace CCr.Class
                 {
                     us.Username = lector["nombre_usuario"].ToString();
                     us.Description = lector["id_tipo_usuario"].ToString();
+                    us.State = lector["estado"].ToString();
                     lector.Close();
                     return us;
                 }

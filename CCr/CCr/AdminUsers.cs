@@ -31,6 +31,12 @@ namespace CCr
             dgvUsuarios.Columns["Password"].Visible = false;
             dgvUsuarios.Columns["Idtipo"].Visible = false;
             dgvUsuarios.Columns["Xid"].Visible = false;
+            dgvUsuarios.Columns[0].HeaderText = "Nombre de usuario";
+            dgvUsuarios.Columns[0].Width = 230;
+            dgvUsuarios.Columns[2].Width = 200;
+            dgvUsuarios.Columns[3].Width = 230;
+            dgvUsuarios.Columns[2].HeaderText = "Estado";
+            dgvUsuarios.Columns[3].HeaderText = "Modulo";
             con.closeConnection();
         }
         private void btnhome_MouseLeave(object sender, EventArgs e)

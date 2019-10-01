@@ -59,8 +59,8 @@ namespace CCr.Class
                     comp.id = int.Parse(lector["id"].ToString());
                     comp.Name = lector["nombre_empresa"].ToString();
                     comp.Address = lector["direccion"].ToString();
+                    comp.email = lector["correo"].ToString();
                     comp.NumberParticipants = int.Parse(lector["cantidad_empleado"].ToString());
-                    comp.Email = lector["correo"].ToString();
                     companys.Add(comp);
                 }
                 lector.Close();

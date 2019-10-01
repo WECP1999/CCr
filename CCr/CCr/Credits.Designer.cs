@@ -37,12 +37,12 @@
             // btnclose
             // 
             this.btnclose.FlatAppearance.BorderSize = 0;
-            this.btnclose.Location = new System.Drawing.Point(349, 0);
+            this.btnclose.Location = new System.Drawing.Point(389, 0);
             // 
             // btnminimyze
             // 
             this.btnminimyze.FlatAppearance.BorderSize = 0;
-            this.btnminimyze.Location = new System.Drawing.Point(307, 0);
+            this.btnminimyze.Location = new System.Drawing.Point(342, 0);
             // 
             // button1
             // 
@@ -91,7 +91,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.BackgroundImage = global::CCr.Properties.Resources.The_Dependables___Handyman_Services;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(395, 608);
+            this.ClientSize = new System.Drawing.Size(435, 608);
             this.Controls.Add(this.btningresar);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);

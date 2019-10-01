@@ -45,6 +45,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxtemas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxcerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxpagos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxcontactos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtprecio)).BeginInit();
             this.grpElementos.SuspendLayout();
@@ -83,6 +86,14 @@
             // 
             this.btnpagos.FlatAppearance.BorderSize = 0;
             // 
+            // btncontactos
+            // 
+            this.btncontactos.FlatAppearance.BorderSize = 0;
+            // 
+            // btncapacitaciones
+            // 
+            this.btncapacitaciones.FlatAppearance.BorderSize = 0;
+            // 
             // btnclose
             // 
             this.btnclose.FlatAppearance.BorderSize = 0;
@@ -101,7 +112,7 @@
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(131, 38);
             this.btnSubmit.TabIndex = 12;
-            this.btnSubmit.Text = "Crear";
+            this.btnSubmit.Text = "Ingresar";
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
@@ -156,6 +167,8 @@
             // 
             // dgvSubjects
             // 
+            this.dgvSubjects.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvSubjects.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dgvSubjects.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.dgvSubjects.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvSubjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -165,6 +178,7 @@
             this.dgvSubjects.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSubjects.Size = new System.Drawing.Size(345, 305);
             this.dgvSubjects.TabIndex = 19;
+            this.dgvSubjects.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubjects_CellContentClick);
             this.dgvSubjects.Click += new System.EventHandler(this.dgvSubjects_Click);
             this.dgvSubjects.DoubleClick += new System.EventHandler(this.dgvSubjects_DoubleClick);
             // 
@@ -240,6 +254,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxtemas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxcerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxpagos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxcontactos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtprecio)).EndInit();
             this.grpElementos.ResumeLayout(false);

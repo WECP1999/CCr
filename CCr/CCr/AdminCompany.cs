@@ -27,7 +27,7 @@ namespace CCr
             listComp = comp.read();
             dgvusuarios.DataSource = null;
             dgvusuarios.DataSource = listComp;
-            dgvusuarios.Columns[0].HeaderText = "Código";
+            dgvusuarios.Columns[0].Visible = false;
             dgvusuarios.Columns[1].HeaderText = "Nombre de la empresa";
             dgvusuarios.Columns[2].HeaderText = "Dirección";
             dgvusuarios.Columns[3].HeaderText = "Número de empleados";
