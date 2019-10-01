@@ -101,5 +101,12 @@ namespace CCr
             }
 
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Credits cre = new Credits();
+            this.Hide();
+            cre.Show();
+        }
     }
 }

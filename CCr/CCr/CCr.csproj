@@ -82,6 +82,12 @@
     <Compile Include="Class\Trainings.cs" />
     <Compile Include="Class\Users.cs" />
     <Compile Include="Class\Validations.cs" />
+    <Compile Include="Credits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Credits.Designer.cs">
+      <DependentUpon>Credits.cs</DependentUpon>
+    </Compile>
     <Compile Include="crudSubjects.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminTemplate.resx">
       <DependentUpon>AdminTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Credits.resx">
+      <DependentUpon>Credits.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="crudSubjects.resx">
       <DependentUpon>crudSubjects.cs</DependentUpon>
@@ -208,6 +217,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\trainings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\credits.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\The Dependables - Handyman Services.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

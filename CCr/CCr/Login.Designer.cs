@@ -37,6 +37,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtpass = new System.Windows.Forms.TextBox();
             this.btnlogin = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -139,10 +140,23 @@
             this.btnlogin.UseVisualStyleBackColor = false;
             this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Location = new System.Drawing.Point(418, 309);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(68, 18);
+            this.linkLabel1.TabIndex = 12;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Acerca de";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(498, 339);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.btnlogin);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.txtpass);
@@ -164,6 +178,7 @@
             this.Controls.SetChildIndex(this.txtpass, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.btnlogin, 0);
+            this.Controls.SetChildIndex(this.linkLabel1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -180,5 +195,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtpass;
         private System.Windows.Forms.Button btnlogin;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

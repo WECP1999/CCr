@@ -101,12 +101,16 @@ namespace CCr
 
         private void btntemas_Click(object sender, EventArgs e)
         {
-
+            crudSubjects ac = new crudSubjects();
+            ac.Show();
+            this.Hide();
         }
 
         private void pbxtemas_Click(object sender, EventArgs e)
         {
-
+            crudSubjects ac = new crudSubjects();
+            ac.Show();
+            this.Hide();
         }
 
         private void btnusuarios_MouseEnter(object sender, EventArgs e)

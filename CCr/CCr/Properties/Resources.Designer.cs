@@ -83,6 +83,16 @@ namespace CCr.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap credits {
+            get {
+                object obj = ResourceManager.GetObject("credits", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cruz1 {
             get {
                 object obj = ResourceManager.GetObject("cruz1", resourceCulture);
@@ -176,6 +186,16 @@ namespace CCr.Properties {
         internal static System.Drawing.Bitmap substract {
             get {
                 object obj = ResourceManager.GetObject("substract", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap The_Dependables___Handyman_Services {
+            get {
+                object obj = ResourceManager.GetObject("The Dependables - Handyman Services", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

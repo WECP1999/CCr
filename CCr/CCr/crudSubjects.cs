@@ -95,6 +95,7 @@ namespace CCr
                         con.closeConnection();
                         txtdescripcion.Clear();
                         txtprecio.Value = 0;
+                        btnSubmit.Text = "Crear";
                         refresh();
                     }
                     break;
