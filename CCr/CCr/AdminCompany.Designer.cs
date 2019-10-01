@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.btningresar = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtcorreo = new System.Windows.Forms.TextBox();
@@ -43,7 +44,6 @@
             this.txtempresa = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvusuarios = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxhome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxempresa)).BeginInit();
@@ -53,6 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxpagos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxcontactos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudcantempleados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvusuarios)).BeginInit();
@@ -68,6 +69,7 @@
             // pbxhome
             // 
             this.pbxhome.BackColor = System.Drawing.Color.Transparent;
+            this.pbxhome.Click += new System.EventHandler(this.pbxhome_Click);
             this.pbxhome.MouseEnter += new System.EventHandler(this.pbxhome_MouseEnter);
             this.pbxhome.MouseLeave += new System.EventHandler(this.pbxhome_MouseLeave);
             // 
@@ -81,6 +83,7 @@
             // 
             this.btnempresas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.btnempresas.FlatAppearance.BorderSize = 0;
+            this.btnempresas.Click += new System.EventHandler(this.btnempresas_Click);
             this.btnempresas.MouseEnter += new System.EventHandler(this.btnempresas_MouseEnter);
             this.btnempresas.MouseLeave += new System.EventHandler(this.btnempresas_MouseLeave);
             // 
@@ -104,6 +107,10 @@
             // btncontactos
             // 
             this.btncontactos.FlatAppearance.BorderSize = 0;
+            // 
+            // btncapacitaciones
+            // 
+            this.btncapacitaciones.FlatAppearance.BorderSize = 0;
             // 
             // btnclose
             // 
@@ -139,11 +146,22 @@
             this.groupBox1.Text = "Datos de la empresa";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(529, 102);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 18);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "label5";
+            this.label5.Visible = false;
+            // 
             // btningresar
             // 
             this.btningresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
             this.btningresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btningresar.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btningresar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btningresar.ForeColor = System.Drawing.Color.White;
             this.btningresar.Location = new System.Drawing.Point(346, 339);
             this.btningresar.Name = "btningresar";
@@ -156,7 +174,8 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Black;
-            this.panel5.Location = new System.Drawing.Point(10, 332);
+            this.panel5.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel5.Location = new System.Drawing.Point(10, 325);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(422, 1);
             this.panel5.TabIndex = 21;
@@ -165,11 +184,11 @@
             // 
             this.txtcorreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.txtcorreo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtcorreo.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcorreo.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcorreo.Location = new System.Drawing.Point(10, 306);
             this.txtcorreo.MaxLength = 100;
             this.txtcorreo.Name = "txtcorreo";
-            this.txtcorreo.Size = new System.Drawing.Size(422, 16);
+            this.txtcorreo.Size = new System.Drawing.Size(422, 19);
             this.txtcorreo.TabIndex = 20;
             this.txtcorreo.Click += new System.EventHandler(this.txtcorreo_Click);
             this.txtcorreo.Leave += new System.EventHandler(this.txtcorreo_Leave);
@@ -177,17 +196,18 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
             this.label4.Location = new System.Drawing.Point(6, 284);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 19);
+            this.label4.Size = new System.Drawing.Size(54, 18);
             this.label4.TabIndex = 19;
             this.label4.Text = "Correo:";
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Black;
+            this.panel4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel4.Location = new System.Drawing.Point(10, 269);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(422, 1);
@@ -197,7 +217,7 @@
             // 
             this.txtdireccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.txtdireccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtdireccion.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdireccion.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdireccion.Location = new System.Drawing.Point(10, 192);
             this.txtdireccion.MaxLength = 100;
             this.txtdireccion.Multiline = true;
@@ -210,11 +230,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
             this.label3.Location = new System.Drawing.Point(6, 170);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 19);
+            this.label3.Size = new System.Drawing.Size(70, 18);
             this.label3.TabIndex = 16;
             this.label3.Text = "Dirección:";
             // 
@@ -222,7 +242,7 @@
             // 
             this.nudcantempleados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.nudcantempleados.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.nudcantempleados.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudcantempleados.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudcantempleados.Location = new System.Drawing.Point(10, 133);
             this.nudcantempleados.Maximum = new decimal(new int[] {
             999999,
@@ -230,7 +250,7 @@
             0,
             0});
             this.nudcantempleados.Name = "nudcantempleados";
-            this.nudcantempleados.Size = new System.Drawing.Size(422, 23);
+            this.nudcantempleados.Size = new System.Drawing.Size(422, 22);
             this.nudcantempleados.TabIndex = 15;
             this.nudcantempleados.Value = new decimal(new int[] {
             1,
@@ -243,6 +263,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel3.Location = new System.Drawing.Point(10, 159);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(422, 1);
@@ -251,17 +272,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
             this.label1.Location = new System.Drawing.Point(6, 111);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 19);
+            this.label1.Size = new System.Drawing.Size(150, 18);
             this.label1.TabIndex = 12;
             this.label1.Text = "Número de empleados";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(10, 92);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(422, 1);
@@ -271,11 +293,11 @@
             // 
             this.txtempresa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.txtempresa.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtempresa.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtempresa.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtempresa.Location = new System.Drawing.Point(10, 77);
             this.txtempresa.MaxLength = 100;
             this.txtempresa.Name = "txtempresa";
-            this.txtempresa.Size = new System.Drawing.Size(422, 16);
+            this.txtempresa.Size = new System.Drawing.Size(422, 19);
             this.txtempresa.TabIndex = 10;
             this.txtempresa.Click += new System.EventHandler(this.txtempresa_Click);
             this.txtempresa.Leave += new System.EventHandler(this.txtempresa_Leave_1);
@@ -283,17 +305,17 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
             this.label2.Location = new System.Drawing.Point(6, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 19);
+            this.label2.Size = new System.Drawing.Size(63, 18);
             this.label2.TabIndex = 9;
             this.label2.Text = "Nombre:";
             // 
             // dgvusuarios
             // 
-            this.dgvusuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgvusuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvusuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dgvusuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.dgvusuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -303,16 +325,6 @@
             this.dgvusuarios.Size = new System.Drawing.Size(710, 173);
             this.dgvusuarios.TabIndex = 4;
             this.dgvusuarios.DoubleClick += new System.EventHandler(this.dgvusuarios_DoubleClick);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(529, 102);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 23);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "label5";
-            this.label5.Visible = false;
             // 
             // AdminCompany
             // 
@@ -335,6 +347,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxpagos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxcontactos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudcantempleados)).EndInit();

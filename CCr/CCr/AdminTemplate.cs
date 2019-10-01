@@ -135,12 +135,16 @@ namespace CCr
 
         private void pbxusuarios_Click(object sender, EventArgs e)
         {
-
+            AdminUsers ac = new AdminUsers();
+            ac.Show();
+            this.Hide();
         }
 
         private void btnusuarios_Click(object sender, EventArgs e)
         {
-
+            AdminUsers ac = new AdminUsers();
+            ac.Show();
+            this.Hide();
         }
 
         private void btnempresas_MouseEnter(object sender, EventArgs e)
@@ -291,6 +295,30 @@ namespace CCr
         private void pbxcontactos_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btncapacitaciones_MouseEnter(object sender, EventArgs e)
+        {
+            btncapacitaciones.BackColor = Color.FromArgb(115, 3, 3);
+            pictureBox2.BackColor = Color.FromArgb(140, 3, 3);
+        }
+
+        private void btncapacitaciones_MouseLeave(object sender, EventArgs e)
+        {
+            btncapacitaciones.BackColor = Color.FromArgb(163, 3, 3);
+            pictureBox2.BackColor = Color.FromArgb(163, 3, 3);
+        }
+
+        private void pictureBox2_MouseEnter(object sender, EventArgs e)
+        {
+            btncapacitaciones.BackColor = Color.FromArgb(140, 3, 3);
+            pictureBox2.BackColor = Color.FromArgb(140, 3, 3);
+        }
+
+        private void pictureBox2_MouseLeave(object sender, EventArgs e)
+        {
+            btncapacitaciones.BackColor = Color.FromArgb(163, 3, 3);
+            pictureBox2.BackColor = Color.FromArgb(163, 3, 3);
         }
     }
 }

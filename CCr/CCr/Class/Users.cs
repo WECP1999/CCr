@@ -49,11 +49,6 @@ namespace CCr.Class
                 return false;
             }
         }
-
-        public bool signOut()
-        {
-            return true;
-        }
         public bool signUp()
         {
             return true;

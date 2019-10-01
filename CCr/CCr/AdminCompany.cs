@@ -240,5 +240,15 @@ namespace CCr
         {
 
         }
+
+        private void pbxhome_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnempresas_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -66,6 +66,12 @@
     <Compile Include="AdminTemplate.Designer.cs">
       <DependentUpon>AdminTemplate.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminUsers.Designer.cs">
+      <DependentUpon>AdminUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Class\Companys.cs" />
     <Compile Include="Class\Connection.cs" />
     <Compile Include="Class\Contacts.cs" />
@@ -109,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminTemplate.resx">
       <DependentUpon>AdminTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminUsers.resx">
+      <DependentUpon>AdminUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -187,6 +196,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trainings.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
