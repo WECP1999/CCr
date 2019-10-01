@@ -14,10 +14,7 @@ namespace CCr.Class
 
         public bool validateEmail(string email)
         {
-            expresion = "^((\"[\\w -\\s] + \")|([\\w-]+(?:\\.[\\w-]+)*)|(\"[\\w -\\s] + \")([\\w-]+(?:\\.[\\w-]+)*))" +
-                "(@((?:[\\w-]+\\.)*\\w[\\w-]{0,66})\\.([a-z]{2,6}(?:\\.[a-z]{2})?)$)|" +
-                "(@\\[?((25[0-5]\\.|2[0-4][0-9]\\.|1[0-9]{2}\\.|[0-9]{1,2}\\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\\.)" +
-                "{2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\\]?$)";
+            expresion = @"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$";
             if (Regex.IsMatch(email, expresion))
             {
                 if (Regex.Replace(email, expresion, string.Empty).Length == 0)
@@ -87,7 +84,24 @@ namespace CCr.Class
 
         public bool validateMoney(string text)
         {
-            expresion = @"^[0-9]+(\.[0-9]{1,2})?";
+            expresion = @"^[0-9]+(\.[0-9]{1,2})?$";
+            if (Regex.IsMatch(text, expresion))
+            {
+                if (Regex.Replace(text, expresion, string.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return false;
+        }
+
+        public bool validateNumber(string text)
+        {
+            expresion = @"^[0-9]+$";
             if (Regex.IsMatch(text, expresion))
             {
                 if (Regex.Replace(text, expresion, string.Empty).Length == 0)
@@ -104,7 +118,7 @@ namespace CCr.Class
 
         public bool validateDUI(string text)
         {
-            expresion = @"^[0-9]+(\.[0-9]{1,2})?";
+            expresion = @"^[0-9]{8}\-?[0-9]{1}$";
             if (Regex.IsMatch(text, expresion))
             {
                 if (Regex.Replace(text, expresion, string.Empty).Length == 0)

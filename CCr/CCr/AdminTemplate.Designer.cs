@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btncapacitaciones = new System.Windows.Forms.Button();
             this.lblUsername = new System.Windows.Forms.Label();
-            this.lblType = new System.Windows.Forms.Label();
+            this.lblTypeUser = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbxcontactos = new System.Windows.Forms.PictureBox();
             this.btncontactos = new System.Windows.Forms.Button();
@@ -48,6 +50,7 @@
             this.pbxhome = new System.Windows.Forms.PictureBox();
             this.btnhome = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxcontactos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxcerrar)).BeginInit();
@@ -72,8 +75,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(3)))), ((int)(((byte)(3)))));
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.btncapacitaciones);
             this.panel1.Controls.Add(this.lblUsername);
-            this.panel1.Controls.Add(this.lblType);
+            this.panel1.Controls.Add(this.lblTypeUser);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.pbxcontactos);
             this.panel1.Controls.Add(this.btncontactos);
@@ -94,7 +99,35 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(238, 632);
             this.panel1.TabIndex = 2;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::CCr.Properties.Resources.trainings;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 389);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(32, 28);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 21;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
+            this.pictureBox2.MouseLeave += new System.EventHandler(this.pictureBox2_MouseLeave);
+            // 
+            // btncapacitaciones
+            // 
+            this.btncapacitaciones.BackColor = System.Drawing.Color.Transparent;
+            this.btncapacitaciones.FlatAppearance.BorderSize = 0;
+            this.btncapacitaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncapacitaciones.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncapacitaciones.ForeColor = System.Drawing.Color.White;
+            this.btncapacitaciones.Location = new System.Drawing.Point(0, 385);
+            this.btncapacitaciones.Name = "btncapacitaciones";
+            this.btncapacitaciones.Size = new System.Drawing.Size(238, 33);
+            this.btncapacitaciones.TabIndex = 20;
+            this.btncapacitaciones.Text = "Capacitaciones";
+            this.btncapacitaciones.UseVisualStyleBackColor = false;
+            this.btncapacitaciones.MouseEnter += new System.EventHandler(this.btncapacitaciones_MouseEnter);
+            this.btncapacitaciones.MouseLeave += new System.EventHandler(this.btncapacitaciones_MouseLeave);
             // 
             // lblUsername
             // 
@@ -107,16 +140,16 @@
             this.lblUsername.TabIndex = 19;
             this.lblUsername.Text = "label2";
             // 
-            // lblType
+            // lblTypeUser
             // 
-            this.lblType.AutoSize = true;
-            this.lblType.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblType.ForeColor = System.Drawing.Color.White;
-            this.lblType.Location = new System.Drawing.Point(93, 548);
-            this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(49, 19);
-            this.lblType.TabIndex = 18;
-            this.lblType.Text = "label1";
+            this.lblTypeUser.AutoSize = true;
+            this.lblTypeUser.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTypeUser.ForeColor = System.Drawing.Color.White;
+            this.lblTypeUser.Location = new System.Drawing.Point(93, 548);
+            this.lblTypeUser.Name = "lblTypeUser";
+            this.lblTypeUser.Size = new System.Drawing.Size(49, 19);
+            this.lblTypeUser.TabIndex = 18;
+            this.lblTypeUser.Text = "label1";
             // 
             // pictureBox1
             // 
@@ -133,7 +166,7 @@
             // 
             this.pbxcontactos.BackColor = System.Drawing.Color.Transparent;
             this.pbxcontactos.Image = global::CCr.Properties.Resources.contact;
-            this.pbxcontactos.Location = new System.Drawing.Point(3, 389);
+            this.pbxcontactos.Location = new System.Drawing.Point(3, 350);
             this.pbxcontactos.Name = "pbxcontactos";
             this.pbxcontactos.Size = new System.Drawing.Size(32, 28);
             this.pbxcontactos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -150,7 +183,7 @@
             this.btncontactos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncontactos.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncontactos.ForeColor = System.Drawing.Color.White;
-            this.btncontactos.Location = new System.Drawing.Point(0, 377);
+            this.btncontactos.Location = new System.Drawing.Point(0, 346);
             this.btncontactos.Name = "btncontactos";
             this.btncontactos.Size = new System.Drawing.Size(238, 33);
             this.btncontactos.TabIndex = 15;
@@ -195,7 +228,7 @@
             // 
             this.pbxpagos.BackColor = System.Drawing.Color.Transparent;
             this.pbxpagos.Image = global::CCr.Properties.Resources.payments;
-            this.pbxpagos.Location = new System.Drawing.Point(3, 345);
+            this.pbxpagos.Location = new System.Drawing.Point(3, 305);
             this.pbxpagos.Name = "pbxpagos";
             this.pbxpagos.Size = new System.Drawing.Size(32, 28);
             this.pbxpagos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -212,7 +245,7 @@
             this.btnpagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnpagos.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnpagos.ForeColor = System.Drawing.Color.White;
-            this.btnpagos.Location = new System.Drawing.Point(0, 333);
+            this.btnpagos.Location = new System.Drawing.Point(0, 302);
             this.btnpagos.Name = "btnpagos";
             this.btnpagos.Size = new System.Drawing.Size(238, 33);
             this.btnpagos.TabIndex = 11;
@@ -237,7 +270,7 @@
             // 
             this.pbxempresa.BackColor = System.Drawing.Color.Transparent;
             this.pbxempresa.Image = global::CCr.Properties.Resources.builds;
-            this.pbxempresa.Location = new System.Drawing.Point(3, 288);
+            this.pbxempresa.Location = new System.Drawing.Point(3, 257);
             this.pbxempresa.Name = "pbxempresa";
             this.pbxempresa.Size = new System.Drawing.Size(32, 28);
             this.pbxempresa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -254,7 +287,7 @@
             this.btnempresas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnempresas.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnempresas.ForeColor = System.Drawing.Color.White;
-            this.btnempresas.Location = new System.Drawing.Point(0, 283);
+            this.btnempresas.Location = new System.Drawing.Point(0, 252);
             this.btnempresas.Name = "btnempresas";
             this.btnempresas.Size = new System.Drawing.Size(238, 35);
             this.btnempresas.TabIndex = 8;
@@ -268,7 +301,7 @@
             // 
             this.pbxusuarios.BackColor = System.Drawing.Color.Transparent;
             this.pbxusuarios.Image = global::CCr.Properties.Resources.user_512;
-            this.pbxusuarios.Location = new System.Drawing.Point(3, 234);
+            this.pbxusuarios.Location = new System.Drawing.Point(3, 203);
             this.pbxusuarios.Name = "pbxusuarios";
             this.pbxusuarios.Size = new System.Drawing.Size(32, 28);
             this.pbxusuarios.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -285,7 +318,7 @@
             this.btnusuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnusuarios.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnusuarios.ForeColor = System.Drawing.Color.White;
-            this.btnusuarios.Location = new System.Drawing.Point(0, 234);
+            this.btnusuarios.Location = new System.Drawing.Point(0, 203);
             this.btnusuarios.Name = "btnusuarios";
             this.btnusuarios.Size = new System.Drawing.Size(238, 35);
             this.btnusuarios.TabIndex = 6;
@@ -299,7 +332,7 @@
             // 
             this.pbxtemas.BackColor = System.Drawing.Color.Transparent;
             this.pbxtemas.Image = global::CCr.Properties.Resources.subjects;
-            this.pbxtemas.Location = new System.Drawing.Point(3, 180);
+            this.pbxtemas.Location = new System.Drawing.Point(3, 149);
             this.pbxtemas.Name = "pbxtemas";
             this.pbxtemas.Size = new System.Drawing.Size(32, 28);
             this.pbxtemas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -316,7 +349,7 @@
             this.btntemas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btntemas.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btntemas.ForeColor = System.Drawing.Color.White;
-            this.btntemas.Location = new System.Drawing.Point(0, 180);
+            this.btntemas.Location = new System.Drawing.Point(0, 149);
             this.btntemas.Name = "btntemas";
             this.btntemas.Size = new System.Drawing.Size(238, 35);
             this.btntemas.TabIndex = 4;
@@ -330,7 +363,7 @@
             // 
             this.pbxhome.BackColor = System.Drawing.Color.Transparent;
             this.pbxhome.Image = global::CCr.Properties.Resources.house;
-            this.pbxhome.Location = new System.Drawing.Point(3, 128);
+            this.pbxhome.Location = new System.Drawing.Point(3, 97);
             this.pbxhome.Name = "pbxhome";
             this.pbxhome.Size = new System.Drawing.Size(32, 28);
             this.pbxhome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -347,7 +380,7 @@
             this.btnhome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnhome.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnhome.ForeColor = System.Drawing.Color.White;
-            this.btnhome.Location = new System.Drawing.Point(0, 128);
+            this.btnhome.Location = new System.Drawing.Point(0, 97);
             this.btnhome.Name = "btnhome";
             this.btnhome.Size = new System.Drawing.Size(238, 35);
             this.btnhome.TabIndex = 0;
@@ -369,6 +402,7 @@
             this.Controls.SetChildIndex(this.btnminimyze, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxcontactos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxcerrar)).EndInit();
@@ -402,6 +436,8 @@
         protected System.Windows.Forms.Button btncontactos;
         protected System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblUsername;
-        private System.Windows.Forms.Label lblType;
+        private System.Windows.Forms.Label lblTypeUser;
+        protected System.Windows.Forms.PictureBox pictureBox2;
+        protected System.Windows.Forms.Button btncapacitaciones;
     }
 }
