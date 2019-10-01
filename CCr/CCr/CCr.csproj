@@ -124,6 +124,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="crudSubjects.resx">
       <DependentUpon>crudSubjects.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminUsers.resx">
       <DependentUpon>AdminUsers.cs</DependentUpon>
     </EmbeddedResource>
