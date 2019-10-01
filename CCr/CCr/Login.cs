@@ -78,16 +78,40 @@ namespace CCr
                 {
                     Class.Connection conexionSQL = new Class.Connection();
                     Class.Users us = new Class.Users();
+                    Class.Users aux = new Class.Users();
                     conexionSQL.startConnection();
 
                     if (us.login(txtusuario.Text, txtpass.Text) == true)
                     {
-                        conexionSQL.closeConnection();
-                        MessageBox.Show("Bienvenido " + txtusuario.Text, "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Hide();
-                        adf.Show();
+                        aux = us.getUser(int.Parse(Class.Users.id));
+                        if (aux.State == "True")
+                        {
+                            if (us.Description == "1")
+                            {
+                                conexionSQL.closeConnection();
+                                MessageBox.Show("Bienvenido " + txtusuario.Text, "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Hide();
+                                adf.Show();
+                            }
+                            else if (aux.Description == "2")
+                            {
+                                conexionSQL.closeConnection();
+                                MessageBox.Show("Bienvenido " + txtusuario.Text, "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else if (aux.Description == "3")
+                            {
+                                conexionSQL.closeConnection();
+                                MessageBox.Show("Bienvenido " + txtusuario.Text, "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+
+                        }
+                        else
+                        {
+                            conexionSQL.closeConnection();
+                            MessageBox.Show("El usuario esta de baja, consulte con el administrador", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
-                    else
+                        else
                     {
                         conexionSQL.closeConnection();
                         MessageBox.Show("Usuario no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -100,6 +124,13 @@ namespace CCr
                 MessageBox.Show("Ocurrio un error " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Credits cre = new Credits();
+            this.Hide();
+            cre.Show();
         }
     }
 }

@@ -24,6 +24,9 @@ namespace CCr
             con.startConnection();
             SR = Subject.read();
             dgvSubjects.DataSource = SR;
+            dgvSubjects.Columns["id"].Visible = false;
+            dgvSubjects.Columns[1].HeaderText = "Tema";
+            dgvSubjects.Columns[2].HeaderText = "Precio";
             con.closeConnection();
         }
         public crudSubjects()
@@ -82,6 +85,11 @@ namespace CCr
                         txtdescripcion.Clear();
                         txtprecio.Value = 0;
                         refresh();
+                        accion = 0;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Falta el tema de la capacitacion");
                     }
                     break;
                 case 1:
@@ -95,7 +103,13 @@ namespace CCr
                         con.closeConnection();
                         txtdescripcion.Clear();
                         txtprecio.Value = 0;
+                        btnSubmit.Text = "Ingresar";
                         refresh();
+                        accion = 0;
+                    }
+                    else
+                    {
+                        MessageBox.Show("El tema de la capacitacion no puede ser nula");
                     }
                     break;
                 default:
@@ -119,5 +133,10 @@ namespace CCr
             btnSubmit.Text = "Modificar"; accion = 1;
         }
         private void dgvSubjects_Click(object sender, EventArgs e){}
+
+        private void dgvSubjects_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
