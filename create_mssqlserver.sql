@@ -259,7 +259,7 @@ GO
 
 CREATE TABLE [Notas] (
     [id] INTEGER IDENTITY(1,1) NOT NULL,
-    [nota] DECIMAL(3,2) NOT NULL,
+    [nota] DECIMAL(4,2) NOT NULL,
     [id_detalle_participante_capacitacion] INTEGER NOT NULL,
     [id_tipo_nota] INTEGER NOT NULL,
     CONSTRAINT [PK_Notas] PRIMARY KEY ([id])
@@ -369,7 +369,7 @@ CHECK (descripcion LIKE 'Capacitador' OR descripcion LIKE 'Asesor' OR descripcio
 --Usuarios 
 ALTER TABLE Usuarios
 ADD CONSTRAINT CK_estado
-CHECK (estado LIKE 1 OR estado LIKE 0)
+CHECK (estado LIKE 1 OR estado LIKE 0) --1 es activo y 0 es inactivo
 
 --Capacitaciones
 ALTER TABLE Capacitaciones
@@ -408,8 +408,16 @@ CHECK (fecha_pago >= getdate())
 
 --Tipos Notas
 ALTER TABLE TiposNotas
-ADD CONSTRAINT CK_porcentaje_tipo
+ADD CONSTRAINT CK_porcentaje
 CHECK (porcentaje > 0)
+
+ALTER TABLE TiposNotas --Porcentaje en base a 100%
+ADD CONSTRAINT CK_porcentaje_unicos
+CHECK (porcentaje = 10 OR porcentaje = 20 OR porcentaje = 40 OR porcentaje = 30) --La empresa solo trabaja con 4 porcentajes
+
+ALTER TABLE TiposNotas
+ADD CONSTRAINT CK_descripcion_unicos
+CHECK (descripcion LIKE 'Asistencia' OR descripcion LIKE 'Participacion' OR descripcion LIKE 'Actividad' OR descripcion LIKE 'Examen') --La empresa solo tiene 4 actividades con los mismos porcentajes
 
 --Notas
 ALTER TABLE Notas
@@ -421,15 +429,91 @@ CHECK (nota >= 0)
 /*--			  INSERTS			--*/
 /*------------------------------------*/
 
+
+INSERT INTO Temas (descripcion,precio) VALUES
+('Curso Basico de Primeros Auxilios',56.75),
+('Capacitacion elemental de evacuacion',76.54)
+
+--Solo tres tipos de usuarios trabajaran con el programa 
 INSERT INTO Tipos_Usuarios VALUES ('Administrador')
-go
 INSERT INTO Tipos_Usuarios VALUES ('Asesor')
-go
 INSERT INTO Tipos_Usuarios VALUES ('Capacitador')
-go
 
-INSERT INTO Empresas VALUES ('Libre', 0, '------')
-go
+select * from Tipos_Usuarios 
 
-INSERT INTO Usuarios VALUES ('admin', '0e80221a93e87a39e7a564048dd5c3b5e422d40ea266d8c006585b8b0d33ad60', 1, 1)
-go
+INSERT INTO Usuarios(nombre_usuario,password,estado,id_tipo_usuario) VALUES
+('Brenda Hidalgo', '123', '1','1'),
+('Vanesa Cruz', '321', '1','2'),
+('Mario Neta','000','1','3'),
+('Leo Calvas', '111','0','2')
+
+DELETE FROM Usuarios WHERE nombre_usuario = 'Leo Calvas'
+
+select * from Usuarios
+
+INSERT INTO Capacitadores(nombre,apellido,id_usuario) VALUES
+('Mario','Neta','4'),
+('Brenda','Hidalgo','2')
+
+INSERT INTO Empresas (nombre_empresa,cantidad_empleado,direccion) VALUES
+('Concentrix','180','Alameda Franklin Delano Roosevelt, San Salvador'),
+('Toei Animations','300','Casa de Goku')
+
+UPDATE Empresas SET direccion = 'Kamehouse'
+WHERE nombre_empresa = 'Toei Animations'
+
+INSERT INTO Capacitaciones(fecha_inicio,fecha_fin,id_empresa,id_capacitador,id_tema) VALUES
+('2019/09/30 13:30:40','2019/10/1 14:50:50',3,1,2),
+('2017/08/25 09:30:00','2018/10/16 12:30:00',2,2,1)
+
+INSERT INTO Participantes (nombre,apellido,dui,correo) VALUES
+('Gerardo','Velasquez','12345678-9','gerardo.jose2011@yahoo.es'),
+('Natasha','Romanoff','74568978-9','romanof15@gmail.com') 
+
+INSERT INTO TiposNotas (id,porcentaje, descripcion) VALUES --Solo existen 4 actividades y siempre con los mismos porcentajes
+(1,10,'Asistencia'),
+(2,20, 'Participacion'),
+(3,40, 'Actividad'),
+(4,30, 'Examen')
+
+INSERT INTO DetallesParticipantesCapacitaciones(id_participante,id_capacitacion) VALUES
+(1,1),
+(2,2)
+
+INSERT INTO Notas (nota,id_detalle_participante_capacitacion,id_tipo_nota) VALUES
+(10,2,1), --Llenado de notas para participante 1
+(8.00,2,2),
+(9.00,2,3),
+(6.94,2,4),
+(5.00,3,1), --Llenado de notas para participante 2
+(7.00,3,2),
+(3.00,3,3),
+(9.80,3,4)
+
+--Busqueda de todos los valores necesarios para mostrar resultados de la capacitacion
+SELECT TEM.descripcion, EMP.nombre_empresa, EMP.direccion, CAPN.fecha_inicio, CAPN.fecha_fin, CAPR.nombre as [cap-nombre], CAPR.apellido as [cap-apellido],  PAR.nombre, PAR.apellido, N.nota,(NT.porcentaje/100) as [porcentaje total], (N.nota*(NT.porcentaje/100)) as [Resultado]
+FROM Empresas EMP
+RIGHT JOIN Capacitaciones CAPN
+ON EMP.id = CAPN.id_empresa
+RIGHT JOIN Capacitadores CAPR
+ON CAPN.id_capacitador = CAPR.id
+RIGHT JOIN Temas TEM
+ON CAPN.id_tema = TEM.id
+INNER JOIN DetallesParticipantesCapacitaciones DPC
+ON DPC.id_capacitacion = CAPN.id
+RIGHT JOIN Participantes PAR
+ON DPC.id_participante = PAR.id
+LEFT JOIN Notas N
+ON N.id_detalle_participante_capacitacion = DPC.id 
+RIGHT JOIN TiposNotas NT
+ON N.id_tipo_nota = NT.id
+ORDER BY PAR.nombre
+
+select * from Empresas
+select * from Capacitadores
+select * from Temas
+select * from Capacitaciones
+select * from Participantes
+select * from TiposNotas
+select * from DetallesParticipantesCapacitaciones
+select * , (porcentaje/100) as [%] from TiposNotas
