@@ -10,7 +10,8 @@ namespace CCr.Class
 {
     class Connection
     {
-        private String stringConnection = "Data Source=.;Initial Catalog=BDDCRr;Integrated Security=True";
+        private String stringConnection = @"Data Source=.;Initial Catalog=BDDCRr;Integrated Security=True"
+        //private String stringConnection = @"Data Source=DESKTOP-GGVQ47S\SQLEXPRESS;Initial Catalog=BDDCRr;Integrated Security=True";
         public static SqlConnection conexionSQL;
         public Connection()
         {

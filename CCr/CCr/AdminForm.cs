@@ -15,10 +15,7 @@ namespace CCr
             InitializeComponent();
         }
 
-        private void btnhome_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void btnhome_Click(object sender, EventArgs e){}
 
         private void btnhome_MouseEnter(object sender, EventArgs e)
         {
