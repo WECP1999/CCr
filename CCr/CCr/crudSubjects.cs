@@ -24,6 +24,7 @@ namespace CCr
             con.startConnection();
             SR = Subject.read();
             dgvSubjects.DataSource = SR;
+            dgvSubjects.Columns["id"].Visible = false;
             con.closeConnection();
         }
         public crudSubjects()
@@ -82,6 +83,11 @@ namespace CCr
                         txtdescripcion.Clear();
                         txtprecio.Value = 0;
                         refresh();
+                        accion = 0;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Falta el tema de la capacitacion");
                     }
                     break;
                 case 1:
@@ -97,6 +103,12 @@ namespace CCr
                         txtprecio.Value = 0;
                         btnSubmit.Text = "Crear";
                         refresh();
+                        accion = 0;
+                        btnSubmit.Text = "Crear";
+                    }
+                    else
+                    {
+                        MessageBox.Show("El tema de la capacitacion no puede ser nula");
                     }
                     break;
                 default:
