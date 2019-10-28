@@ -7,13 +7,13 @@ using System.Data.SqlClient;
 
 namespace CCr.Class
 {
-    class Trainers
+    class Capacitadores
     {
-        private string name;
-        private string lastname;
+        private string nombre;
+        private string apellido;
 
-        public string Name { get => name; set => name = value; }
-        public string Lastname { get => lastname; set => lastname = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
+        public string Apellido { get => apellido; set => apellido = value; }
 
         public bool create(string name, string lastname, int idU)
         {
@@ -21,7 +21,7 @@ namespace CCr.Class
             SqlCommand comando = new SqlCommand();
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = query;
-            comando.Connection = Class.Connection.conexionSQL;
+            comando.Connection = Class.Conexion.conexionSQL;
             try
             {
                 comando.Parameters.AddWithValue("@p1", name);

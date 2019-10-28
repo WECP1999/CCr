@@ -10,11 +10,11 @@ namespace CCr
 {
     public partial class AdminUsers : CCr.AdminForm
     {
-        Class.Validations val = new Class.Validations();
-        Class.Connection con = new Class.Connection();
-        Class.Trainers tr = new Class.Trainers();
-        Class.Users us = new Class.Users();
-        List<Class.Users> SR = new List<Class.Users>();
+        Class.Validaciones val = new Class.Validaciones();
+        Class.Conexion con = new Class.Conexion();
+        Class.Capacitadores tr = new Class.Capacitadores();
+        Class.Usuarios us = new Class.Usuarios();
+        List<Class.Usuarios> SR = new List<Class.Usuarios>();
         private int edit_indice = -1;
         static bool ver = false;
         public AdminUsers()
@@ -28,7 +28,7 @@ namespace CCr
             SR = us.read();
 
             dgvUsuarios.DataSource = SR;
-            dgvUsuarios.Columns["Password"].Visible = false;
+            dgvUsuarios.Columns["Contra"].Visible = false;
             dgvUsuarios.Columns["Idtipo"].Visible = false;
             dgvUsuarios.Columns["Xid"].Visible = false;
             dgvUsuarios.Columns[0].HeaderText = "Nombre de usuario";
@@ -193,19 +193,19 @@ namespace CCr
                     {
                         if (val.validateName(txtnombre.Text) && val.validateName(txtapellido.Text))
                         {
-                            tr.Name = txtnombre.Text; tr.Lastname = txtapellido.Text;
-                            us.Username = txtUserName.Text;
-                            us.Password = txtPass.Text;
+                            tr.Nombre = txtnombre.Text; tr.Apellido = txtapellido.Text;
+                            us.NombreUsuario = txtUserName.Text;
+                            us.Contra = txtPass.Text;
                             us.Idtipo = cmbtipo.SelectedIndex + 1;
                             con.startConnection();
-                            int po = us.signUp(us.Username, us.Password, us.Idtipo);
+                            int po = us.signUp(us.NombreUsuario, us.Contra, us.Idtipo);
                             if (po == 0)
                             {
                                 MessageBox.Show("Hubo un error, usuario repetido");
                             }
                             else
                             {
-                                tr.create(tr.Name, tr.Lastname, po);
+                                tr.create(tr.Nombre, tr.Apellido, po);
                                 MessageBox.Show("Usuario ingresado exitosamente");
                             }
                             con.closeConnection();
@@ -217,11 +217,11 @@ namespace CCr
                     }
                     else
                     {
-                        us.Username = txtUserName.Text; 
-                        us.Password = txtPass.Text;
+                        us.NombreUsuario = txtUserName.Text; 
+                        us.Contra = txtPass.Text;
                         us.Idtipo = cmbtipo.SelectedIndex + 1;
                         con.startConnection();
-                        if (us.signUp(us.Username, us.Password, us.Idtipo) == 0)
+                        if (us.signUp(us.NombreUsuario, us.Contra, us.Idtipo) == 0)
                         {
                             MessageBox.Show("Hubo un error, usuario repetido");
                         }
@@ -267,9 +267,9 @@ namespace CCr
             DataGridViewRow selected = dgvUsuarios.SelectedRows[0];
             int posicion = dgvUsuarios.Rows.IndexOf(selected);
             edit_indice = posicion;
-            Class.Users auxS = SR[posicion];
+            Class.Usuarios auxS = SR[posicion];
             con.startConnection();
-            if (auxS.State == "Activo")
+            if (auxS.Estado == "Activo")
             {
                 if (MessageBox.Show("¿Estas seguro que deseas dar de baja al usuario?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {

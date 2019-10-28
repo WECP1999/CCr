@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace CCr.Class
 {
-    class Subjects
+    class Temas
     {
         private int id;
-        private string description;
-        private double price;
+        private string descripcion;
+        private double precio;
+
         public int Id { get => id; set => id = value; }
-        public string Description { get => description; set => description = value; }
-        public double Price { get => price; set => price = value; }
-        
+        public string Descripcion { get => descripcion; set => descripcion = value; }
+        public double Precio { get => precio; set => precio = value; }
 
         public int create(string descripcion, double pago)
         {
@@ -23,7 +23,7 @@ namespace CCr.Class
             SqlCommand comando = new SqlCommand();
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = queryInsert;
-            comando.Connection = Class.Connection.conexionSQL;
+            comando.Connection = Class.Conexion.conexionSQL;
             try
             {
                 comando.Parameters.AddWithValue("@p1", descripcion);
@@ -35,24 +35,24 @@ namespace CCr.Class
                 return 0;
             }
         }
-        public List<Subjects> read()
+        public List<Temas> read()
         {
-            List<Subjects> ss = new List<Subjects>();
+            List<Temas> ss = new List<Temas>();
             SqlCommand comando = new SqlCommand();
             SqlDataReader lector;
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = "SELECT * FROM temas";
-            comando.Connection = Class.Connection.conexionSQL;
+            comando.Connection = Class.Conexion.conexionSQL;
             try
             {
                 lector = comando.ExecuteReader();
                 
                 while (lector.Read())
                 {
-                    Subjects aux = new Subjects();
-                    aux.id = Convert.ToInt16(lector["id"]);
-                    aux.price = Convert.ToDouble(lector["precio"]);
-                    aux.description = lector["descripcion"].ToString();
+                    Temas aux = new Temas();
+                    aux.Id = Convert.ToInt16(lector["id"]);
+                    aux.Precio = Convert.ToDouble(lector["precio"]);
+                    aux.Descripcion = lector["descripcion"].ToString();
                     ss.Add(aux);
                 }
                 lector.Close();
@@ -71,7 +71,7 @@ namespace CCr.Class
 
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = query;
-            comando.Connection = Class.Connection.conexionSQL;
+            comando.Connection = Class.Conexion.conexionSQL;
             try
             {
                 comando.Parameters.AddWithValue("@p1", descripcion);

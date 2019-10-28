@@ -10,7 +10,7 @@ namespace CCr
 {
     public partial class Login : CCr.Template
     {
-        Class.Validations val = new Class.Validations();
+        Class.Validaciones val = new Class.Validaciones();
         public Login()
         {
             InitializeComponent();
@@ -76,29 +76,29 @@ namespace CCr
 
                 if (ban1)
                 {
-                    Class.Connection conexionSQL = new Class.Connection();
-                    Class.Users us = new Class.Users();
-                    Class.Users aux = new Class.Users();
+                    Class.Conexion conexionSQL = new Class.Conexion();
+                    Class.Usuarios us = new Class.Usuarios();
+                    Class.Usuarios aux = new Class.Usuarios();
                     conexionSQL.startConnection();
 
                     if (us.login(txtusuario.Text, txtpass.Text) == true)
                     {
-                        aux = us.getUser(int.Parse(Class.Users.id));
-                        if (aux.State == "True")
+                        aux = us.getUser(int.Parse(Class.Usuarios.Id));
+                        if (aux.Estado == "True")
                         {
-                            if (us.Description == "1")
+                            if (aux.Descripcion == "1")
                             {
                                 conexionSQL.closeConnection();
                                 MessageBox.Show("Bienvenido " + txtusuario.Text, "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Hide();
                                 adf.Show();
                             }
-                            else if (aux.Description == "2")
+                            else if (aux.Descripcion == "2")
                             {
                                 conexionSQL.closeConnection();
                                 MessageBox.Show("Bienvenido " + txtusuario.Text, "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
-                            else if (aux.Description == "3")
+                            else if (aux.Descripcion == "3")
                             {
                                 conexionSQL.closeConnection();
                                 MessageBox.Show("Bienvenido " + txtusuario.Text, "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);

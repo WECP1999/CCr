@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace CCr.Class
 {
-    class Connection
+    class Conexion
     {
         private String stringConnection = CCr.Properties.Settings.Default.BDDCRrConnectionString;
         //private String stringConnection = @"Data Source=DESKTOP-GGVQ47S\SQLEXPRESS;Initial Catalog=BDDCRr;Integrated Security=True";
         public static SqlConnection conexionSQL;
-        public Connection()
+        public Conexion()
         {
         }
         public string StringConnection { get => stringConnection; set => stringConnection = value; }

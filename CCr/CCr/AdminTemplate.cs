@@ -17,22 +17,22 @@ namespace CCr
 
         private void AdminTemplate_Load(object sender, EventArgs e)
         {
-            Class.Users us = new Class.Users();
-            Class.Connection conexionSQL = new Class.Connection();
+            Class.Usuarios us = new Class.Usuarios();
+            Class.Conexion conexionSQL = new Class.Conexion();
             conexionSQL.startConnection();
             us = us.getUser(1);
             conexionSQL.closeConnection();
-            lblUsername.Text = us.Username.ToString();
+            lblUsername.Text = us.NombreUsuario.ToString();
 
-            if (us.Description == "1")
+            if (us.Descripcion == "1")
             {
                 lblTypeUser.Text = "Administrador";
             }
-            else if(us.Description == "2")
+            else if(us.Descripcion == "2")
             {
                 lblTypeUser.Text = "Asesor";
             }
-            else if (us.Description == "3")
+            else if (us.Descripcion == "3")
             {
                 lblTypeUser.Text = "Capacitador";
             }
@@ -250,7 +250,7 @@ namespace CCr
             Login log = new Login();
             if (MessageBox.Show("¿Estas seguro que deseas cerrar sesion?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Class.Users.id = null;
+                Class.Usuarios.Id = null;
                 log.Show();
                 this.Hide();
             }
@@ -261,7 +261,7 @@ namespace CCr
             Login log = new Login();
             if (MessageBox.Show("¿Estas seguro que deseas cerrar sesion?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Class.Users.id = null;
+                Class.Usuarios.Id = null;
                 log.Show();
                 this.Hide();
             }
