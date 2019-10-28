@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace CCr.Class
 {
-    class Trainings
+    class Capacitaciones
     {
         private int id;
-        private DateTime startDay;
-        private DateTime endDay;
-        private string typeTraining;
+        private DateTime diaInicio;
+        private DateTime diaFinal;
+        private string tipoCapacitacion;
 
         public int Id { get => id; set => id = value; }
-        public DateTime StartDay { get => startDay; set => startDay = value; }
-        public DateTime EndDay { get => endDay; set => endDay = value; }
-        public string TypeTraining { get => typeTraining; set => typeTraining = value; }
+        public DateTime DiaInicio { get => diaInicio; set => diaInicio = value; }
+        public DateTime DiaFinal { get => diaFinal; set => diaFinal = value; }
+        public string TipoCapacitacion { get => tipoCapacitacion; set => tipoCapacitacion = value; }
 
         public bool create()
         {

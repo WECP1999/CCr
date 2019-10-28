@@ -72,16 +72,16 @@
     <Compile Include="AdminUsers.Designer.cs">
       <DependentUpon>AdminUsers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Class\Companys.cs" />
-    <Compile Include="Class\Connection.cs" />
-    <Compile Include="Class\Contacts.cs" />
-    <Compile Include="Class\Entrys.cs" />
-    <Compile Include="Class\Payments.cs" />
-    <Compile Include="Class\Subjects.cs" />
-    <Compile Include="Class\Trainers.cs" />
-    <Compile Include="Class\Trainings.cs" />
-    <Compile Include="Class\Users.cs" />
-    <Compile Include="Class\Validations.cs" />
+    <Compile Include="Class\Empresas.cs" />
+    <Compile Include="Class\Conexion.cs" />
+    <Compile Include="Class\Contactos.cs" />
+    <Compile Include="Class\Participantes.cs" />
+    <Compile Include="Class\Pagos.cs" />
+    <Compile Include="Class\Temas.cs" />
+    <Compile Include="Class\Capacitadores.cs" />
+    <Compile Include="Class\Capacitaciones.cs" />
+    <Compile Include="Class\Usuarios.cs" />
+    <Compile Include="Class\Validaciones.cs" />
     <Compile Include="Credits.cs">
       <SubType>Form</SubType>
     </Compile>

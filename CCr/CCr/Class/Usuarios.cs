@@ -8,19 +8,21 @@ using System.Threading.Tasks;
 
 namespace CCr.Class
 {
-    class Users
+    class Usuarios
     {
-        private string username;
-        private string password;
-        private string state;
-        private string description;
-        public static string id;
+        private string nombreUsuario;
+        private string contra;
+        private string estado;
+        private string descripcion;
+        private static string id;
         private int idtipo;
         private string xid;
-        public string Username { get => username; set => username = value; }
-        public string Password { get => password; set => password = value; }
-        public string State { get => state; set => state = value; }
-        public string Description { get => description; set => description = value; }
+
+        public string NombreUsuario { get => nombreUsuario; set => nombreUsuario = value; }
+        public string Contra { get => contra; set => contra = value; }
+        public string Estado { get => estado; set => estado = value; }
+        public string Descripcion { get => descripcion; set => descripcion = value; }
+        public static string Id { get => id; set => id = value; }
         public int Idtipo { get => idtipo; set => idtipo = value; }
         public string Xid { get => xid; set => xid = value; }
 
@@ -30,15 +32,15 @@ namespace CCr.Class
             SqlDataReader lector;
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = "SELECT * FROM Usuarios WHERE nombre_usuario = @p1 AND password = @p2 AND estado = 1";
-            comando.Connection = Class.Connection.conexionSQL;
+            comando.Connection = Class.Conexion.conexionSQL;
             try
             {
                 comando.Parameters.AddWithValue("@p1", user);
-                comando.Parameters.AddWithValue("@p2", Class.Validations.GetSHA256(pass));
+                comando.Parameters.AddWithValue("@p2", Class.Validaciones.GetSHA256(pass));
                 lector = comando.ExecuteReader();
                 if (lector.Read())
                 {
-                    id = lector["id"].ToString();
+                    Id = lector["id"].ToString();
                     lector.Close();
                     return true;
                 }
@@ -58,7 +60,7 @@ namespace CCr.Class
             SqlCommand comando = new SqlCommand();
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = query;
-            comando.Connection = Class.Connection.conexionSQL;
+            comando.Connection = Class.Conexion.conexionSQL;
             if (GetId(username) != 0)
             {
                 return 0;
@@ -66,7 +68,7 @@ namespace CCr.Class
             try
             {
                 comando.Parameters.AddWithValue("@p1", username);
-                comando.Parameters.AddWithValue("@p2", Class.Validations.GetSHA256(pass));
+                comando.Parameters.AddWithValue("@p2", Class.Validaciones.GetSHA256(pass));
                 comando.Parameters.AddWithValue("@p3", id_tipo);
                 comando.ExecuteNonQuery();
                 return GetId(username);
@@ -88,7 +90,7 @@ namespace CCr.Class
 
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = query;
-            comando.Connection = Class.Connection.conexionSQL;
+            comando.Connection = Class.Conexion.conexionSQL;
             try
             {
                 comando.Parameters.AddWithValue("@p1", activar);
@@ -101,31 +103,31 @@ namespace CCr.Class
                 throw;
             }
         }
-        public List<Users> read()
+        public List<Usuarios> read()
         {
-            List<Users> ss = new List<Users>();
+            List<Usuarios> ss = new List<Usuarios>();
             SqlCommand comando = new SqlCommand();
             SqlDataReader lector;
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = "SELECT u.id, nombre_usuario,t.descripcion,u.estado FROM Usuarios u INNER JOIN Tipos_Usuarios t ON t.id = u.id_tipo_usuario";
-            comando.Connection = Class.Connection.conexionSQL;
+            comando.Connection = Class.Conexion.conexionSQL;
             try
             {
                 lector = comando.ExecuteReader();
 
                 while (lector.Read())
                 {
-                    Users aux = new Users();
-                    aux.xid = lector["id"].ToString();
-                    aux.Username = lector["nombre_usuario"].ToString();
-                    aux.Description = lector["descripcion"].ToString();
+                    Usuarios aux = new Usuarios();
+                    aux.Xid = lector["id"].ToString();
+                    aux.nombreUsuario = lector["nombre_usuario"].ToString();
+                    aux.descripcion = lector["descripcion"].ToString();
                     if (lector["estado"].ToString() != "False")
                     {
-                        aux.state = "Activo";
+                        aux.estado = "Activo";
                     }
                     else
                     {
-                        aux.state = "Inactivo";
+                        aux.estado = "Inactivo";
                     }
                     ss.Add(aux);
                 }
@@ -140,23 +142,23 @@ namespace CCr.Class
             return ss;
         }
 
-        public Users getUser(int id)
+        public Usuarios getUser(int id)
         {
             SqlCommand comando = new SqlCommand();
             SqlDataReader lector;
-            Users us = new Users();
+            Usuarios us = new Usuarios();
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = "SELECT * FROM Usuarios WHERE id = @p1";
-            comando.Connection = Class.Connection.conexionSQL;
+            comando.Connection = Class.Conexion.conexionSQL;
             try
             {
                 comando.Parameters.AddWithValue("@p1", id);
                 lector = comando.ExecuteReader();
                 if (lector.Read())
                 {
-                    us.Username = lector["nombre_usuario"].ToString();
-                    us.Description = lector["id_tipo_usuario"].ToString();
-                    us.State = lector["estado"].ToString();
+                    us.nombreUsuario = lector["nombre_usuario"].ToString();
+                    us.descripcion = lector["id_tipo_usuario"].ToString();
+                    us.estado = lector["estado"].ToString();
                     lector.Close();
                     return us;
                 }
@@ -176,7 +178,7 @@ namespace CCr.Class
             SqlDataReader lector;
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = "SELECT * FROM Usuarios WHERE nombre_usuario = @p1";
-            comando.Connection = Class.Connection.conexionSQL;
+            comando.Connection = Class.Conexion.conexionSQL;
             try
             {
                 comando.Parameters.AddWithValue("@p1", user);

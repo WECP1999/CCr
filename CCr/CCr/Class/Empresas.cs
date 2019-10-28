@@ -7,20 +7,19 @@ using System.Threading.Tasks;
 
 namespace CCr.Class
 {
-    class Companys
+    class Empresas
     {
         private int id;
-        private string name;
-        private string address;
-        private int numberParticipants;
+        private string nombre;
+        private string direccion;
+        private int numeroParticipantes;
         private string email;
 
         public int Id { get => id; set => id = value; }
-        public string Name { get => name; set => name = value; }
-        public string Address { get => address; set => address = value; }
-        public int NumberParticipants { get => numberParticipants; set => numberParticipants = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
+        public string Direccion { get => direccion; set => direccion = value; }
+        public int NumeroParticipantes { get => numeroParticipantes; set => numeroParticipantes = value; }
         public string Email { get => email; set => email = value; }
-
 
         public int create(string nombre, int cant, string direccion, string correo)
         {
@@ -28,7 +27,7 @@ namespace CCr.Class
             SqlCommand comando = new SqlCommand();
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = queryInsert;
-            comando.Connection = Class.Connection.conexionSQL;
+            comando.Connection = Class.Conexion.conexionSQL;
             try
             {
                 comando.Parameters.AddWithValue("@p1", nombre);
@@ -42,25 +41,25 @@ namespace CCr.Class
                 return 0;
             }
         }
-        public List<Companys> read()
+        public List<Empresas> read()
         {
-            List<Companys> companys = new List<Companys>();
+            List<Empresas> companys = new List<Empresas>();
             SqlCommand comando = new SqlCommand();
             SqlDataReader lector;
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = "SELECT * FROM Empresas WHERE id != 1 ORDER BY nombre_empresa DESC";
-            comando.Connection = Class.Connection.conexionSQL;
+            comando.Connection = Class.Conexion.conexionSQL;
             try
             {
                 lector = comando.ExecuteReader();
                 while (lector.Read())
                 {
-                    Companys comp = new Companys();
-                    comp.id = int.Parse(lector["id"].ToString());
-                    comp.Name = lector["nombre_empresa"].ToString();
-                    comp.Address = lector["direccion"].ToString();
-                    comp.email = lector["correo"].ToString();
-                    comp.NumberParticipants = int.Parse(lector["cantidad_empleado"].ToString());
+                    Empresas comp = new Empresas();
+                    comp.Id = int.Parse(lector["id"].ToString());
+                    comp.Nombre = lector["nombre_empresa"].ToString();
+                    comp.Direccion = lector["direccion"].ToString();
+                    comp.Email = lector["correo"].ToString();
+                    comp.NumeroParticipantes = int.Parse(lector["cantidad_empleado"].ToString());
                     companys.Add(comp);
                 }
                 lector.Close();
@@ -79,7 +78,7 @@ namespace CCr.Class
                 SqlCommand comando = new SqlCommand();
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = queryInsert;
-                comando.Connection = Class.Connection.conexionSQL;
+                comando.Connection = Class.Conexion.conexionSQL;
 
                 comando.Parameters.AddWithValue("@p1", nombre);
                 comando.Parameters.AddWithValue("@p2", cant);

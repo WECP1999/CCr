@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CCr.Class
 {
-    class Validations
+    class Validaciones
     {
         private string expresion;
 

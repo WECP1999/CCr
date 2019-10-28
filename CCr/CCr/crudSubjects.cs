@@ -13,10 +13,10 @@ namespace CCr
     public partial class crudSubjects : AdminTemplate
     {
         private int accion = 0;
-        Class.Connection con = new Class.Connection();
-        Class.Validations val = new Class.Validations();
-        Class.Subjects Subject = new Class.Subjects();
-        List<Class.Subjects> SR = new List<Class.Subjects>();
+        Class.Conexion con = new Class.Conexion();
+        Class.Validaciones val = new Class.Validaciones();
+        Class.Temas Subject = new Class.Temas();
+        List<Class.Temas> SR = new List<Class.Temas>();
         private int edit_indice = -1;
         private void refresh()
         {
@@ -77,10 +77,10 @@ namespace CCr
                 case 0:
                     if (txtdescripcion.Text != "")
                     {
-                        Subject.Price = Convert.ToDouble(txtprecio.Value);
-                        Subject.Description = txtdescripcion.Text;
+                        Subject.Precio = Convert.ToDouble(txtprecio.Value);
+                        Subject.Descripcion = txtdescripcion.Text;
                         con.startConnection();
-                        Subject.create(Subject.Description, Subject.Price);
+                        Subject.create(Subject.Descripcion, Subject.Precio);
                         con.closeConnection();
                         txtdescripcion.Clear();
                         txtprecio.Value = 0;
@@ -95,11 +95,11 @@ namespace CCr
                 case 1:
                     if (txtdescripcion.Text != "")
                     {
-                        Subject.Price = Convert.ToDouble(txtprecio.Value);
-                        Subject.Description = txtdescripcion.Text;
+                        Subject.Precio = Convert.ToDouble(txtprecio.Value);
+                        Subject.Descripcion = txtdescripcion.Text;
                         Subject.Id = Convert.ToInt32(lblAux.Text);
                         con.startConnection();
-                        Subject.update(Subject.Description, Subject.Price, Subject.Id);
+                        Subject.update(Subject.Descripcion, Subject.Precio, Subject.Id);
                         con.closeConnection();
                         txtdescripcion.Clear();
                         txtprecio.Value = 0;
@@ -125,10 +125,10 @@ namespace CCr
             DataGridViewRow selected = dgvSubjects.SelectedRows[0];
             int posicion = dgvSubjects.Rows.IndexOf(selected);
             edit_indice = posicion;
-            Class.Subjects auxS = SR[posicion];
+            Class.Temas auxS = SR[posicion];
 
-            txtprecio.Value = Convert.ToDecimal(auxS.Price);
-            txtdescripcion.Text = auxS.Description;
+            txtprecio.Value = Convert.ToDecimal(auxS.Precio);
+            txtdescripcion.Text = auxS.Descripcion;
             lblAux.Text = Convert.ToString(auxS.Id);
             btnSubmit.Text = "Modificar"; accion = 1;
         }

@@ -15,14 +15,14 @@ namespace CCr
             InitializeComponent();
         }
 
-        Class.Validations val = new Class.Validations();
-        List<Class.Companys> listComp = new List<Class.Companys>();
+        Class.Validaciones val = new Class.Validaciones();
+        List<Class.Empresas> listComp = new List<Class.Empresas>();
         int indice = -1;
 
         public void refresh()
         {
-            Class.Companys comp = new Class.Companys();
-            Class.Connection conexionSQL = new Class.Connection();
+            Class.Empresas comp = new Class.Empresas();
+            Class.Conexion conexionSQL = new Class.Conexion();
             conexionSQL.startConnection();
             listComp = comp.read();
             dgvusuarios.DataSource = null;
@@ -152,8 +152,8 @@ namespace CCr
                             {
                                 if(indice > -1)
                                 {
-                                    Class.Connection conexionSQL = new Class.Connection();
-                                    Class.Companys comp = new Class.Companys();
+                                    Class.Conexion conexionSQL = new Class.Conexion();
+                                    Class.Empresas comp = new Class.Empresas();
                                     conexionSQL.startConnection();
                                     int resultado = comp.update(int.Parse(label5.Text),txtempresa.Text, int.Parse(nudcantempleados.Value.ToString()), txtdireccion.Text, txtcorreo.Text);
                                     conexionSQL.closeConnection();
@@ -168,8 +168,8 @@ namespace CCr
                                 }
                                 else
                                 {
-                                    Class.Connection conexionSQL = new Class.Connection();
-                                    Class.Companys comp = new Class.Companys();
+                                    Class.Conexion conexionSQL = new Class.Conexion();
+                                    Class.Empresas comp = new Class.Empresas();
                                     conexionSQL.startConnection();
                                     int resultado = comp.create(txtempresa.Text, int.Parse(nudcantempleados.Value.ToString()), txtdireccion.Text, txtcorreo.Text);
                                     conexionSQL.closeConnection();
@@ -226,12 +226,12 @@ namespace CCr
             int posicion = dgvusuarios.Rows.IndexOf(selected);
             indice = posicion;
 
-            Class.Companys comp = listComp[indice];
+            Class.Empresas comp = listComp[indice];
 
-            txtempresa.Text = comp.Name;
-            txtdireccion.Text = comp.Address;
+            txtempresa.Text = comp.Nombre;
+            txtdireccion.Text = comp.Direccion;
             txtcorreo.Text = comp.Email;
-            nudcantempleados.Value = comp.NumberParticipants;
+            nudcantempleados.Value = comp.NumeroParticipantes;
             btningresar.Text = "Modificar";
             label5.Text = comp.Id.ToString();
         }
