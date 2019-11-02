@@ -144,5 +144,11 @@ namespace CCr
             new CapacitadorForm().Show();
             this.Hide();
         }
+
+        private void btnParticipantes_Click(object sender, EventArgs e)
+        {
+            new CapacitadorParticipantes().Show();
+            this.Hide();
+        }
     }
 }

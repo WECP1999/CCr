@@ -106,6 +106,7 @@
             this.btnParticipantes.TabIndex = 22;
             this.btnParticipantes.Text = "Participantes";
             this.btnParticipantes.UseVisualStyleBackColor = false;
+            this.btnParticipantes.Click += new System.EventHandler(this.btnParticipantes_Click);
             this.btnParticipantes.MouseEnter += new System.EventHandler(this.btnParticipantes_MouseEnter);
             this.btnParticipantes.MouseLeave += new System.EventHandler(this.btnParticipantes_MouseLeave);
             // 

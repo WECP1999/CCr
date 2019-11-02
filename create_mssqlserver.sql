@@ -44,6 +44,9 @@ CREATE TABLE [Participantes] (
     [apellido] VARCHAR(100) NOT NULL,
     [dui] VARCHAR(10),
     [correo] VARCHAR(150),
+    [num_casa] VARCHAR(10) NULL,
+    [num_tel] VARCHAR(10) NULL,
+	[num_trab] VARCHAR(10) NULL,
     CONSTRAINT [PK_Participantes] PRIMARY KEY ([id])
 )
 GO
@@ -118,18 +121,6 @@ GO
 /* ---------------------------------------------------------------------- */
 
 GO
-
-
-CREATE TABLE [Telefonos] (
-    [id] INTEGER IDENTITY(1,1) NOT NULL,
-    [numero] VARCHAR(10),
-    [extension] VARCHAR(40),
-    [id_participante] INTEGER NOT NULL,
-    CONSTRAINT [PK_Telefonos] PRIMARY KEY ([id])
-)
-GO
-
-
 /* ---------------------------------------------------------------------- */
 /* Add table "Usuarios"                                                    */
 /* ---------------------------------------------------------------------- */
@@ -314,10 +305,6 @@ ALTER TABLE [Pagos] ADD CONSTRAINT [Capacitaciones_Pagos]
     FOREIGN KEY ([id_capacitacion]) REFERENCES [Capacitaciones] ([id])
 GO
 
-ALTER TABLE [Telefonos] ADD CONSTRAINT [Participantes_Telefonos]
-	FOREIGN KEY ([id_participante]) REFERENCES [Participantes] ([id])
-GO
-
 
 /*------------------------------------*/
 /*--		   CONSTRAINTS			--*/
@@ -358,11 +345,6 @@ CHECK(fecha_inicio < fecha_fin)
 ALTER TABLE Temas
 ADD CONSTRAINT CK_precio
 CHECK (Precio >= 0)
-
---Telefonos
-ALTER TABLE Telefonos
-ADD CONSTRAINT CK_numero_participante
-CHECK (numero NOT LIKE '%[A-Z]%' AND numero NOT LIKE '%[a-z]%')
 
 --Participantes
 ALTER TABLE Participantes
