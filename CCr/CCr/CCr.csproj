@@ -72,6 +72,30 @@
     <Compile Include="AdminUsers.Designer.cs">
       <DependentUpon>AdminUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="AsesorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AsesorForm.Designer.cs">
+      <DependentUpon>AsesorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AsesorTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AsesorTemplate.Designer.cs">
+      <DependentUpon>AsesorTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapacitadorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapacitadorForm.Designer.cs">
+      <DependentUpon>CapacitadorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapacitadorTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapacitadorTemplate.Designer.cs">
+      <DependentUpon>CapacitadorTemplate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Class\Empresas.cs" />
     <Compile Include="Class\Conexion.cs" />
     <Compile Include="Class\Contactos.cs" />
@@ -127,6 +151,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminTemplate.resx">
       <DependentUpon>AdminTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AsesorForm.resx">
+      <DependentUpon>AsesorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AsesorTemplate.resx">
+      <DependentUpon>AsesorTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapacitadorForm.resx">
+      <DependentUpon>CapacitadorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapacitadorTemplate.resx">
+      <DependentUpon>CapacitadorTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Credits.resx">
       <DependentUpon>Credits.cs</DependentUpon>
@@ -223,6 +259,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\The Dependables - Handyman Services.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\participant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\participant1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seo-training.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trainings1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diploma.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

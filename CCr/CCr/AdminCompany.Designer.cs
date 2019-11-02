@@ -319,10 +319,10 @@
             this.dgvusuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dgvusuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.dgvusuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvusuarios.Location = new System.Drawing.Point(244, 415);
+            this.dgvusuarios.Location = new System.Drawing.Point(302, 405);
             this.dgvusuarios.Name = "dgvusuarios";
             this.dgvusuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvusuarios.Size = new System.Drawing.Size(710, 173);
+            this.dgvusuarios.Size = new System.Drawing.Size(615, 173);
             this.dgvusuarios.TabIndex = 4;
             this.dgvusuarios.DoubleClick += new System.EventHandler(this.dgvusuarios_DoubleClick);
             // 

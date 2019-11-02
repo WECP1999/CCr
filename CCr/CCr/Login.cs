@@ -97,6 +97,8 @@ namespace CCr
                             {
                                 conexionSQL.closeConnection();
                                 MessageBox.Show("Bienvenido " + txtusuario.Text, "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Hide();
+                                new CapacitadorForm().Show();
                             }
                             else if (aux.Descripcion == "3")
                             {

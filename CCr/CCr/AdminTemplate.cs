@@ -19,23 +19,19 @@ namespace CCr
         {
             Class.Usuarios us = new Class.Usuarios();
             Class.Conexion conexionSQL = new Class.Conexion();
-            conexionSQL.startConnection();
-            us = us.getUser(1);
-            conexionSQL.closeConnection();
-            lblUsername.Text = us.NombreUsuario.ToString();
+                conexionSQL.startConnection();
+                us = us.getUser(1);
+                conexionSQL.closeConnection();
+                lblUsername.Text = us.NombreUsuario.ToString();
 
-            if (us.Descripcion == "1")
-            {
-                lblTypeUser.Text = "Administrador";
-            }
-            else if(us.Descripcion == "2")
-            {
-                lblTypeUser.Text = "Asesor";
-            }
-            else if (us.Descripcion == "3")
-            {
-                lblTypeUser.Text = "Capacitador";
-            }
+                if (us.Descripcion == "1")
+                {
+                    lblTypeUser.Text = "Administrador";
+                }
+                else
+                {
+                    new Login().Show();
+                }
         }
         private void pbxhome_Click(object sender, EventArgs e)
         {
@@ -250,7 +246,7 @@ namespace CCr
             Login log = new Login();
             if (MessageBox.Show("¿Estas seguro que deseas cerrar sesion?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Class.Usuarios.Id = null;
+                Class.Usuarios.Id = "";
                 log.Show();
                 this.Hide();
             }
@@ -261,7 +257,7 @@ namespace CCr
             Login log = new Login();
             if (MessageBox.Show("¿Estas seguro que deseas cerrar sesion?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Class.Usuarios.Id = null;
+                Class.Usuarios.Id = "";
                 log.Show();
                 this.Hide();
             }
@@ -323,6 +319,34 @@ namespace CCr
         {
             btncapacitaciones.BackColor = Color.FromArgb(163, 3, 3);
             pictureBox2.BackColor = Color.FromArgb(163, 3, 3);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnCertificados_MouseEnter(object sender, EventArgs e)
+        {
+            btnCertificados.BackColor = Color.FromArgb(115, 3, 3);
+            pbxCertificados.BackColor = Color.FromArgb(140, 3, 3);
+        }
+
+        private void pbxCertificados_MouseEnter(object sender, EventArgs e)
+        {
+            btnCertificados.BackColor = Color.FromArgb(140, 3, 3);
+            pbxCertificados.BackColor = Color.FromArgb(140, 3, 3);
+        }
+
+        private void pbxCertificados_MouseLeave(object sender, EventArgs e)
+        {
+            btnCertificados.BackColor = Color.FromArgb(163, 3, 3);
+            pbxCertificados.BackColor = Color.FromArgb(163, 3, 3);
+        }
+
+        private void btnCertificados_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
