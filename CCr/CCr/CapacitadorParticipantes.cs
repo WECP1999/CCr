@@ -154,6 +154,7 @@ namespace CCr
             else
             {
                 btningresar.Location = new Point(295, 273);
+                btneliminar.Visible = false;
             }
         }
 
@@ -256,9 +257,11 @@ namespace CCr
                                     if (resultado == 1)
                                     {
                                         MessageBox.Show("Participante modificado con exito", "Succesfull", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                        refresh();
                                         indice = -1;
+                                        refresh();
                                         refreshComp();
+                                        rdbNo.Checked = false;
+                                        rdbNo.Checked = true;
                                     }
                                     else
                                     {
@@ -354,6 +357,11 @@ namespace CCr
         }
 
         private void dgvusuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btneliminar_Click(object sender, EventArgs e)
         {
 
         }
