@@ -253,6 +253,7 @@ GO
 
 ALTER TABLE [Notas] ADD CONSTRAINT [tipos_nota_Notas] 
     FOREIGN KEY ([id_tipo_nota]) REFERENCES [TiposNotas] ([id])
+	ON UPDATE CASCADE
 GO
 
 
@@ -263,46 +264,61 @@ GO
 
 ALTER TABLE [Contactos] ADD CONSTRAINT [Numeros_Telefonos_Contactos] 
     FOREIGN KEY ([id_numero_telefono]) REFERENCES [NumerosTelefonos] ([id])
+	ON DELETE CASCADE
+	ON UPDATE CASCADE
 GO
 
 
 ALTER TABLE [Contactos] ADD CONSTRAINT [Empresas_Contactos] 
     FOREIGN KEY ([id_empresa]) REFERENCES [Empresas] ([id])
+	ON DELETE CASCADE
+	ON UPDATE CASCADE
 GO
 
 
 ALTER TABLE [DetallesParticipantesCapacitaciones] ADD CONSTRAINT [ParticipantesDetallesParticipantesCapacitaciones] 
     FOREIGN KEY ([id_participante]) REFERENCES [Participantes] ([id])
+	ON DELETE CASCADE
+	ON UPDATE CASCADE
 GO
 
 
 ALTER TABLE [DetallesParticipantesCapacitaciones] ADD CONSTRAINT [CapacitacionesDetallesParticipantesCapacitaciones] 
     FOREIGN KEY ([id_capacitacion]) REFERENCES [Capacitaciones] ([id])
+	ON DELETE CASCADE
+	ON UPDATE CASCADE
 GO
 
 
 ALTER TABLE [Capacitadores] ADD CONSTRAINT [Usuarios_Capacitadores] 
     FOREIGN KEY ([id_usuario]) REFERENCES [Usuarios] ([id])
+	ON DELETE CASCADE
+	ON UPDATE CASCADE
 GO
 
 
 ALTER TABLE [Capacitaciones] ADD CONSTRAINT [Temas_Capacitaciones] 
     FOREIGN KEY ([id_tema]) REFERENCES [Temas] ([id])
+	ON DELETE CASCADE
+	ON UPDATE CASCADE
 GO
 
 
 ALTER TABLE [Capacitaciones] ADD CONSTRAINT [Capacitadores_Capacitaciones] 
     FOREIGN KEY ([id_capacitador]) REFERENCES [Capacitadores] ([id])
+	ON UPDATE CASCADE
 GO
 
 
 ALTER TABLE [Capacitaciones] ADD CONSTRAINT [Empresas_Capacitaciones] 
     FOREIGN KEY ([id_empresa]) REFERENCES [Empresas] ([id])
+	ON UPDATE CASCADE
 GO
 
 
 ALTER TABLE [Pagos] ADD CONSTRAINT [Capacitaciones_Pagos] 
     FOREIGN KEY ([id_capacitacion]) REFERENCES [Capacitaciones] ([id])
+	ON UPDATE CASCADE
 GO
 
 
@@ -354,6 +370,8 @@ CHECK (dui LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]-[0-9]')
 ALTER TABLE Participantes
 ADD CONSTRAINT U_dui
 UNIQUE (dui)
+
+
 
 --Pagos
 ALTER TABLE Pagos

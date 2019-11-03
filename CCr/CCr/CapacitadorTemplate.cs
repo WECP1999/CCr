@@ -81,7 +81,8 @@ namespace CCr
 
         private void btnNotas_Click(object sender, EventArgs e)
         {
-
+            new CapacitadorNotas().Show();
+            this.Hide();
         }
 
         private void btnNotas_MouseEnter(object sender, EventArgs e)
@@ -146,6 +147,12 @@ namespace CCr
         }
 
         private void btnParticipantes_Click(object sender, EventArgs e)
+        {
+            new CapacitadorParticipantes().Show();
+            this.Hide();
+        }
+
+        private void pbxParticipantes_Click(object sender, EventArgs e)
         {
             new CapacitadorParticipantes().Show();
             this.Hide();

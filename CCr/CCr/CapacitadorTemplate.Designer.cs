@@ -84,12 +84,13 @@
             // 
             this.pbxParticipantes.BackColor = System.Drawing.Color.Transparent;
             this.pbxParticipantes.Image = global::CCr.Properties.Resources.participant1;
-            this.pbxParticipantes.Location = new System.Drawing.Point(3, 171);
+            this.pbxParticipantes.Location = new System.Drawing.Point(3, 173);
             this.pbxParticipantes.Name = "pbxParticipantes";
             this.pbxParticipantes.Size = new System.Drawing.Size(32, 28);
             this.pbxParticipantes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxParticipantes.TabIndex = 23;
             this.pbxParticipantes.TabStop = false;
+            this.pbxParticipantes.Click += new System.EventHandler(this.pbxParticipantes_Click);
             this.pbxParticipantes.MouseEnter += new System.EventHandler(this.pbxParticipantes_MouseEnter);
             this.pbxParticipantes.MouseLeave += new System.EventHandler(this.btnParticipantes_MouseLeave);
             // 
@@ -120,6 +121,7 @@
             this.pbxNotas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxNotas.TabIndex = 21;
             this.pbxNotas.TabStop = false;
+            this.pbxNotas.Click += new System.EventHandler(this.btnNotas_Click);
             this.pbxNotas.MouseEnter += new System.EventHandler(this.pbxNotas_MouseEnter);
             this.pbxNotas.MouseLeave += new System.EventHandler(this.pbxNotas_MouseLeave);
             // 
