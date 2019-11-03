@@ -229,7 +229,9 @@
             this.txtdireccion.Name = "txtdireccion";
             this.txtdireccion.Size = new System.Drawing.Size(422, 75);
             this.txtdireccion.TabIndex = 17;
+            this.txtdireccion.Text = "s";
             this.txtdireccion.Click += new System.EventHandler(this.txtdireccion_Click);
+            this.txtdireccion.TextChanged += new System.EventHandler(this.txtdireccion_TextChanged);
             this.txtdireccion.Leave += new System.EventHandler(this.txtdireccion_Leave);
             // 
             // label3

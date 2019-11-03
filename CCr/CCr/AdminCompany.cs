@@ -250,5 +250,10 @@ namespace CCr
         {
 
         }
+
+        private void txtdireccion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

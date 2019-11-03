@@ -150,5 +150,11 @@ namespace CCr
             new CapacitadorParticipantes().Show();
             this.Hide();
         }
+
+        private void pbxParticipantes_Click(object sender, EventArgs e)
+        {
+            new CapacitadorParticipantes().Show();
+            this.Hide();
+        }
     }
 }
