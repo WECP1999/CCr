@@ -25,23 +25,30 @@ namespace CCr
         List<Class.Capacitaciones> Lista3 = new List<Class.Capacitaciones>();
         private void cargar()
         {
+            bool a1 = false, a2= false, a3 = false;
             con.startConnection();
             lista = em.read();
             foreach (var em in lista)
             {
+                a1 = true;
                 cmbEmpresa.Items.Add(em.Nombre);
             }
             lista1 = ca.read();
             foreach (var ca in lista1)
             {
+                a2 = true;
                 cmbCapacitador.Items.Add(ca.Apellido + " " + ca.Nombre);
             }
             lista2 = te.read(3);
             foreach (var te in lista2)
             {
+                a3 = true;
                 cmbTema.Items.Add(te.Descripcion);
             }
-            btningresar.Enabled = true;
+            if (a1 && a2 && a3)
+            {
+                btningresar.Enabled = true;
+            }
             con.closeConnection();
         }
         private void refresh()
