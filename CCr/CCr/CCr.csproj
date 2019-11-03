@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminCapacitaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminCapacitaciones.Designer.cs">
+      <DependentUpon>AdminCapacitaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminCompany.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +161,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdminCapacitaciones.resx">
+      <DependentUpon>AdminCapacitaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminCompany.resx">
       <DependentUpon>AdminCompany.cs</DependentUpon>
     </EmbeddedResource>

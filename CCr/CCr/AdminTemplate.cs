@@ -320,7 +320,6 @@ namespace CCr
             btncapacitaciones.BackColor = Color.FromArgb(163, 3, 3);
             pictureBox2.BackColor = Color.FromArgb(163, 3, 3);
         }
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -346,7 +345,19 @@ namespace CCr
 
         private void btnCertificados_Click(object sender, EventArgs e)
         {
+        }
+        private void btncapacitaciones_Click(object sender, EventArgs e)
+        {
+            AdminCapacitaciones ac = new AdminCapacitaciones();
+            ac.Show();
+            this.Hide();
+        }
 
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            AdminCapacitaciones ac = new AdminCapacitaciones();
+            ac.Show();
+            this.Hide();
         }
     }
 }

@@ -35,13 +35,24 @@ namespace CCr.Class
                 return 0;
             }
         }
-        public List<Temas> read()
+        public List<Temas> read(int tipo)
         {
             List<Temas> ss = new List<Temas>();
             SqlCommand comando = new SqlCommand();
             SqlDataReader lector;
             comando.CommandType = System.Data.CommandType.Text;
-            comando.CommandText = "SELECT * FROM temas";
+            if (tipo == 1)
+            {
+                comando.CommandText = "SELECT * FROM temas";
+            }
+            else if (tipo == 2)
+            {
+                comando.CommandText = "SELECT * FROM temas WHERE precio = 0";
+            }
+            else
+            {
+                comando.CommandText = "SELECT * FROM temas WHERE precio != 0";
+            }
             comando.Connection = Class.Conexion.conexionSQL;
             try
             {
