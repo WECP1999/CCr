@@ -29,6 +29,15 @@
         private void InitializeComponent()
         {
             ((System.ComponentModel.ISupportInitialize)(this.pbxhome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxempresa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxusuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxtemas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxcerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxpagos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxcontactos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnhome
@@ -45,6 +54,35 @@
             this.pbxhome.MouseEnter += new System.EventHandler(this.pbxhome_MouseEnter);
             this.pbxhome.MouseLeave += new System.EventHandler(this.pbxhome_MouseLeave);
             // 
+            // btnempresas
+            // 
+            this.btnempresas.FlatAppearance.BorderSize = 0;
+            // 
+            // btnusuarios
+            // 
+            this.btnusuarios.FlatAppearance.BorderSize = 0;
+            // 
+            // btntemas
+            // 
+            this.btntemas.FlatAppearance.BorderSize = 0;
+            this.btntemas.Click += new System.EventHandler(this.btntemas_Click);
+            // 
+            // btncerrar
+            // 
+            this.btncerrar.FlatAppearance.BorderSize = 0;
+            // 
+            // btnpagos
+            // 
+            this.btnpagos.FlatAppearance.BorderSize = 0;
+            // 
+            // btncontactos
+            // 
+            this.btncontactos.FlatAppearance.BorderSize = 0;
+            // 
+            // btncapacitaciones
+            // 
+            this.btncapacitaciones.FlatAppearance.BorderSize = 0;
+            // 
             // btnclose
             // 
             this.btnclose.FlatAppearance.BorderSize = 0;
@@ -59,6 +97,15 @@
             this.ClientSize = new System.Drawing.Size(966, 610);
             this.Name = "AdminForm";
             ((System.ComponentModel.ISupportInitialize)(this.pbxhome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxempresa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxusuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxtemas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxcerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxpagos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxcontactos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -384,6 +384,7 @@
             this.cmbtipo.Size = new System.Drawing.Size(368, 26);
             this.cmbtipo.TabIndex = 0;
             this.cmbtipo.SelectedIndexChanged += new System.EventHandler(this.cmbtipo_SelectedIndexChanged);
+            this.cmbtipo.SelectedValueChanged += new System.EventHandler(this.cmbtipo_SelectedValueChanged);
             // 
             // dgvUsuarios
             // 
@@ -396,6 +397,7 @@
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios.Size = new System.Drawing.Size(710, 173);
             this.dgvUsuarios.TabIndex = 5;
+            this.dgvUsuarios.Click += new System.EventHandler(this.dgvUsuarios_Click);
             this.dgvUsuarios.DoubleClick += new System.EventHandler(this.dgvUsuarios_DoubleClick);
             // 
             // AdminUsers

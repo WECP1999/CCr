@@ -17,6 +17,7 @@ namespace CCr
         List<Class.Usuarios> SR = new List<Class.Usuarios>();
         private int edit_indice = -1;
         static bool ver = false;
+        private bool bb = false;
         public AdminUsers()
         {
             InitializeComponent();
@@ -87,10 +88,7 @@ namespace CCr
             pbxusuarios.BackColor = Color.FromArgb(0, 0, 0);
         }
 
-        private void btnusuarios_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void btnusuarios_Click(object sender, EventArgs e){ }
 
         private void AdminUsers_Load(object sender, EventArgs e)
         {
@@ -185,64 +183,144 @@ namespace CCr
 
         private void btningresar_Click(object sender, EventArgs e)
         {
-            if (txtUserName.Text != "")
+            try
             {
-                if (txtPass.Text != "" && (txtPass.Text == txtVerify.Text))
+                con.startConnection();
+                if (txtUserName.Text != "")
                 {
-                    if ((cmbtipo.SelectedIndex + 1) == 3)
+                    if (bb)
                     {
-                        if (val.validateName(txtnombre.Text) && val.validateName(txtapellido.Text))
+                        if (txtPass.Text == txtVerify.Text)
                         {
-                            tr.Nombre = txtnombre.Text; tr.Apellido = txtapellido.Text;
-                            us.NombreUsuario = txtUserName.Text;
-                            us.Contra = txtPass.Text;
-                            us.Idtipo = cmbtipo.SelectedIndex + 1;
-                            con.startConnection();
-                            int po = us.signUp(us.NombreUsuario, us.Contra, us.Idtipo);
-                            if (po == 0)
+                            if (cmbtipo.SelectedIndex == 2)
                             {
-                                MessageBox.Show("Hubo un error, usuario repetido");
+                                if (val.validateName(txtnombre.Text) && val.validateName(txtapellido.Text))
+                                {//aqui se modifica con nombre
+                                    if (txtPass.Text == "")
+                                    {
+                                        if (us.update(txtUserName.Text, us.Xid))
+                                        {
+                                            tr.update(txtnombre.Text, txtapellido.Text, us.Xid);
+                                            MessageBox.Show("Usuario modificado exitosamente");
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Hubo un error, usuario repetido");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (us.update(txtUserName.Text, txtPass.Text, us.Xid))
+                                        {
+                                            tr.update(txtnombre.Text, txtapellido.Text, us.Xid);
+                                            MessageBox.Show("Usuario ingresado exitosamente");
+                                            txtapellido.Clear(); txtnombre.Clear(); txtPass.Clear(); txtVerify.Clear(); txtUserName.Clear(); txtUserName.Focus();
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Hubo un error, usuario repetido");
+                                        }
+                                    }
+                                    //MessageBox.Show("Usuario Modificado exitosamente");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Error con el nombre o el apellido \r\n (primera letra de cada nombre en mayuscula)");
+                                }
                             }
                             else
-                            {
-                                tr.create(tr.Nombre, tr.Apellido, po);
-                                MessageBox.Show("Usuario ingresado exitosamente");
+                            {//aqui se modifica sin nombre
+                                if (txtPass.Text == "")
+                                {
+                                    if (us.update(txtUserName.Text, us.Xid))
+                                    {
+                                        MessageBox.Show("Usuario modificado exitosamente");
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Hubo un error, usuario repetido");
+                                    }
+                                }
+                                else
+                                {
+                                    if (us.update(txtUserName.Text, txtPass.Text, us.Xid))
+                                    {
+                                        MessageBox.Show("Usuario ingresado exitosamente");
+                                        txtapellido.Clear(); txtnombre.Clear(); txtPass.Clear(); txtVerify.Clear(); txtUserName.Clear(); txtUserName.Focus();
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Hubo un error, usuario repetido");
+                                    }
+                                }
                             }
-                            con.closeConnection();
                         }
                         else
                         {
-                            MessageBox.Show("Error con el nombre o el apellido \r\n (primera letra de cada nombre en mayuscula)");
+                            MessageBox.Show("Error con la contraseña");
                         }
+                        bb = false; btningresar.Text = "Ingresar";
+                        txtapellido.Clear(); txtnombre.Clear(); txtPass.Clear(); txtVerify.Clear(); txtUserName.Clear(); txtUserName.Focus();
                     }
                     else
                     {
-                        us.NombreUsuario = txtUserName.Text; 
-                        us.Contra = txtPass.Text;
-                        us.Idtipo = cmbtipo.SelectedIndex + 1;
-                        con.startConnection();
-                        if (us.signUp(us.NombreUsuario, us.Contra, us.Idtipo) == 0)
-                        {
-                            MessageBox.Show("Hubo un error, usuario repetido");
+                        if (txtPass.Text != "" && (txtPass.Text == txtVerify.Text))
+                        {//aqui se ingresa con nombre       
+                            us.NombreUsuario = txtUserName.Text;
+                            us.Contra = txtPass.Text;
+                            us.Idtipo = cmbtipo.SelectedIndex + 1;
+                            if (cmbtipo.SelectedIndex == 2)
+                            {
+                                if (val.validateName(txtnombre.Text) && val.validateName(txtapellido.Text))
+                                {
+                                    int po = us.signUp(us.NombreUsuario, us.Contra, us.Idtipo);
+                                    if (po == 0)
+                                    {
+                                        MessageBox.Show("Hubo un error, usuario repetido");
+                                    }
+                                    else
+                                    {
+                                        tr.Nombre = txtnombre.Text; tr.Apellido = txtapellido.Text;
+                                        tr.create(tr.Nombre, tr.Apellido, po);
+                                        MessageBox.Show("Usuario ingresado exitosamente");
+                                        txtapellido.Clear();txtnombre.Clear();txtPass.Clear();txtVerify.Clear();txtUserName.Clear();txtUserName.Focus();
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Error con el nombre o el apellido \r\n (primera letra de cada nombre en mayuscula)");
+                                }
+                            }
+                            else
+                            {//aqui se ingresa SIN nombre
+                                int po = us.signUp(us.NombreUsuario, us.Contra, us.Idtipo);
+                                if (po == 0)
+                                {
+                                    MessageBox.Show("Hubo un error, usuario repetido");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Usuario ingresado exitosamente");
+                                    txtapellido.Clear();txtnombre.Clear();txtPass.Clear();txtVerify.Clear();txtUserName.Clear();txtUserName.Focus();
+                                }
+                            }    
                         }
                         else
                         {
-                            MessageBox.Show("Usuario ingresado exitosamente");
+                            MessageBox.Show("Error con la contraseña");
                         }
-                        con.closeConnection();
-                        txtUserName.Clear();
-                        txtUserName.Focus();
-                        txtVerify.Clear();
-                        txtPass.Clear();
-                    }
+                    }                
                 }
                 else
                 {
-                    MessageBox.Show("Error con la contraseña");
+                    MessageBox.Show("Error con el nombre de usuario");
                 }
-            }else
+                refresh();
+                con.closeConnection();
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("Error con el nombre de usuario");
+                MessageBox.Show("Ocurrio un error " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -264,27 +342,81 @@ namespace CCr
 
         private void dgvUsuarios_DoubleClick(object sender, EventArgs e)
         {
-            DataGridViewRow selected = dgvUsuarios.SelectedRows[0];
-            int posicion = dgvUsuarios.Rows.IndexOf(selected);
-            edit_indice = posicion;
-            Class.Usuarios auxS = SR[posicion];
-            con.startConnection();
-            if (auxS.Estado == "Activo")
+            try
             {
-                if (MessageBox.Show("¿Estas seguro que deseas dar de baja al usuario?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                DataGridViewRow selected = dgvUsuarios.SelectedRows[0];
+                int posicion = dgvUsuarios.Rows.IndexOf(selected);
+                edit_indice = posicion;
+                Class.Usuarios auxS = SR[posicion];
+                con.startConnection();
+                if (auxS.Estado == "Activo")
                 {
-                    us.update(auxS.Xid, false);
+                    if (MessageBox.Show("¿Estas seguro que deseas dar de baja al usuario?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        us.shutdown(auxS.Xid, false);
+                    }
                 }
+                else
+                {
+                    if (MessageBox.Show("¿Estas seguro que deseas reintegrar al usuario?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        us.shutdown(auxS.Xid, true);
+                    }
+                }
+                bb = false; btningresar.Text = "Ingresar";
+                con.closeConnection();
+                refresh();
             }
-            else
+            catch (Exception ex)
             {
-                if (MessageBox.Show("¿Estas seguro que deseas reintegrar al usuario?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    us.update(auxS.Xid, true);
-                }
+                MessageBox.Show("Ocurrio un error " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            con.closeConnection();
-            refresh();
+            txtapellido.Clear();txtnombre.Clear();txtPass.Clear();txtVerify.Clear();txtUserName.Clear();txtUserName.Focus();
+        }
+
+        private void dgvUsuarios_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridViewRow selected = dgvUsuarios.SelectedRows[0];
+                int posicion = dgvUsuarios.Rows.IndexOf(selected);
+                edit_indice = posicion;
+                Class.Usuarios auxS = SR[posicion];
+                con.startConnection();
+                switch (auxS.Descripcion)
+                {
+                    case "Administrador":
+                        cmbtipo.SelectedIndex = 0;
+                        break;
+                    case "Asesor":
+                        cmbtipo.SelectedIndex = 1;
+                        break;
+                    case "Capacitador":
+                        cmbtipo.SelectedIndex = 2;
+                        tr = tr.nombres(auxS.Xid);
+                        txtapellido.Text = tr.Nombre.ToString();
+                        txtnombre.Text = tr.Apellido.ToString();
+                        //MessageBox.Show("Si no desea cambiar la contraseña dejarla en blanco");
+                        break;
+                    default:
+                        break;
+                }
+                bb = true;
+                btningresar.Text = "Modificar";
+                us = us.getUser(Convert.ToInt32(auxS.Xid));
+                txtUserName.Text = us.NombreUsuario;
+                con.closeConnection();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void cmbtipo_SelectedValueChanged(object sender, EventArgs e)
+        {
+            txtapellido.Clear(); txtnombre.Clear(); txtPass.Clear(); txtVerify.Clear(); txtUserName.Clear(); txtUserName.Focus();
+            bb = false; btningresar.Text = "Ingresar";
         }
     }
 }

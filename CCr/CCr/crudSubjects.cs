@@ -22,7 +22,7 @@ namespace CCr
         {
             dgvSubjects.DataSource = null;
             con.startConnection();
-            SR = Subject.read();
+            SR = Subject.read(1);
             dgvSubjects.DataSource = SR;
             dgvSubjects.Columns["id"].Visible = false;
             dgvSubjects.Columns[1].HeaderText = "Tema";

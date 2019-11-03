@@ -41,5 +41,10 @@ namespace CCr
             btnhome.BackColor = Color.FromArgb(0, 0, 0);
             pbxhome.BackColor = Color.FromArgb(0, 0, 0);
         }
+
+        private void btntemas_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

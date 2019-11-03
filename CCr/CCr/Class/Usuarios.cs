@@ -79,11 +79,7 @@ namespace CCr.Class
                 throw;
             }
         }
-        public bool shutdown()
-        {
-            return true;
-        }
-        public int update(string id, bool activar)
+        public int shutdown(string id, bool activar)
         {
             String query = "UPDATE Usuarios SET estado = @p1 WHERE id = @p2";
             SqlCommand comando = new SqlCommand();
@@ -101,6 +97,92 @@ namespace CCr.Class
             {
                 return 0;
                 throw;
+            }
+        }
+        public bool update(string nombre, string id)
+        {
+            if (ver(nombre,id))
+            {
+                String query = "UPDATE Usuarios SET nombre_usuario = @p1 WHERE id = @p2";
+                SqlCommand comando = new SqlCommand();
+
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = query;
+                comando.Connection = Class.Conexion.conexionSQL;
+                try
+                {
+                    comando.Parameters.AddWithValue("@p1", nombre);
+                    comando.Parameters.AddWithValue("@p2", id);
+                    comando.ExecuteNonQuery();
+                    return true;
+                }
+                catch (Exception error)
+                {
+                    return false;
+                    throw;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool update(string nombre, string contra,string id)
+        {
+            if (ver(nombre, id))
+            {
+
+                String query = "UPDATE Usuarios SET nombre_usuario = @p1, password = @p2 WHERE id = @p3";
+                SqlCommand comando = new SqlCommand();
+
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = query;
+                comando.Connection = Class.Conexion.conexionSQL;
+                try
+                {
+                    comando.Parameters.AddWithValue("@p1", nombre);
+                    comando.Parameters.AddWithValue("@p2", Class.Validaciones.GetSHA256(contra));
+                    comando.Parameters.AddWithValue("@p3", id);
+                    comando.ExecuteNonQuery();
+                    return true;
+                }
+                catch (Exception error)
+                {
+                    return false;
+                    throw;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+        private bool ver(string nombre, string id)
+        {
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.CommandText = "SELECT * FROM Usuarios where nombre_usuario = @p1 and id != @p2";
+            comando.Connection = Class.Conexion.conexionSQL;
+            try
+            {
+                comando.Parameters.AddWithValue("@p1", nombre);
+                comando.Parameters.AddWithValue("@p2", id);
+                lector = comando.ExecuteReader();
+                if (lector.Read())
+                {
+                    lector.Close();
+                    return false;
+                }
+                else
+                {
+                    lector.Close();
+                    return true;
+                }
+            }
+            catch (SqlException error)
+            {
+                return false;
             }
         }
         public List<Usuarios> read()
@@ -158,6 +240,7 @@ namespace CCr.Class
                 {
                     us.nombreUsuario = lector["nombre_usuario"].ToString();
                     us.descripcion = lector["id_tipo_usuario"].ToString();
+                    us.Xid = lector["id"].ToString();
                     us.estado = lector["estado"].ToString();
                     lector.Close();
                     return us;

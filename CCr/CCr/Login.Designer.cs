@@ -60,6 +60,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label2
             // 
@@ -71,6 +72,7 @@
             this.label2.Size = new System.Drawing.Size(138, 19);
             this.label2.TabIndex = 4;
             this.label2.Text = "Nombre de usuario:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -82,6 +84,7 @@
             this.label3.Size = new System.Drawing.Size(87, 19);
             this.label3.TabIndex = 5;
             this.label3.Text = "Contraseña:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtusuario
             // 
@@ -94,6 +97,7 @@
             this.txtusuario.Size = new System.Drawing.Size(340, 16);
             this.txtusuario.TabIndex = 6;
             this.txtusuario.Click += new System.EventHandler(this.txtusuario_Click);
+            this.txtusuario.TextChanged += new System.EventHandler(this.txtusuario_TextChanged);
             this.txtusuario.Leave += new System.EventHandler(this.txtusuario_Leave);
             // 
             // panel1
@@ -103,6 +107,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(340, 1);
             this.panel1.TabIndex = 8;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel2
             // 
@@ -111,6 +116,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(340, 1);
             this.panel2.TabIndex = 10;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // txtpass
             // 
@@ -124,6 +130,7 @@
             this.txtpass.Size = new System.Drawing.Size(340, 16);
             this.txtpass.TabIndex = 9;
             this.txtpass.Click += new System.EventHandler(this.txtpass_Click);
+            this.txtpass.TextChanged += new System.EventHandler(this.txtpass_TextChanged);
             this.txtpass.Leave += new System.EventHandler(this.txtpass_Leave);
             // 
             // btnlogin

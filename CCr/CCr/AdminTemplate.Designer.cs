@@ -110,6 +110,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 21;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             this.pictureBox2.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
             this.pictureBox2.MouseLeave += new System.EventHandler(this.pictureBox2_MouseLeave);
             // 
@@ -126,6 +127,7 @@
             this.btncapacitaciones.TabIndex = 20;
             this.btncapacitaciones.Text = "Capacitaciones";
             this.btncapacitaciones.UseVisualStyleBackColor = false;
+            this.btncapacitaciones.Click += new System.EventHandler(this.btncapacitaciones_Click);
             this.btncapacitaciones.MouseEnter += new System.EventHandler(this.btncapacitaciones_MouseEnter);
             this.btncapacitaciones.MouseLeave += new System.EventHandler(this.btncapacitaciones_MouseLeave);
             // 
