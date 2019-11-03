@@ -44,6 +44,9 @@ CREATE TABLE [Participantes] (
     [apellido] VARCHAR(100) NOT NULL,
     [dui] VARCHAR(10),
     [correo] VARCHAR(150),
+    [num_casa] VARCHAR(10) NULL,
+    [num_tel] VARCHAR(10) NULL,
+	[num_trab] VARCHAR(10) NULL,
     CONSTRAINT [PK_Participantes] PRIMARY KEY ([id])
 )
 GO
@@ -118,18 +121,6 @@ GO
 /* ---------------------------------------------------------------------- */
 
 GO
-
-
-CREATE TABLE [Telefonos] (
-    [id] INTEGER IDENTITY(1,1) NOT NULL,
-    [numero] VARCHAR(10),
-    [extension] VARCHAR(40),
-    [id_participante] INTEGER NOT NULL,
-    CONSTRAINT [PK_Telefonos] PRIMARY KEY ([id])
-)
-GO
-
-
 /* ---------------------------------------------------------------------- */
 /* Add table "Usuarios"                                                    */
 /* ---------------------------------------------------------------------- */
@@ -262,6 +253,7 @@ GO
 
 ALTER TABLE [Notas] ADD CONSTRAINT [tipos_nota_Notas] 
     FOREIGN KEY ([id_tipo_nota]) REFERENCES [TiposNotas] ([id])
+	ON UPDATE CASCADE
 GO
 
 
@@ -272,50 +264,61 @@ GO
 
 ALTER TABLE [Contactos] ADD CONSTRAINT [Numeros_Telefonos_Contactos] 
     FOREIGN KEY ([id_numero_telefono]) REFERENCES [NumerosTelefonos] ([id])
+	ON DELETE CASCADE
+	ON UPDATE CASCADE
 GO
 
 
 ALTER TABLE [Contactos] ADD CONSTRAINT [Empresas_Contactos] 
     FOREIGN KEY ([id_empresa]) REFERENCES [Empresas] ([id])
+	ON DELETE CASCADE
+	ON UPDATE CASCADE
 GO
 
 
 ALTER TABLE [DetallesParticipantesCapacitaciones] ADD CONSTRAINT [ParticipantesDetallesParticipantesCapacitaciones] 
     FOREIGN KEY ([id_participante]) REFERENCES [Participantes] ([id])
+	ON DELETE CASCADE
+	ON UPDATE CASCADE
 GO
 
 
 ALTER TABLE [DetallesParticipantesCapacitaciones] ADD CONSTRAINT [CapacitacionesDetallesParticipantesCapacitaciones] 
     FOREIGN KEY ([id_capacitacion]) REFERENCES [Capacitaciones] ([id])
+	ON DELETE CASCADE
+	ON UPDATE CASCADE
 GO
 
 
 ALTER TABLE [Capacitadores] ADD CONSTRAINT [Usuarios_Capacitadores] 
     FOREIGN KEY ([id_usuario]) REFERENCES [Usuarios] ([id])
+	ON DELETE CASCADE
+	ON UPDATE CASCADE
 GO
 
 
 ALTER TABLE [Capacitaciones] ADD CONSTRAINT [Temas_Capacitaciones] 
     FOREIGN KEY ([id_tema]) REFERENCES [Temas] ([id])
+	ON DELETE CASCADE
+	ON UPDATE CASCADE
 GO
 
 
 ALTER TABLE [Capacitaciones] ADD CONSTRAINT [Capacitadores_Capacitaciones] 
     FOREIGN KEY ([id_capacitador]) REFERENCES [Capacitadores] ([id])
+	ON UPDATE CASCADE
 GO
 
 
 ALTER TABLE [Capacitaciones] ADD CONSTRAINT [Empresas_Capacitaciones] 
     FOREIGN KEY ([id_empresa]) REFERENCES [Empresas] ([id])
+	ON UPDATE CASCADE
 GO
 
 
 ALTER TABLE [Pagos] ADD CONSTRAINT [Capacitaciones_Pagos] 
     FOREIGN KEY ([id_capacitacion]) REFERENCES [Capacitaciones] ([id])
-GO
-
-ALTER TABLE [Telefonos] ADD CONSTRAINT [Participantes_Telefonos]
-	FOREIGN KEY ([id_participante]) REFERENCES [Participantes] ([id])
+	ON UPDATE CASCADE
 GO
 
 
@@ -359,11 +362,6 @@ ALTER TABLE Temas
 ADD CONSTRAINT CK_precio
 CHECK (Precio >= 0)
 
---Telefonos
-ALTER TABLE Telefonos
-ADD CONSTRAINT CK_numero_participante
-CHECK (numero NOT LIKE '%[A-Z]%' AND numero NOT LIKE '%[a-z]%')
-
 --Participantes
 ALTER TABLE Participantes
 ADD CONSTRAINT CK_dui
@@ -372,6 +370,8 @@ CHECK (dui LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]-[0-9]')
 ALTER TABLE Participantes
 ADD CONSTRAINT U_dui
 UNIQUE (dui)
+
+
 
 --Pagos
 ALTER TABLE Pagos
