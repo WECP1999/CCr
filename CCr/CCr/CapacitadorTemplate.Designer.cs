@@ -121,6 +121,7 @@
             this.pbxNotas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxNotas.TabIndex = 21;
             this.pbxNotas.TabStop = false;
+            this.pbxNotas.Click += new System.EventHandler(this.btnNotas_Click);
             this.pbxNotas.MouseEnter += new System.EventHandler(this.pbxNotas_MouseEnter);
             this.pbxNotas.MouseLeave += new System.EventHandler(this.pbxNotas_MouseLeave);
             // 

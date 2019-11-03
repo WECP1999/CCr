@@ -28,9 +28,28 @@ namespace CCr.Class
         public string Telfij { get => telfij; set => telfij = value; }
         public string Telem { get => telem; set => telem = value; }
 
-        public bool crear()
+        public int crear(Participantes participantes)
         {
-            return true;
+            String queryInsert = "INSERT INTO Participantes(nombre, apellido, dui, correo, num_tel, num_casa, num_trab) VALUES(@p1, @p2, @p3, @p4, @p5, @p6, @p7)";
+            SqlCommand comando = new SqlCommand();
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.CommandText = queryInsert;
+            comando.Connection = Class.Conexion.conexionSQL;
+            try
+            {
+                comando.Parameters.AddWithValue("@p1", participantes.Nombre);
+                comando.Parameters.AddWithValue("@p2", participantes.Apellido);
+                comando.Parameters.AddWithValue("@p3", participantes.Dui);
+                comando.Parameters.AddWithValue("@p4", participantes.Email);
+                comando.Parameters.AddWithValue("@p5", participantes.Telmov);
+                comando.Parameters.AddWithValue("@p6", participantes.Telfij);
+                comando.Parameters.AddWithValue("@p7", participantes.Telem);
+                return comando.ExecuteNonQuery();
+            }
+            catch (Exception error)
+            {
+                return 0;
+            }
         }
         public List<Participantes> leer()
         {
@@ -38,7 +57,7 @@ namespace CCr.Class
             SqlCommand comando = new SqlCommand();
             SqlDataReader lector;
             comando.CommandType = System.Data.CommandType.Text;
-            comando.CommandText = "SELECT * FROM Participantes ORDER BY nombre DESC";
+            comando.CommandText = "SELECT * FROM Participantes ORDER BY nombre ASC";
             comando.Connection = Class.Conexion.conexionSQL;
             try
             {
@@ -64,9 +83,28 @@ namespace CCr.Class
                 return null;
             }
         }
-        public bool actualizar()
+        public int actualizar(Participantes participantes)
         {
-            return true;
+            String queryInsert = "UPDATE Participantes SET nombre = @p1, apellido = @p2, dui = @p3, correo = @p4, num_tel = @p5, num_casa = @p6, num_trab = @p7 WHERE id = " + participantes.id;
+            SqlCommand comando = new SqlCommand();
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.CommandText = queryInsert;
+            comando.Connection = Class.Conexion.conexionSQL;
+            try
+            {
+                comando.Parameters.AddWithValue("@p1", participantes.Nombre);
+                comando.Parameters.AddWithValue("@p2", participantes.Apellido);
+                comando.Parameters.AddWithValue("@p3", participantes.Dui);
+                comando.Parameters.AddWithValue("@p4", participantes.Email);
+                comando.Parameters.AddWithValue("@p5", participantes.Telmov);
+                comando.Parameters.AddWithValue("@p6", participantes.Telfij);
+                comando.Parameters.AddWithValue("@p7", participantes.Telem);
+                return comando.ExecuteNonQuery();
+            }
+            catch (Exception error)
+            {
+                return 0;
+            }
         }
         public bool borrar()
         {

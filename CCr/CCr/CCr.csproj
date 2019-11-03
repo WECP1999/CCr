@@ -90,6 +90,12 @@
     <Compile Include="CapacitadorForm.Designer.cs">
       <DependentUpon>CapacitadorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CapacitadorNotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapacitadorNotas.Designer.cs">
+      <DependentUpon>CapacitadorNotas.cs</DependentUpon>
+    </Compile>
     <Compile Include="CapacitadorParticipantes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CapacitadorForm.resx">
       <DependentUpon>CapacitadorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapacitadorNotas.resx">
+      <DependentUpon>CapacitadorNotas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CapacitadorParticipantes.resx">
       <DependentUpon>CapacitadorParticipantes.cs</DependentUpon>

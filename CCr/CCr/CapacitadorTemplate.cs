@@ -81,7 +81,8 @@ namespace CCr
 
         private void btnNotas_Click(object sender, EventArgs e)
         {
-
+            new CapacitadorNotas().Show();
+            this.Hide();
         }
 
         private void btnNotas_MouseEnter(object sender, EventArgs e)
