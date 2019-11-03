@@ -54,6 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxcontactos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCertificados)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudcantempleados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvusuarios)).BeginInit();
@@ -111,6 +112,10 @@
             // btncapacitaciones
             // 
             this.btncapacitaciones.FlatAppearance.BorderSize = 0;
+            // 
+            // btnCertificados
+            // 
+            this.btnCertificados.FlatAppearance.BorderSize = 0;
             // 
             // btnclose
             // 
@@ -224,7 +229,9 @@
             this.txtdireccion.Name = "txtdireccion";
             this.txtdireccion.Size = new System.Drawing.Size(422, 75);
             this.txtdireccion.TabIndex = 17;
+            this.txtdireccion.Text = "s";
             this.txtdireccion.Click += new System.EventHandler(this.txtdireccion_Click);
+            this.txtdireccion.TextChanged += new System.EventHandler(this.txtdireccion_TextChanged);
             this.txtdireccion.Leave += new System.EventHandler(this.txtdireccion_Leave);
             // 
             // label3
@@ -319,10 +326,10 @@
             this.dgvusuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dgvusuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.dgvusuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvusuarios.Location = new System.Drawing.Point(244, 415);
+            this.dgvusuarios.Location = new System.Drawing.Point(302, 405);
             this.dgvusuarios.Name = "dgvusuarios";
             this.dgvusuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvusuarios.Size = new System.Drawing.Size(710, 173);
+            this.dgvusuarios.Size = new System.Drawing.Size(615, 173);
             this.dgvusuarios.TabIndex = 4;
             this.dgvusuarios.DoubleClick += new System.EventHandler(this.dgvusuarios_DoubleClick);
             // 
@@ -348,6 +355,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxcontactos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCertificados)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudcantempleados)).EndInit();

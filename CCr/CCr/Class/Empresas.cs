@@ -87,7 +87,7 @@ namespace CCr.Class
 
                 return comando.ExecuteNonQuery();
             }
-            catch (SqlException)
+            catch (Exception ex)
             {
                 return 0;
             }

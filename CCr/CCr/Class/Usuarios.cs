@@ -49,7 +49,7 @@ namespace CCr.Class
                     return false;
                 }
             }
-            catch (SqlException error)
+            catch (Exception error)
             {
                 return false;
             }
@@ -221,7 +221,6 @@ namespace CCr.Class
                 return null;
                 throw;
             }
-            return ss;
         }
 
         public Usuarios getUser(int id)
