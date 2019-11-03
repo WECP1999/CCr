@@ -153,6 +153,7 @@
             this.btneliminar.Text = "Eliminar";
             this.btneliminar.UseVisualStyleBackColor = false;
             this.btneliminar.Visible = false;
+            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
             // 
             // lblaux
             // 
@@ -455,7 +456,6 @@
             this.dgvusuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvusuarios.Size = new System.Drawing.Size(615, 173);
             this.dgvusuarios.TabIndex = 28;
-            this.dgvusuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvusuarios_CellContentClick);
             this.dgvusuarios.DoubleClick += new System.EventHandler(this.dgvusuarios_DoubleClick);
             // 
             // CapacitadorParticipantes
