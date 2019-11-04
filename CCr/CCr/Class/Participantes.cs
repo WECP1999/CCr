@@ -83,6 +83,38 @@ namespace CCr.Class
                 return null;
             }
         }
+        public List<Participantes> leer(string parametro)
+        {
+            List<Participantes> participantes = new List<Participantes>();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.CommandText = "SELECT * FROM Participantes  WHERE nombre LIKE '%"+parametro+"%' or apellido LIKE '%"+parametro+"%' or dui LIKE '%"+parametro+"%' ORDER BY nombre ASC";
+            comando.Connection = Class.Conexion.conexionSQL;
+            try
+            {
+                lector = comando.ExecuteReader();
+                while (lector.Read())
+                {
+                    Participantes comp = new Participantes();
+                    comp.Id = int.Parse(lector["id"].ToString());
+                    comp.Nombre = lector["nombre"].ToString();
+                    comp.apellido = lector["apellido"].ToString();
+                    comp.Email = lector["correo"].ToString();
+                    comp.Dui = lector["Dui"].ToString();
+                    comp.Telfij = lector["num_casa"].ToString();
+                    comp.Telem = lector["num_tel"].ToString();
+                    comp.Telmov = lector["num_trab"].ToString();
+                    participantes.Add(comp);
+                }
+                lector.Close();
+                return participantes;
+            }
+            catch (Exception error)
+            {
+                return null;
+            }
+        }
         public int actualizar(Participantes participantes)
         {
             String queryInsert = "UPDATE Participantes SET nombre = @p1, apellido = @p2, dui = @p3, correo = @p4, num_tel = @p5, num_casa = @p6, num_trab = @p7 WHERE id = " + participantes.id;

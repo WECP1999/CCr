@@ -46,6 +46,36 @@ namespace CCr.Class
                 return 0;
             }
         }
+        public List<Capacitaciones> read()
+        {
+            List<Capacitaciones> lista = new List<Capacitaciones>();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.CommandText = "SELECT cap.id,em.nombre_empresa,te.descripcion,fecha_inicio,cap.id_empresa FROM Capacitaciones cap INNER JOIN Empresas em ON cap.id_empresa = em.id INNER JOIN Temas te ON cap.id_tema = te.id ORDER BY te.precio DESC, em.nombre_empresa ASC";
+            comando.Connection = Class.Conexion.conexionSQL;
+            try
+            {
+                lector = comando.ExecuteReader();
+                while (lector.Read())
+                {
+                    Capacitaciones comp = new Capacitaciones();
+                    comp.Empresa = lector["nombre_empresa"].ToString();
+                    comp.Tema = lector["descripcion"].ToString();
+                    comp.tipoCapacitacion = lector["id_empresa"].ToString();
+                    comp.diaInicio = Convert.ToDateTime(lector["fecha_inicio"]);
+                    comp.id = Convert.ToInt32(lector["id"]);
+                    lista.Add(comp);
+                }
+                lector.Close();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public List<Capacitaciones> read(bool tipo)
         {
             List<Capacitaciones> lista = new List<Capacitaciones>();
@@ -58,7 +88,7 @@ namespace CCr.Class
             }
             else
             {
-                comando.CommandText = "SELECT cap.id,fecha_fin,fecha_inicio,em.nombre_empresa,ca.nombre,ca.apellido,te.descripcion, te.precio FROM Capacitaciones cap INNER JOIN Empresas em ON cap.id_empresa = em.id INNER JOIN Capacitadores ca ON cap.id_capacitador = ca.id INNER JOIN Temas te ON cap.id_tema = te.id precio = 0";
+                comando.CommandText = "SELECT cap.id,fecha_fin,fecha_inicio,em.nombre_empresa,ca.nombre,ca.apellido,te.descripcion, te.precio FROM Capacitaciones cap INNER JOIN Empresas em ON cap.id_empresa = em.id INNER JOIN Capacitadores ca ON cap.id_capacitador = ca.id INNER JOIN Temas te ON cap.id_tema = te.id WHERE precio = 0";
             }
             comando.Connection = Class.Conexion.conexionSQL;
             try

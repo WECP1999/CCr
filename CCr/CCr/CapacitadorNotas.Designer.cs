@@ -75,6 +75,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(966, 628);
             this.Name = "CapacitadorNotas";
+            this.Load += new System.EventHandler(this.CapacitadorNotas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxParticipantes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxNotas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -25,5 +25,10 @@ namespace CCr
         {
 
         }
+
+        private void CapacitadorNotas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
