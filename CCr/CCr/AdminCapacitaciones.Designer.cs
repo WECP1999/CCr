@@ -60,6 +60,7 @@
             this.txtbusqueda = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dgvCapacitaciones = new System.Windows.Forms.DataGridView();
+            this.btnInscribir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxhome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxempresa)).BeginInit();
@@ -548,10 +549,25 @@
             this.dgvCapacitaciones.Size = new System.Drawing.Size(628, 219);
             this.dgvCapacitaciones.TabIndex = 32;
             // 
+            // btnInscribir
+            // 
+            this.btnInscribir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnInscribir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInscribir.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInscribir.ForeColor = System.Drawing.Color.White;
+            this.btnInscribir.Location = new System.Drawing.Point(853, 397);
+            this.btnInscribir.Name = "btnInscribir";
+            this.btnInscribir.Size = new System.Drawing.Size(95, 38);
+            this.btnInscribir.TabIndex = 56;
+            this.btnInscribir.Text = "Inscribir";
+            this.btnInscribir.UseVisualStyleBackColor = false;
+            this.btnInscribir.Visible = false;
+            // 
             // AdminCapacitaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(966, 610);
+            this.Controls.Add(this.btnInscribir);
             this.Controls.Add(this.dgvCapacitaciones);
             this.Controls.Add(this.groupBox1);
             this.Name = "AdminCapacitaciones";
@@ -560,6 +576,7 @@
             this.Controls.SetChildIndex(this.dgvCapacitaciones, 0);
             this.Controls.SetChildIndex(this.btnclose, 0);
             this.Controls.SetChildIndex(this.btnminimyze, 0);
+            this.Controls.SetChildIndex(this.btnInscribir, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pbxhome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxempresa)).EndInit();
@@ -619,5 +636,6 @@
         private System.Windows.Forms.DataGridView dgvAux;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cmbCapacita;
+        private System.Windows.Forms.Button btnInscribir;
     }
 }

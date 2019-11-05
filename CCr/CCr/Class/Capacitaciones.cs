@@ -125,5 +125,9 @@ namespace CCr.Class
         public void generateCertificates (){ 
         
         }
+        public bool Detalles(string id)
+        {
+            return false;
+        }
     }
 }

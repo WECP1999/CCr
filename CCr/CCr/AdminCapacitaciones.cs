@@ -19,7 +19,9 @@ namespace CCr
         Class.Conexion con = new Class.Conexion();
         Class.Capacitaciones cap = new Class.Capacitaciones();
         Class.Participantes pa = new Class.Participantes();
+
         static string id;
+        private int edit_indice = -1;
         //listas
         List<Class.Empresas> lista = new List<Class.Empresas>();
         List<Class.Capacitadores> lista1 = new List<Class.Capacitadores>();
@@ -27,6 +29,8 @@ namespace CCr
         List<Class.Capacitaciones> Lista3 = new List<Class.Capacitaciones>();
         List<Class.Participantes> lista4 = new List<Class.Participantes>();
         List<Class.Participantes> listap = new List<Class.Participantes>();
+
+        //funciones para cargar cosas
         private void cargar()
         {
             try
@@ -64,6 +68,7 @@ namespace CCr
                 MessageBox.Show("Ocurrio un error durante la ejecución " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        //funciones para cargar cosas
         private void cargarL()
         {
             try
@@ -95,6 +100,9 @@ namespace CCr
                 MessageBox.Show("Ocurrio un error durante la ejecución " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+        //funciones para llenar dgv cosas
         private void refresh()
         {
             try
@@ -112,8 +120,27 @@ namespace CCr
             catch (Exception ex)
             {
                 MessageBox.Show("Ocurrio un error durante la ejecución " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
+        private void refreshPa()
+        {
+            try
+            {
+                dgvCapacitaciones.DataSource = null;
+                dgvCapacitaciones.DataSource = listap;
+                dgvCapacitaciones.Columns["id"].Visible = false;
+                dgvCapacitaciones.Columns[5].Visible = false;
+                dgvCapacitaciones.Columns[6].Visible = false;
+                dgvCapacitaciones.Columns[7].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error durante la ejecución " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
+        //funciones para llenar dgv cosas
         private void rLibre()
         {
             try
@@ -135,15 +162,16 @@ namespace CCr
                 MessageBox.Show("Ocurrio un error durante la ejecución " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        //funciones para llenar dgv cosas
+
         private void llenar(string par)
         {
             try
             {
                 dgvAux.DataSource = null;
                 con.startConnection();
-                List<Class.Participantes> listA = new List<Class.Participantes>();
-                listA = pa.leer(par);
-                dgvAux.DataSource = listA;
+                lista4 = pa.leer(par);
+                dgvAux.DataSource = lista4;
                 con.closeConnection();
                 dgvAux.Columns["id"].Visible = false;
                 dgvAux.Columns[5].Visible = false;
@@ -155,6 +183,8 @@ namespace CCr
                 MessageBox.Show("Ocurrio un error durante la ejecución " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        //funciones para llenar dgv cosas
+
         private void combo()
         {
             try
@@ -164,7 +194,7 @@ namespace CCr
                 Lista3 = cap.read();
                 con.closeConnection(); bool a1 = false;
                 foreach (var cp in Lista3)
-                {
+                {//validar si existe tipo de capacitacion
                     a1 = true;
                     cmbCapacita.Items.Add(cp.Tema + " " +cp.Empresa+ " " + cp.DiaInicio.ToString("dd/MM/yyyy"));
                 }
@@ -179,6 +209,10 @@ namespace CCr
                 MessageBox.Show("Ocurrio un error durante la ejecución " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+
+
         public AdminCapacitaciones()
         {
             InitializeComponent();
@@ -305,7 +339,33 @@ namespace CCr
 
         private void dgvAux_DoubleClick(object sender, EventArgs e)
         {
-
+            DataGridViewRow selected = dgvAux.SelectedRows[0];
+            int posicion = dgvAux.Rows.IndexOf(selected);
+            edit_indice = posicion;
+            Class.Participantes SS = lista4[posicion];
+            con.startConnection();
+            if (pa.empresa(SS.Id.ToString(), id))
+            {
+                bool repetido = true;
+                foreach (var adios in listap)
+                {
+                    if (SS.Id == adios.Id)
+                    {
+                        repetido = false;
+                    }
+                }
+                if (repetido)
+                {
+                    listap.Add(SS);
+                    refreshPa();
+                    btnInscribir.Visible = true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("El participante no pertenece a esa empresa");
+            }
+            con.closeConnection();
         }
         private void txtUserName_TextChanged(object sender, EventArgs e) 
         {

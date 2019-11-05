@@ -142,5 +142,38 @@ namespace CCr.Class
         {
             return true;
         }
+
+        public bool empresa(string id_usuario, string id_empresa)
+        {
+            try
+            {
+                SqlCommand comando = new SqlCommand();
+                SqlDataReader lector;
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = "SELECT dd.id_participante, cap.id_empresa FROM Participantes pa INNER JOIN DetallesParticipantesCapacitaciones dd ON dd.id_participante = pa.id INNER JOIN Capacitaciones cap ON dd.id_capacitacion = cap.id INNER JOIN Empresas em ON cap.id_empresa = em.id  WHERE pa.id = "+ id_usuario;
+                comando.Connection = Class.Conexion.conexionSQL;
+                lector = comando.ExecuteReader();
+                if (lector.Read())
+                {
+                    if (id_empresa == lector["id_empresa"].ToString())
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return true;
+                }
+                lector.Close();
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }
