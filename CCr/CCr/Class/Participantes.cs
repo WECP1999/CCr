@@ -157,23 +157,48 @@ namespace CCr.Class
                 {
                     if (id_empresa == lector["id_empresa"].ToString())
                     {
+                        lector.Close();
                         return true;
                     }
                     else
                     {
+                        lector.Close();
                         return false;
                     }
                 }
                 else
                 {
+                    lector.Close();
                     return true;
                 }
-                lector.Close();
             }
             catch (Exception ex)
             {
                 return false;
             }
+        }
+        public bool crearDD(List<Participantes> listaA, int capa)
+        {
+            try
+            {
+                foreach (var cc in listaA)
+                {
+                    String queryInsert = "INSERT INTO DetallesParticipantesCapacitaciones(id_participante,id_capacitacion) VALUES (@p1, @p2)";
+                    SqlCommand comando = new SqlCommand();
+                    comando.CommandType = System.Data.CommandType.Text;
+                    comando.CommandText = queryInsert;
+                    comando.Connection = Class.Conexion.conexionSQL;
+                    comando.Parameters.AddWithValue("@p1", cc.Id.ToString());
+                    comando.Parameters.AddWithValue("@p2", capa.ToString());
+                    comando.ExecuteNonQuery();
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            
         }
     }
 }

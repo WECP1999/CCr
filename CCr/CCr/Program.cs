@@ -16,7 +16,7 @@ namespace CCr
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdminCapacitaciones());
+            Application.Run(new adminPagos());
         }
     }
 }

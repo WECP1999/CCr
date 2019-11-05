@@ -22,6 +22,7 @@ namespace CCr
 
         static string id;
         private int edit_indice = -1;
+        private bool crear = true;
         //listas
         List<Class.Empresas> lista = new List<Class.Empresas>();
         List<Class.Capacitadores> lista1 = new List<Class.Capacitadores>();
@@ -128,11 +129,18 @@ namespace CCr
             try
             {
                 dgvCapacitaciones.DataSource = null;
-                dgvCapacitaciones.DataSource = listap;
-                dgvCapacitaciones.Columns["id"].Visible = false;
-                dgvCapacitaciones.Columns[5].Visible = false;
-                dgvCapacitaciones.Columns[6].Visible = false;
-                dgvCapacitaciones.Columns[7].Visible = false;
+                if (listap.Count() != 0)
+                {
+                    dgvCapacitaciones.DataSource = listap;
+                    dgvCapacitaciones.Columns["id"].Visible = false;
+                    dgvCapacitaciones.Columns[5].Visible = false;
+                    dgvCapacitaciones.Columns[6].Visible = false;
+                    dgvCapacitaciones.Columns[7].Visible = false;
+                }
+                else
+                {
+                    btnInscribir.Visible = false;
+                }
             }
             catch (Exception ex)
             {
@@ -150,11 +158,10 @@ namespace CCr
                 Lista3 = cap.read(false);
                 dgvCapacitaciones.DataSource = Lista3;
                 dgvCapacitaciones.Columns["id"].Visible = false;
-                dgvCapacitaciones.Columns[3].HeaderText = "Precio";
+                dgvCapacitaciones.Columns[3].Visible = false;
                 dgvCapacitaciones.Columns[0].HeaderText = "Fecha de inicio";
                 dgvCapacitaciones.Columns[1].HeaderText = "Fecha de final";
                 dgvCapacitaciones.Columns[5].HeaderText = "Tipo de capacitacion";
-
                 con.closeConnection();
             }
             catch (Exception ex)
@@ -191,18 +198,25 @@ namespace CCr
             {
                 cmbCapacita.Items.Clear() ;
                 con.startConnection();
-                Lista3 = cap.read();
-                con.closeConnection(); bool a1 = false;
-                foreach (var cp in Lista3)
+                List<Class.Capacitaciones> lista3b = new List<Class.Capacitaciones>();
+                Lista3.Clear();
+                lista3b = cap.read();
+                bool a1 = false;
+                foreach (var cp in lista3b)
                 {//validar si existe tipo de capacitacion
-                    a1 = true;
-                    cmbCapacita.Items.Add(cp.Tema + " " +cp.Empresa+ " " + cp.DiaInicio.ToString("dd/MM/yyyy"));
+                    if (cap.Detalles(cp.Id.ToString()))
+                    {
+                        Lista3.Add(cp);
+                        a1 = true;
+                        cmbCapacita.Items.Add(cp.Tema + " -> (" + cp.Empresa + ")(" + cp.DiaInicio.ToString("dd/MM/yyyy")+ ")");
+                    }
                 }
                 if (a1)
                 {
                     dgvAux.Visible = true; txtbusqueda.Enabled = true;
+                    cmbCapacita.SelectedIndex = 0;
                 }
-                cmbCapacita.SelectedIndex = 0;
+                con.closeConnection();
             }
             catch (Exception ex)
             {
@@ -254,6 +268,7 @@ namespace CCr
         }
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             if (tabControl1.SelectedIndex == 0)
             {
                 refresh();
@@ -266,6 +281,7 @@ namespace CCr
             }
             else
             {
+                listap.Clear();
                 llenar("");
                 combo();
                 dgvCapacitaciones.DataSource = null;
@@ -294,6 +310,8 @@ namespace CCr
                 cap.create(cap.DiaInicio, cap.DiaFinal, cap.Tema, cap.Empresa, cap.Capacitador);
                 con.closeConnection(); refresh();
                 MessageBox.Show("Se ha ingresado con exito");
+                cmbEmpresa.SelectedIndex = 0;cmbEmpresa.SelectedIndex = 0;cmbCapacitador.SelectedIndex = 0;
+                dtpInicio.Value = DateTime.Today; dtpFinal.Value = DateTime.Today.AddDays(1);
             }
             catch (Exception ex)
             {
@@ -329,7 +347,8 @@ namespace CCr
                 cap.create(cap.DiaInicio, cap.DiaFinal, cap.Tema, cap.Empresa, cap.Capacitador);
                 con.closeConnection(); rLibre();
                 MessageBox.Show("Se ha ingresado con exito");
-
+                cmbTemal.SelectedIndex = 0; cmbCapacitadorl.SelectedIndex = 0;
+                dtpiniciol.Value = DateTime.Today; dtpfinl.Value = DateTime.Today.AddDays(1);
             }
             catch (Exception ex)
             {
@@ -371,19 +390,41 @@ namespace CCr
         {
             llenar(txtbusqueda.Text);
         }
-        
-        private void txtbusqueda_TextAlignChanged(object sender, EventArgs e){}
-        private void btnusuarios_Click(object sender, EventArgs e) {}
-        private void dgvAux_CellContentClick_1(object sender, DataGridViewCellEventArgs e) {}
-        private void label10_Click(object sender, EventArgs e) {}
-        private void tabPage3_Click(object sender, EventArgs e) {}
-        private void label11_Click(object sender, EventArgs e) {}
-
+       
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             id = Lista3[cmbCapacita.SelectedIndex].TipoCapacitacion;
+            dgvCapacitaciones.DataSource = null;
+            listap.Clear();
         }
 
-        
+        private void btnInscribir_Click(object sender, EventArgs e)
+        {
+            txtbusqueda.Clear();
+            con.startConnection();
+            if (pa.crearDD(listap,Lista3[cmbCapacita.SelectedIndex].Id))
+            {
+                listap.Clear();combo();refreshPa();dgvCapacitaciones.DataSource = null;
+                MessageBox.Show("Se registro correctamente");
+            }
+            else
+            {
+                MessageBox.Show("No se registro");
+            }
+            con.closeConnection();
+        }
+
+        private void dgvCapacitaciones_DoubleClick(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedIndex == 2)
+            {
+                DataGridViewRow selected = dgvCapacitaciones.SelectedRows[0];
+                int posicion = dgvCapacitaciones.Rows.IndexOf(selected);
+                edit_indice = posicion;
+                listap.RemoveAt(posicion);
+                refreshPa();
+            }
+        }
+
     }
 }

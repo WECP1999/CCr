@@ -211,12 +211,16 @@ namespace CCr
 
         private void btnpagos_Click(object sender, EventArgs e)
         {
-
+            adminPagos ac = new adminPagos();
+            ac.Show();
+            this.Hide();
         }
 
         private void pbxpagos_Click(object sender, EventArgs e)
         {
-
+            adminPagos ac = new adminPagos();
+            ac.Show();
+            this.Hide();
         }
 
         private void btncerrar_MouseEnter(object sender, EventArgs e)

@@ -92,7 +92,6 @@
             // btnusuarios
             // 
             this.btnusuarios.FlatAppearance.BorderSize = 0;
-            this.btnusuarios.Click += new System.EventHandler(this.btnusuarios_Click);
             // 
             // btntemas
             // 
@@ -455,7 +454,6 @@
             this.tabPage3.Size = new System.Drawing.Size(667, 278);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Participantes";
-            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
             // label11
             // 
@@ -467,7 +465,6 @@
             this.label11.Size = new System.Drawing.Size(90, 18);
             this.label11.TabIndex = 50;
             this.label11.Text = "Capacitacion:";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // cmbCapacita
             // 
@@ -497,7 +494,6 @@
             this.dgvAux.Size = new System.Drawing.Size(508, 206);
             this.dgvAux.TabIndex = 33;
             this.dgvAux.Visible = false;
-            this.dgvAux.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAux_CellContentClick_1);
             this.dgvAux.DoubleClick += new System.EventHandler(this.dgvAux_DoubleClick);
             // 
             // panel2
@@ -520,7 +516,6 @@
             this.txtbusqueda.Name = "txtbusqueda";
             this.txtbusqueda.Size = new System.Drawing.Size(313, 19);
             this.txtbusqueda.TabIndex = 16;
-            this.txtbusqueda.TextAlignChanged += new System.EventHandler(this.txtbusqueda_TextAlignChanged);
             this.txtbusqueda.TextChanged += new System.EventHandler(this.txtUserName_TextChanged);
             // 
             // label10
@@ -533,7 +528,6 @@
             this.label10.Size = new System.Drawing.Size(157, 18);
             this.label10.TabIndex = 15;
             this.label10.Text = "Nombre, apellido o DUI:";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // dgvCapacitaciones
             // 
@@ -548,6 +542,7 @@
             this.dgvCapacitaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCapacitaciones.Size = new System.Drawing.Size(628, 219);
             this.dgvCapacitaciones.TabIndex = 32;
+            this.dgvCapacitaciones.DoubleClick += new System.EventHandler(this.dgvCapacitaciones_DoubleClick);
             // 
             // btnInscribir
             // 
@@ -562,6 +557,7 @@
             this.btnInscribir.Text = "Inscribir";
             this.btnInscribir.UseVisualStyleBackColor = false;
             this.btnInscribir.Visible = false;
+            this.btnInscribir.Click += new System.EventHandler(this.btnInscribir_Click);
             // 
             // AdminCapacitaciones
             // 

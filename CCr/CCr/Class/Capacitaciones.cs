@@ -52,7 +52,7 @@ namespace CCr.Class
             SqlCommand comando = new SqlCommand();
             SqlDataReader lector;
             comando.CommandType = System.Data.CommandType.Text;
-            comando.CommandText = "SELECT cap.id,em.nombre_empresa,te.descripcion,fecha_inicio,cap.id_empresa FROM Capacitaciones cap INNER JOIN Empresas em ON cap.id_empresa = em.id INNER JOIN Temas te ON cap.id_tema = te.id ORDER BY te.precio DESC, em.nombre_empresa ASC";
+            comando.CommandText = "SELECT cap.id,em.nombre_empresa,te.descripcion,fecha_inicio,cap.id_empresa FROM Capacitaciones cap INNER JOIN Empresas em ON cap.id_empresa = em.id INNER JOIN Temas te ON cap.id_tema = te.id ORDER BY em.nombre_empresa ASC, te.precio DESC";
             comando.Connection = Class.Conexion.conexionSQL;
             try
             {
@@ -125,9 +125,32 @@ namespace CCr.Class
         public void generateCertificates (){ 
         
         }
-        public bool Detalles(string id)
+        public bool Detalles(string idCap)
         {
-            return false;
+            try
+            {
+                SqlCommand comando = new SqlCommand();
+                SqlDataReader lector;
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = "SELECT * FROM Capacitaciones cap INNER JOIN DetallesParticipantesCapacitaciones dd ON dd.id_capacitacion = cap.id WHERE cap.id  = "+idCap;
+                comando.Connection = Class.Conexion.conexionSQL;
+                lector = comando.ExecuteReader();
+                if (lector.Read())
+                {
+                    lector.Close();
+                    return false;
+                }
+                else
+                {
+                    lector.Close();
+                    return true;
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
     }
 }
