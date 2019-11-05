@@ -54,11 +54,23 @@
     <Compile Include="AdminCapacitaciones.Designer.cs">
       <DependentUpon>AdminCapacitaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="adminCertificados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adminCertificados.Designer.cs">
+      <DependentUpon>adminCertificados.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminCompany.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdminCompany.Designer.cs">
       <DependentUpon>AdminCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adminContactos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adminContactos.Designer.cs">
+      <DependentUpon>adminContactos.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminForm.cs">
       <SubType>Form</SubType>
@@ -170,8 +182,14 @@
     <EmbeddedResource Include="AdminCapacitaciones.resx">
       <DependentUpon>AdminCapacitaciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="adminCertificados.resx">
+      <DependentUpon>adminCertificados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminCompany.resx">
       <DependentUpon>AdminCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adminContactos.resx">
+      <DependentUpon>adminContactos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>

@@ -116,6 +116,7 @@
             this.pbxCertificados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxCertificados.TabIndex = 31;
             this.pbxCertificados.TabStop = false;
+            this.pbxCertificados.Click += new System.EventHandler(this.pbxCertificados_Click);
             this.pbxCertificados.MouseEnter += new System.EventHandler(this.pbxCertificados_MouseEnter);
             this.pbxCertificados.MouseLeave += new System.EventHandler(this.pbxCertificados_MouseLeave);
             // 
