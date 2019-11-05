@@ -37,6 +37,7 @@
             this.cmbnotas = new System.Windows.Forms.ComboBox();
             this.dgvparticipantes = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnmodificar = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -112,7 +113,7 @@
             this.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnbuscar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnbuscar.ForeColor = System.Drawing.Color.White;
-            this.btnbuscar.Location = new System.Drawing.Point(522, 109);
+            this.btnbuscar.Location = new System.Drawing.Point(560, 109);
             this.btnbuscar.Name = "btnbuscar";
             this.btnbuscar.Size = new System.Drawing.Size(95, 38);
             this.btnbuscar.TabIndex = 39;
@@ -126,7 +127,7 @@
             this.panel4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel4.Location = new System.Drawing.Point(10, 143);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(440, 1);
+            this.panel4.Size = new System.Drawing.Size(479, 1);
             this.panel4.TabIndex = 38;
             // 
             // txtdui
@@ -138,7 +139,7 @@
             this.txtdui.Location = new System.Drawing.Point(10, 128);
             this.txtdui.MaxLength = 1000;
             this.txtdui.Name = "txtdui";
-            this.txtdui.Size = new System.Drawing.Size(440, 19);
+            this.txtdui.Size = new System.Drawing.Size(479, 19);
             this.txtdui.TabIndex = 37;
             this.txtdui.Click += new System.EventHandler(this.txtdui_Click);
             this.txtdui.TextChanged += new System.EventHandler(this.txtdui_TextChanged);
@@ -193,6 +194,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnmodificar);
             this.groupBox2.Controls.Add(this.numericUpDown1);
             this.groupBox2.Controls.Add(this.panel2);
             this.groupBox2.Controls.Add(this.label1);
@@ -200,18 +202,34 @@
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.groupBox2.Location = new System.Drawing.Point(261, 395);
+            this.groupBox2.Location = new System.Drawing.Point(261, 370);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(693, 109);
+            this.groupBox2.Size = new System.Drawing.Size(681, 109);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ingreso de notas";
             this.groupBox2.Visible = false;
             // 
+            // btnmodificar
+            // 
+            this.btnmodificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnmodificar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmodificar.ForeColor = System.Drawing.Color.White;
+            this.btnmodificar.Location = new System.Drawing.Point(571, 40);
+            this.btnmodificar.Name = "btnmodificar";
+            this.btnmodificar.Size = new System.Drawing.Size(104, 38);
+            this.btnmodificar.TabIndex = 44;
+            this.btnmodificar.Text = "Modifica";
+            this.btnmodificar.UseVisualStyleBackColor = false;
+            this.btnmodificar.Visible = false;
+            this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
+            // 
             // numericUpDown1
             // 
             this.numericUpDown1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.numericUpDown1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numericUpDown1.DecimalPlaces = 2;
             this.numericUpDown1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown1.Increment = new decimal(new int[] {
             5,
@@ -254,7 +272,7 @@
             this.btningresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btningresar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btningresar.ForeColor = System.Drawing.Color.White;
-            this.btningresar.Location = new System.Drawing.Point(522, 40);
+            this.btningresar.Location = new System.Drawing.Point(470, 40);
             this.btningresar.Name = "btningresar";
             this.btningresar.Size = new System.Drawing.Size(95, 38);
             this.btningresar.TabIndex = 31;
@@ -322,5 +340,6 @@
         private System.Windows.Forms.Button btnbuscar;
         private System.Windows.Forms.Button btningresar;
         private System.Windows.Forms.Label lblid;
+        private System.Windows.Forms.Button btnmodificar;
     }
 }

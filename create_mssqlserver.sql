@@ -240,6 +240,21 @@ CREATE TABLE [Notas] (
 GO
 
 /* ---------------------------------------------------------------------- */
+/* Add table "Modificacion"                                                       */
+/* ---------------------------------------------------------------------- */
+
+GO
+
+CREATE TABLE [Modificaciones] (
+    [id] INTEGER IDENTITY(1,1) NOT NULL,
+	[estado] BIT NOT NULL,
+    [id_nota] INTEGER NOT NULL,
+    [id_usuario] INTEGER NOT NULL,
+    CONSTRAINT [PK_Modificaciones] PRIMARY KEY ([id])
+)
+GO
+
+/* ---------------------------------------------------------------------- */
 /* Add foreign key constraints                                            */
 /* ---------------------------------------------------------------------- */
 
@@ -328,6 +343,15 @@ ALTER TABLE [Pagos] ADD CONSTRAINT [Capacitaciones_Pagos]
 	ON UPDATE CASCADE
 GO
 
+ALTER TABLE [Modificaciones] ADD CONSTRAINT [Modificaciones_Notas]
+	FOREIGN KEY ([id_nota]) REFERENCES [Notas] ([id])
+	ON DELETE CASCADE
+	ON UPDATE CASCADE
+GO
+
+ALTER TABLE [Modificaciones] ADD CONSTRAINT [Modificaciones_Usuarios]
+	FOREIGN KEY ([id_usuario]) REFERENCES [Usuarios] ([id])
+GO
 
 /*------------------------------------*/
 /*--		   CONSTRAINTS			--*/
@@ -545,7 +569,7 @@ INNER JOIN Temas
 ON Temas.id = CAPA.id_tema
 go
 
-CREATE PROCEDURE BuscarParticipantes(@name VARCHAR(100), @ape VARCHAR(100))
+CREATE PROCEDURE BuscarParticipantes(@name VARCHAR(100))
 AS
 SELECT CONCAT(PART.nombre, ' ', PART.apellido) AS Nombre, Temas.descripcion, Deta.id AS Id FROM Participantes PART
 INNER JOIN DetallesParticipantesCapacitaciones Deta
@@ -554,7 +578,25 @@ INNER JOIN Capacitaciones CAPA
 ON Deta.id_capacitacion = CAPA.id
 INNER JOIN Temas
 ON Temas.id = CAPA.id_tema
-WHERE PART.nombre LIKE '%' + @name + '%' or PART.apellido LIKE '%' + @ape + '%'
+WHERE PART.nombre LIKE '%' + @name + '%' or PART.apellido LIKE '%' + @name + '%'
 go
 
-EXECUTE BuscarParticipantes 'Ger', 'z';
+CREATE PROCEDURE ObtenerNotas(@id INT, @evaluacion INT)
+AS
+SELECT * FROM Notas WHERE id_detalle_participante_capacitacion = @id AND id_tipo_nota = @evaluacion
+GO
+
+EXECUTE ObtenerNotas 1, 3;
+GO
+
+SELECT * FROM Modificaciones 
+GO
+
+CREATE PROCEDURE InsertarModis (@id_nota INT, @id_usuer INT)
+AS
+INSERT INTO Modificaciones (estado, id_nota, id_usuario) VALUES (1, @id_nota, @id_usuer)
+GO
+
+EXECUTE InsertarModis 8, 4;
+
+SELECT * FROM Notas
