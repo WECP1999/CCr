@@ -112,6 +112,7 @@ namespace CCr
             if (txtprecio.Value > 0)
             {
                 pago.crear(dtpInicio.Value,txtprecio.Value.ToString(), Lista3[cmbCapacitacion.SelectedIndex].Id.ToString());
+                refresh();
                 con.closeConnection();
             }
 

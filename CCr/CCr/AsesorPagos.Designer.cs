@@ -112,7 +112,7 @@
             this.dgvPagos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.dgvPagos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPagos.Enabled = false;
-            this.dgvPagos.Location = new System.Drawing.Point(299, 343);
+            this.dgvPagos.Location = new System.Drawing.Point(267, 304);
             this.dgvPagos.Name = "dgvPagos";
             this.dgvPagos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPagos.Size = new System.Drawing.Size(615, 173);
@@ -172,6 +172,7 @@
             this.btnTotal.Size = new System.Drawing.Size(32, 28);
             this.btnTotal.TabIndex = 43;
             this.btnTotal.UseVisualStyleBackColor = false;
+            this.btnTotal.Click += new System.EventHandler(this.btnTotal_Click);
             // 
             // btningresar
             // 

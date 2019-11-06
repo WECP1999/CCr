@@ -77,10 +77,18 @@ namespace CCr
 
         private void btningresar_Click(object sender, EventArgs e)
         {
+            con.startConnection();
             if (txtprecio.Value > 0)
             {
                 pago.crear(dtpInicio.Value, txtprecio.Value.ToString(), Lista3[cmbCapacitacion.SelectedIndex].Id.ToString());
+                refresh();
+                con.closeConnection();
             }
+        }
+
+        private void btnTotal_Click(object sender, EventArgs e)
+        {
+            txtprecio.Value = txtprecio.Maximum;
         }
     }
 }
