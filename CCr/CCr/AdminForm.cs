@@ -46,5 +46,21 @@ namespace CCr
         {
 
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            new AdminModis().Show();
+            this.Hide();
+        }
+
+        private void AdminForm_Load(object sender, EventArgs e)
+        {
+            Class.Modificaciones us = new Class.Modificaciones();
+            Class.Conexion conexionSQL = new Class.Conexion();
+            conexionSQL.startConnection();
+
+            lblnum.Text = us.contarModi().ToString();
+            conexionSQL.closeConnection();
+        }
     }
 }

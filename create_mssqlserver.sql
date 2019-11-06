@@ -600,3 +600,15 @@ GO
 EXECUTE InsertarModis 8, 4;
 
 SELECT * FROM Notas
+
+SELECT Modi.estado, TN.descripcion, CONCAT(PART.nombre, ' ' , PART.apellido) AS Nombre, US.nombre_usuario FROM Modificaciones Modi
+INNER JOIN Notas 
+ON Notas.id = Modi.id_nota
+INNER JOIN TiposNotas TN
+ON TN.id = Notas.id_tipo_nota
+INNER JOIN DetallesParticipantesCapacitaciones Det
+ON Det.id = Notas.id
+INNER JOIN Participantes PART
+ON DET.id_participante = PART.id
+INNER JOIN Usuarios US
+ON US.id = Modi.id_usuario

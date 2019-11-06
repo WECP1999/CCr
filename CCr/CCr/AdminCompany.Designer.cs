@@ -31,17 +31,17 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btningresar = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.txtcorreo = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtdireccion = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.nudcantempleados = new System.Windows.Forms.NumericUpDown();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtempresa = new System.Windows.Forms.TextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvusuarios = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pbxhome)).BeginInit();
@@ -129,18 +129,14 @@
             // 
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.btningresar);
-            this.groupBox1.Controls.Add(this.panel5);
             this.groupBox1.Controls.Add(this.txtcorreo);
-            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.panel4);
             this.groupBox1.Controls.Add(this.txtdireccion);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.nudcantempleados);
             this.groupBox1.Controls.Add(this.panel3);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Controls.Add(this.txtempresa);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
             this.groupBox1.Location = new System.Drawing.Point(244, 22);
@@ -150,6 +146,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de la empresa";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.groupBox1.Controls.SetChildIndex(this.txtempresa, 0);
+            this.groupBox1.Controls.SetChildIndex(this.panel2, 0);
+            this.groupBox1.Controls.SetChildIndex(this.label1, 0);
+            this.groupBox1.Controls.SetChildIndex(this.panel3, 0);
+            this.groupBox1.Controls.SetChildIndex(this.nudcantempleados, 0);
+            this.groupBox1.Controls.SetChildIndex(this.txtdireccion, 0);
+            this.groupBox1.Controls.SetChildIndex(this.panel4, 0);
+            this.groupBox1.Controls.SetChildIndex(this.txtcorreo, 0);
+            this.groupBox1.Controls.SetChildIndex(this.btningresar, 0);
+            this.groupBox1.Controls.SetChildIndex(this.label5, 0);
             // 
             // label5
             // 
@@ -176,15 +182,6 @@
             this.btningresar.UseVisualStyleBackColor = false;
             this.btningresar.Click += new System.EventHandler(this.btningresar_Click);
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Black;
-            this.panel5.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel5.Location = new System.Drawing.Point(10, 325);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(422, 1);
-            this.panel5.TabIndex = 21;
-            // 
             // txtcorreo
             // 
             this.txtcorreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
@@ -197,17 +194,6 @@
             this.txtcorreo.TabIndex = 20;
             this.txtcorreo.Click += new System.EventHandler(this.txtcorreo_Click);
             this.txtcorreo.Leave += new System.EventHandler(this.txtcorreo_Leave);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.label4.Location = new System.Drawing.Point(6, 284);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 18);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Correo:";
             // 
             // panel4
             // 
@@ -229,21 +215,9 @@
             this.txtdireccion.Name = "txtdireccion";
             this.txtdireccion.Size = new System.Drawing.Size(422, 75);
             this.txtdireccion.TabIndex = 17;
-            this.txtdireccion.Text = "s";
             this.txtdireccion.Click += new System.EventHandler(this.txtdireccion_Click);
             this.txtdireccion.TextChanged += new System.EventHandler(this.txtdireccion_TextChanged);
             this.txtdireccion.Leave += new System.EventHandler(this.txtdireccion_Leave);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.label3.Location = new System.Drawing.Point(6, 170);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 18);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Dirección:";
             // 
             // nudcantempleados
             // 
@@ -309,6 +283,37 @@
             this.txtempresa.Click += new System.EventHandler(this.txtempresa_Click);
             this.txtempresa.Leave += new System.EventHandler(this.txtempresa_Leave_1);
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Black;
+            this.panel5.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel5.Location = new System.Drawing.Point(10, 325);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(422, 1);
+            this.panel5.TabIndex = 21;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.label4.Location = new System.Drawing.Point(6, 284);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 18);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Correo:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.label3.Location = new System.Drawing.Point(6, 170);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 18);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Dirección:";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -361,6 +366,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudcantempleados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvusuarios)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

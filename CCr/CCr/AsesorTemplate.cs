@@ -218,5 +218,11 @@ namespace CCr
                 this.Hide();
             }
         }
+
+        private void btnParticipantes_Click(object sender, EventArgs e)
+        {
+            new AsesorParticipantes().Show();
+            this.Hide();
+        }
     }
 }

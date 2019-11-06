@@ -174,6 +174,7 @@
             this.pbxParticipantes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxParticipantes.TabIndex = 25;
             this.pbxParticipantes.TabStop = false;
+            this.pbxParticipantes.Click += new System.EventHandler(this.btnParticipantes_Click);
             this.pbxParticipantes.MouseEnter += new System.EventHandler(this.pbxParticipantes_MouseEnter);
             this.pbxParticipantes.MouseLeave += new System.EventHandler(this.pbxParticipantes_MouseLeave);
             // 
@@ -190,6 +191,7 @@
             this.btnParticipantes.TabIndex = 24;
             this.btnParticipantes.Text = "Participantes";
             this.btnParticipantes.UseVisualStyleBackColor = false;
+            this.btnParticipantes.Click += new System.EventHandler(this.btnParticipantes_Click);
             this.btnParticipantes.MouseEnter += new System.EventHandler(this.btnParticipantes_MouseEnter);
             this.btnParticipantes.MouseLeave += new System.EventHandler(this.pbxParticipantes_MouseLeave);
             // 

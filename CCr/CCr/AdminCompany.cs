@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace CCr
 {
-    public partial class AdminCompany : CCr.AdminForm
+    public partial class AdminCompany : CCr.AdminTemplate
     {
         public AdminCompany()
         {
@@ -175,7 +175,7 @@ namespace CCr
                                     conexionSQL.closeConnection();
                                     if (resultado == 1)
                                     {
-                                        MessageBox.Show("Empresa ingresada con exito", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        MessageBox.Show("Empresa ingresada con exito", "Bien", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         refresh();
                                         refreshComp();
                                     }
