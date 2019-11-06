@@ -102,6 +102,18 @@
     <Compile Include="AsesorForm.Designer.cs">
       <DependentUpon>AsesorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AsesorPagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AsesorPagos.Designer.cs">
+      <DependentUpon>AsesorPagos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="asesorTemas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asesorTemas.Designer.cs">
+      <DependentUpon>asesorTemas.cs</DependentUpon>
+    </Compile>
     <Compile Include="AsesorTemplate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +214,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AsesorForm.resx">
       <DependentUpon>AsesorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AsesorPagos.resx">
+      <DependentUpon>AsesorPagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asesorTemas.resx">
+      <DependentUpon>asesorTemas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AsesorTemplate.resx">
       <DependentUpon>AsesorTemplate.cs</DependentUpon>

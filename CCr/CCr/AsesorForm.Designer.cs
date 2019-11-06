@@ -86,6 +86,7 @@
             // btnParticipantes
             // 
             this.btnParticipantes.FlatAppearance.BorderSize = 0;
+            this.btnParticipantes.Click += new System.EventHandler(this.btnParticipantes_Click);
             // 
             // btnCertificados
             // 

@@ -16,6 +16,7 @@ namespace CCr.Class
         private string capacitador;
         private string empresa;
         private string tema;
+        private double precio;
 
         public int Id { get => id; set => id = value; }
         public DateTime DiaInicio { get => diaInicio; set => diaInicio = value; }
@@ -24,6 +25,7 @@ namespace CCr.Class
         public string Capacitador { get => capacitador; set => capacitador = value; }
         public string Empresa { get => empresa; set => empresa = value; }
         public string Tema { get => tema; set => tema = value; }
+        public double Precio { get => precio; set => precio = value; }
 
         public int create(DateTime diaI,DateTime diaF,string tema,string empresa,string capacitador)
         {
