@@ -240,6 +240,21 @@ CREATE TABLE [Notas] (
 GO
 
 /* ---------------------------------------------------------------------- */
+/* Add table "Modificacion"                                                       */
+/* ---------------------------------------------------------------------- */
+
+GO
+
+CREATE TABLE [Modificaciones] (
+    [id] INTEGER IDENTITY(1,1) NOT NULL,
+	[estado] BIT NOT NULL,
+    [id_nota] INTEGER NOT NULL,
+    [id_usuario] INTEGER NOT NULL,
+    CONSTRAINT [PK_Modificaciones] PRIMARY KEY ([id])
+)
+GO
+
+/* ---------------------------------------------------------------------- */
 /* Add foreign key constraints                                            */
 /* ---------------------------------------------------------------------- */
 
@@ -248,6 +263,8 @@ GO
 
 ALTER TABLE [Usuarios] ADD CONSTRAINT [tipos_usuario_Usuarios] 
     FOREIGN KEY ([id_tipo_usuario]) REFERENCES [Tipos_Usuarios] ([id])
+	ON DELETE CASCADE
+	ON UPDATE CASCADE
 GO
 
 
@@ -259,6 +276,8 @@ GO
 
 ALTER TABLE [Notas] ADD CONSTRAINT [Detalles_Participantes_Capacitaciones_Notas] 
     FOREIGN KEY ([id_detalle_participante_capacitacion]) REFERENCES [DetallesParticipantesCapacitaciones] ([id])
+	ON DELETE CASCADE
+	ON UPDATE CASCADE
 GO
 
 
@@ -306,21 +325,33 @@ GO
 
 ALTER TABLE [Capacitaciones] ADD CONSTRAINT [Capacitadores_Capacitaciones] 
     FOREIGN KEY ([id_capacitador]) REFERENCES [Capacitadores] ([id])
+	ON DELETE CASCADE
 	ON UPDATE CASCADE
 GO
 
 
 ALTER TABLE [Capacitaciones] ADD CONSTRAINT [Empresas_Capacitaciones] 
     FOREIGN KEY ([id_empresa]) REFERENCES [Empresas] ([id])
+	ON DELETE CASCADE
 	ON UPDATE CASCADE
 GO
 
 
 ALTER TABLE [Pagos] ADD CONSTRAINT [Capacitaciones_Pagos] 
     FOREIGN KEY ([id_capacitacion]) REFERENCES [Capacitaciones] ([id])
+	ON DELETE CASCADE
 	ON UPDATE CASCADE
 GO
 
+ALTER TABLE [Modificaciones] ADD CONSTRAINT [Modificaciones_Notas]
+	FOREIGN KEY ([id_nota]) REFERENCES [Notas] ([id])
+	ON DELETE CASCADE
+	ON UPDATE CASCADE
+GO
+
+ALTER TABLE [Modificaciones] ADD CONSTRAINT [Modificaciones_Usuarios]
+	FOREIGN KEY ([id_usuario]) REFERENCES [Usuarios] ([id])
+GO
 
 /*------------------------------------*/
 /*--		   CONSTRAINTS			--*/
@@ -452,7 +483,8 @@ INSERT INTO Capacitaciones(fecha_inicio,fecha_fin,id_empresa,id_capacitador,id_t
 
 INSERT INTO Participantes (nombre,apellido,dui,correo) VALUES
 ('Gerardo','Velasquez','12345678-9','gerardo.jose2011@yahoo.es'),
-('Natasha','Romanoff','74568978-9','romanof15@gmail.com') 
+('Natasha','Romanoff','74568978-9','romanof15@gmail.com'),
+('Jotaro','Kujo','46890278-9','elmejorjojoever@gmail.com') 
 
 INSERT INTO TiposNotas (id,porcentaje, descripcion) VALUES --Solo existen 4 actividades y siempre con los mismos porcentajes
 (1,10,'Asistencia'),
@@ -507,3 +539,64 @@ select * from Participantes
 select * from TiposNotas
 select * from DetallesParticipantesCapacitaciones
 select * , (porcentaje/100) as [%] from TiposNotas
+
+select Notas.nota AS Nota, TN.porcentaje AS Porcentaje, TN.descripcion as Evaluacion, CONCAT(Part.nombre, ' ', Part.apellido) as Nombre FROM Notas 
+INNER JOIN DetallesParticipantesCapacitaciones Deta
+ON Deta.id = Notas.id_detalle_participante_capacitacion
+INNER JOIN TiposNotas TN
+ON TN.id = Notas.id_tipo_nota
+INNER JOIN Participantes Part
+ON Deta.id_participante = Part.id
+
+select ROUND(SUM(Notas.nota*(TN.porcentaje/100)), 2, 1) AS Notas, CONCAT(Part.nombre, ' ', Part.apellido) as Nombre FROM Notas 
+INNER JOIN DetallesParticipantesCapacitaciones Deta
+ON Deta.id = Notas.id_detalle_participante_capacitacion
+INNER JOIN TiposNotas TN
+ON TN.id = Notas.id_tipo_nota
+INNER JOIN Participantes Part
+ON Deta.id_participante = Part.id
+GROUP BY Part.nombre, Part.apellido
+GO
+
+CREATE PROCEDURE ListarParticipantes
+AS
+SELECT CONCAT(PART.nombre, ' ', PART.apellido) AS Nombre, Temas.descripcion, Deta.id AS Id FROM Participantes PART
+INNER JOIN DetallesParticipantesCapacitaciones Deta
+ON Deta.id_participante = PART.id
+INNER JOIN Capacitaciones CAPA
+ON Deta.id_capacitacion = CAPA.id
+INNER JOIN Temas
+ON Temas.id = CAPA.id_tema
+go
+
+CREATE PROCEDURE BuscarParticipantes(@name VARCHAR(100))
+AS
+SELECT CONCAT(PART.nombre, ' ', PART.apellido) AS Nombre, Temas.descripcion, Deta.id AS Id FROM Participantes PART
+INNER JOIN DetallesParticipantesCapacitaciones Deta
+ON Deta.id_participante = PART.id
+INNER JOIN Capacitaciones CAPA
+ON Deta.id_capacitacion = CAPA.id
+INNER JOIN Temas
+ON Temas.id = CAPA.id_tema
+WHERE PART.nombre LIKE '%' + @name + '%' or PART.apellido LIKE '%' + @name + '%'
+go
+
+CREATE PROCEDURE ObtenerNotas(@id INT, @evaluacion INT)
+AS
+SELECT * FROM Notas WHERE id_detalle_participante_capacitacion = @id AND id_tipo_nota = @evaluacion
+GO
+
+EXECUTE ObtenerNotas 1, 3;
+GO
+
+SELECT * FROM Modificaciones 
+GO
+
+CREATE PROCEDURE InsertarModis (@id_nota INT, @id_usuer INT)
+AS
+INSERT INTO Modificaciones (estado, id_nota, id_usuario) VALUES (1, @id_nota, @id_usuer)
+GO
+
+EXECUTE InsertarModis 8, 4;
+
+SELECT * FROM Notas

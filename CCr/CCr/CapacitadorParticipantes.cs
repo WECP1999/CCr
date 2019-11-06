@@ -363,6 +363,39 @@ namespace CCr
 
         private void btneliminar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Class.Conexion conexionSQL = new Class.Conexion();
+                Class.Participantes comp = new Class.Participantes();
+
+                partAux.Id = int.Parse(lblaux.Text);
+
+                conexionSQL.startConnection();
+
+                int resultado = comp.borrar(partAux);
+                conexionSQL.closeConnection();
+                if (resultado != 0)
+                {
+                    MessageBox.Show("Participante eliminado con exito", "Succesfull", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    indice = -1;
+                    refresh();
+                    refreshComp();
+                    rdbNo.Checked = false;
+                    rdbNo.Checked = true;
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrio un error al intentar eliminar este registro, por favor intentelo nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error durante la ejecución " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtdui_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

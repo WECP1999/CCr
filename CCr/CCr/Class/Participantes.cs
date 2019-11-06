@@ -83,6 +83,7 @@ namespace CCr.Class
                 return null;
             }
         }
+
         public int actualizar(Participantes participantes)
         {
             String queryInsert = "UPDATE Participantes SET nombre = @p1, apellido = @p2, dui = @p3, correo = @p4, num_tel = @p5, num_casa = @p6, num_trab = @p7 WHERE id = " + participantes.id;
@@ -106,9 +107,22 @@ namespace CCr.Class
                 return 0;
             }
         }
-        public bool borrar()
+        public int borrar(Participantes participantes)
         {
-            return true;
+            String queryInsert = "DELETE FROM Participantes WHERE id = @p1";
+            SqlCommand comando = new SqlCommand();
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.CommandText = queryInsert;
+            comando.Connection = Class.Conexion.conexionSQL;
+            try
+            {
+                comando.Parameters.AddWithValue("@p1", participantes.Id);
+                return comando.ExecuteNonQuery();
+            }
+            catch (Exception error)
+            {
+                return 0;
+            }
         }
     }
 }
