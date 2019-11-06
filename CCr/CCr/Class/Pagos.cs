@@ -50,9 +50,24 @@ namespace CCr.Class
                 throw;
             }
         }
-        public bool crear()
+        public void crear(DateTime aa, string pago, string idcapa)
         {
-            return true;
+            String queryInsert = "INSERT INTO Pagos(fecha_pago,pago,id_capacitacion) VALUES (@p1,@p2,@p3)";
+            SqlCommand comando = new SqlCommand();
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.CommandText = queryInsert;
+            comando.Connection = Class.Conexion.conexionSQL;
+            try
+            {
+                comando.Parameters.AddWithValue("@p1", aa);
+                comando.Parameters.AddWithValue("@p2", pago);
+                comando.Parameters.AddWithValue("@p3", idcapa);
+                comando.ExecuteNonQuery();
+            }
+            catch (SqlException error)
+            {
+                throw;
+            }
         }
         public bool actualizar()
         {
