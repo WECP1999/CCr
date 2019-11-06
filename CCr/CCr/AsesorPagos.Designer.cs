@@ -1,6 +1,6 @@
 ﻿namespace CCr
 {
-    partial class adminPagos
+    partial class AsesorPagos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(adminPagos));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AsesorPagos));
+            this.dgvPagos = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dtpInicio = new System.Windows.Forms.DateTimePicker();
@@ -39,38 +40,25 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbCapacitacion = new System.Windows.Forms.ComboBox();
-            this.dgvPagos = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxhome)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxempresa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxusuarios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxtemas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxcontactos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxcerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxpagos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxcontactos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxempresa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxtemas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxhome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCapacitaciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxParticipantes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCertificados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPagos)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtprecio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPagos)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnhome
+            // btncontactos
             // 
-            this.btnhome.FlatAppearance.BorderSize = 0;
-            // 
-            // btnempresas
-            // 
-            this.btnempresas.FlatAppearance.BorderSize = 0;
-            // 
-            // btnusuarios
-            // 
-            this.btnusuarios.FlatAppearance.BorderSize = 0;
-            // 
-            // btntemas
-            // 
-            this.btntemas.FlatAppearance.BorderSize = 0;
+            this.btncontactos.FlatAppearance.BorderSize = 0;
             // 
             // btncerrar
             // 
@@ -78,24 +66,32 @@
             // 
             // pbxpagos
             // 
-            this.pbxpagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.pbxpagos.MouseEnter += new System.EventHandler(this.pbxpagos_MouseEnter);
-            this.pbxpagos.MouseLeave += new System.EventHandler(this.pbxpagos_MouseLeave);
+            this.pbxpagos.BackColor = System.Drawing.Color.Black;
             // 
             // btnpagos
             // 
-            this.btnpagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.btnpagos.BackColor = System.Drawing.Color.Black;
             this.btnpagos.FlatAppearance.BorderSize = 0;
-            this.btnpagos.MouseEnter += new System.EventHandler(this.btnpagos_MouseEnter);
-            this.btnpagos.MouseLeave += new System.EventHandler(this.btnpagos_MouseLeave);
             // 
-            // btncontactos
+            // btnempresas
             // 
-            this.btncontactos.FlatAppearance.BorderSize = 0;
+            this.btnempresas.FlatAppearance.BorderSize = 0;
             // 
-            // btncapacitaciones
+            // btntemas
             // 
-            this.btncapacitaciones.FlatAppearance.BorderSize = 0;
+            this.btntemas.FlatAppearance.BorderSize = 0;
+            // 
+            // btnhome
+            // 
+            this.btnhome.FlatAppearance.BorderSize = 0;
+            // 
+            // btnCapacitaciones
+            // 
+            this.btnCapacitaciones.FlatAppearance.BorderSize = 0;
+            // 
+            // btnParticipantes
+            // 
+            this.btnParticipantes.FlatAppearance.BorderSize = 0;
             // 
             // btnCertificados
             // 
@@ -108,6 +104,19 @@
             // btnminimyze
             // 
             this.btnminimyze.FlatAppearance.BorderSize = 0;
+            // 
+            // dgvPagos
+            // 
+            this.dgvPagos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvPagos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.dgvPagos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.dgvPagos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvPagos.Enabled = false;
+            this.dgvPagos.Location = new System.Drawing.Point(299, 343);
+            this.dgvPagos.Name = "dgvPagos";
+            this.dgvPagos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPagos.Size = new System.Drawing.Size(615, 173);
+            this.dgvPagos.TabIndex = 7;
             // 
             // groupBox1
             // 
@@ -122,13 +131,12 @@
             this.groupBox1.Controls.Add(this.cmbCapacitacion);
             this.groupBox1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.groupBox1.Location = new System.Drawing.Point(244, 36);
+            this.groupBox1.Location = new System.Drawing.Point(241, 39);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(710, 259);
-            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos sobre los pagos";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label4
             // 
@@ -150,7 +158,6 @@
             this.dtpInicio.Name = "dtpInicio";
             this.dtpInicio.Size = new System.Drawing.Size(247, 26);
             this.dtpInicio.TabIndex = 45;
-            this.dtpInicio.ValueChanged += new System.EventHandler(this.dtpInicio_ValueChanged);
             // 
             // btnTotal
             // 
@@ -165,7 +172,6 @@
             this.btnTotal.Size = new System.Drawing.Size(32, 28);
             this.btnTotal.TabIndex = 43;
             this.btnTotal.UseVisualStyleBackColor = false;
-            this.btnTotal.Click += new System.EventHandler(this.button1_Click);
             // 
             // btningresar
             // 
@@ -180,7 +186,6 @@
             this.btningresar.TabIndex = 42;
             this.btningresar.Text = "Ingresar";
             this.btningresar.UseVisualStyleBackColor = false;
-            this.btningresar.Click += new System.EventHandler(this.btningresar_Click);
             // 
             // txtprecio
             // 
@@ -202,7 +207,6 @@
             this.txtprecio.Name = "txtprecio";
             this.txtprecio.Size = new System.Drawing.Size(340, 22);
             this.txtprecio.TabIndex = 41;
-            this.txtprecio.ValueChanged += new System.EventHandler(this.txtprecio_ValueChanged);
             // 
             // label1
             // 
@@ -248,64 +252,51 @@
             this.cmbCapacitacion.TabIndex = 37;
             this.cmbCapacitacion.SelectedIndexChanged += new System.EventHandler(this.cmbCapacitacion_SelectedIndexChanged);
             // 
-            // dgvPagos
-            // 
-            this.dgvPagos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvPagos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
-            this.dgvPagos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.dgvPagos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvPagos.Enabled = false;
-            this.dgvPagos.Location = new System.Drawing.Point(302, 340);
-            this.dgvPagos.Name = "dgvPagos";
-            this.dgvPagos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPagos.Size = new System.Drawing.Size(615, 173);
-            this.dgvPagos.TabIndex = 5;
-            // 
-            // adminPagos
+            // AsesorPagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(966, 610);
+            this.ClientSize = new System.Drawing.Size(960, 571);
             this.Controls.Add(this.dgvPagos);
             this.Controls.Add(this.groupBox1);
-            this.Name = "adminPagos";
-            this.Text = "adminPagos";
-            this.Load += new System.EventHandler(this.adminPagos_Load);
+            this.Name = "AsesorPagos";
+            this.Text = "AsesorPagos";
+            this.Load += new System.EventHandler(this.AsesorPagos_Load);
             this.Controls.SetChildIndex(this.btnclose, 0);
             this.Controls.SetChildIndex(this.btnminimyze, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.dgvPagos, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.pbxhome)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxempresa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxusuarios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxtemas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxcontactos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxcerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxpagos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxcontactos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxempresa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxtemas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxhome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCapacitaciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxParticipantes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCertificados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPagos)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtprecio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPagos)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.DataGridView dgvPagos;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cmbCapacitacion;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker dtpInicio;
+        private System.Windows.Forms.Button btnTotal;
+        private System.Windows.Forms.Button btningresar;
         private System.Windows.Forms.NumericUpDown txtprecio;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btningresar;
-        private System.Windows.Forms.Button btnTotal;
-        private System.Windows.Forms.DataGridView dgvPagos;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dtpInicio;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbCapacitacion;
     }
 }

@@ -100,7 +100,8 @@ namespace CCr
 
         private void btnpagos_Click(object sender, EventArgs e)
         {
-
+            new AsesorPagos().Show();
+            this.Hide();
         }
 
         private void btncontactos_MouseEnter(object sender, EventArgs e)
@@ -228,6 +229,12 @@ namespace CCr
         private void btnempresas_Click(object sender, EventArgs e)
         {
             new AsesorCompany().Show();
+            this.Hide();
+        }
+
+        private void btncontactos_Click(object sender, EventArgs e)
+        {
+            new AsesorContactos().Show();
             this.Hide();
         }
     }

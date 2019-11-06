@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace CCr
 {
-    public partial class crudSubjects : AdminTemplate
+    public partial class asesorTemas : AsesorTemplate
     {
         private int accion = 0;
         Class.Conexion con = new Class.Conexion();
@@ -29,12 +29,12 @@ namespace CCr
             dgvSubjects.Columns[2].HeaderText = "Precio";
             con.closeConnection();
         }
-        public crudSubjects()
+        public asesorTemas()
         {
             InitializeComponent();
         }
 
-        private void crudSubjects_Load(object sender, EventArgs e)
+        private void asesorTemas_Load(object sender, EventArgs e)
         {
             refresh();
             btnSubmit.BackColor = Color.FromArgb(175, 4, 4);
@@ -46,29 +46,31 @@ namespace CCr
 
         private void btntemas_MouseLeave(object sender, EventArgs e)
         {
+
             btntemas.BackColor = Color.FromArgb(37, 37, 37);
             pbxtemas.BackColor = Color.FromArgb(37, 37, 37);
         }
 
         private void btntemas_MouseEnter(object sender, EventArgs e)
         {
-            btntemas.BackColor = Color.FromArgb(0, 0, 0); 
+
+            btntemas.BackColor = Color.FromArgb(0, 0, 0);
+            pbxtemas.BackColor = Color.FromArgb(0, 0, 0);
+        }
+
+        private void pbxtemas_MouseEnter(object sender, EventArgs e)
+        {
+
+            btntemas.BackColor = Color.FromArgb(0, 0, 0);
             pbxtemas.BackColor = Color.FromArgb(0, 0, 0);
         }
 
         private void pbxtemas_MouseLeave(object sender, EventArgs e)
         {
-            btntemas.BackColor = Color.FromArgb(37,37,37);
+
+            btntemas.BackColor = Color.FromArgb(37, 37, 37);
             pbxtemas.BackColor = Color.FromArgb(37, 37, 37);
         }
-
-        private void pbxtemas_MouseEnter(object sender, EventArgs e)
-        {
-            btntemas.BackColor = Color.FromArgb(0, 0, 0);
-            pbxtemas.BackColor = Color.FromArgb(0, 0, 0);
-        }
-
-        
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -117,8 +119,11 @@ namespace CCr
                     break;
             }
         }
-        //ERRORES
-        private void txtprecio_KeyPress(object sender, KeyPressEventArgs e) { }
+
+        private void dgvSubjects_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
 
         private void dgvSubjects_DoubleClick(object sender, EventArgs e)
         {
@@ -132,14 +137,8 @@ namespace CCr
             lblAux.Text = Convert.ToString(auxS.Id);
             btnSubmit.Text = "Modificar"; accion = 1;
         }
-        private void dgvSubjects_Click(object sender, EventArgs e){}
 
-        private void dgvSubjects_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void grpElementos_Enter(object sender, EventArgs e)
+        private void txtdescripcion_TextChanged(object sender, EventArgs e)
         {
 
         }

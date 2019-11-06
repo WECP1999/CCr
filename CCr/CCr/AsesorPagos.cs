@@ -1,0 +1,56 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace CCr
+{
+    public partial class AsesorPagos : AsesorTemplate
+    {
+        public AsesorPagos()
+        {
+            InitializeComponent();
+        }
+
+        Class.Pagos pago = new Class.Pagos();
+        Class.Capacitaciones capacitacion = new Class.Capacitaciones();
+        Class.Conexion con = new Class.Conexion();
+
+        List<Class.Capacitaciones> Lista3 = new List<Class.Capacitaciones>();
+        List<Class.Pagos> Lista2 = new List<Class.Pagos>();
+
+        private void llenar_combobox()
+        {
+            con.startConnection();
+            List<Class.Capacitaciones> Lista3a = new List<Class.Capacitaciones>();
+            Lista3a = capacitacion.read(true);
+            foreach (var item in Lista3a)
+            {
+                if (pago.deuda(item.Id.ToString(), Convert.ToDouble(item.TipoCapacitacion.Replace("$", ""))) > 0)
+                {
+                    Lista3.Add(item); btningresar.Enabled = true;
+                    cmbCapacitacion.Items.Add(item.Empresa + " -> (" + item.DiaInicio.ToString() + ")(" + item.Tema + ")");
+                }
+            }
+            con.closeConnection();
+            cmbCapacitacion.SelectedIndex = 0;
+        }
+
+        private void AsesorPagos_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbCapacitacion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            con.startConnection();
+            txtprecio.Maximum = Convert.ToDecimal(pago.deuda(Lista3[cmbCapacitacion.SelectedIndex].Id.ToString(), Convert.ToDouble(Lista3[cmbCapacitacion.SelectedIndex].TipoCapacitacion.Replace("$", ""))));
+            con.closeConnection();
+        }
+    }
+}
