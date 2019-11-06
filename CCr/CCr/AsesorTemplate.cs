@@ -224,5 +224,11 @@ namespace CCr
             new AsesorParticipantes().Show();
             this.Hide();
         }
+
+        private void btnempresas_Click(object sender, EventArgs e)
+        {
+            new AsesorCompany().Show();
+            this.Hide();
+        }
     }
 }

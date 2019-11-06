@@ -339,6 +339,7 @@
             this.pbxempresa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxempresa.TabIndex = 9;
             this.pbxempresa.TabStop = false;
+            this.pbxempresa.Click += new System.EventHandler(this.btnempresas_Click);
             this.pbxempresa.MouseEnter += new System.EventHandler(this.pbxempresa_MouseEnter);
             this.pbxempresa.MouseLeave += new System.EventHandler(this.pbxempresa_MouseLeave);
             // 
@@ -355,6 +356,7 @@
             this.btnempresas.TabIndex = 8;
             this.btnempresas.Text = "Empresas";
             this.btnempresas.UseVisualStyleBackColor = false;
+            this.btnempresas.Click += new System.EventHandler(this.btnempresas_Click);
             this.btnempresas.MouseEnter += new System.EventHandler(this.btnempresas_MouseEnter);
             this.btnempresas.MouseLeave += new System.EventHandler(this.pbxempresa_MouseLeave);
             // 

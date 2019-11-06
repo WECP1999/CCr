@@ -598,17 +598,27 @@ INSERT INTO Modificaciones (estado, id_nota, id_usuario) VALUES (1, @id_nota, @i
 GO
 
 EXECUTE InsertarModis 8, 4;
+GO
 
 SELECT * FROM Notas
+GO
 
-SELECT Modi.estado, TN.descripcion, CONCAT(PART.nombre, ' ' , PART.apellido) AS Nombre, US.nombre_usuario FROM Modificaciones Modi
+CREATE PROCEDURE ObtenerModificaciones
+AS
+SELECT Modi.id AS Id, TN.descripcion AS Evaluacion, CONCAT(CAPA.nombre, ' ', CAPA.apellido) AS Capacitador, CONCAT(PART.nombre, ' ' , PART.apellido) AS Participante FROM Modificaciones Modi
 INNER JOIN Notas 
 ON Notas.id = Modi.id_nota
-INNER JOIN TiposNotas TN
-ON TN.id = Notas.id_tipo_nota
-INNER JOIN DetallesParticipantesCapacitaciones Det
-ON Det.id = Notas.id
-INNER JOIN Participantes PART
-ON DET.id_participante = PART.id
 INNER JOIN Usuarios US
 ON US.id = Modi.id_usuario
+INNER JOIN TiposNotas TN
+ON TN.id = Notas.id_tipo_nota
+INNER JOIN Capacitadores CAPA
+ON CAPA.id_usuario = US.id
+INNER JOIN DetallesParticipantesCapacitaciones DETA
+ON DETA.id = Notas.id_detalle_participante_capacitacion
+INNER JOIN Participantes PART
+ON PART.id = DETA.id_participante
+WHERE Modi.estado = 1
+GO
+
+EXECUTE ObtenerModificaciones
