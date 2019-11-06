@@ -108,12 +108,15 @@ namespace CCr
 
         private void btningresar_Click(object sender, EventArgs e)
         {
+            if (txtprecio.Value > 0)
+            {
+                pago.crear(dtpInicio.Value,txtprecio.Value.ToString(), Lista3[cmbCapacitacion.SelectedIndex].Id.ToString());
+            }
 
         }
 
         private void dtpInicio_ValueChanged(object sender, EventArgs e)
         {
-
         }
     }
 }
