@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace CCr
 {
-    public partial class AdminUsers : CCr.AdminForm
+    public partial class AdminUsers : CCr.AdminTemplate
     {
         Class.Validaciones val = new Class.Validaciones();
         Class.Conexion con = new Class.Conexion();

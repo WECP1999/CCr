@@ -11,11 +11,15 @@ namespace CCr.Class
     {
         private int id;
         private int nota;
-        private int user;
+        private string user;
+        private string part;
+        private string evaluacion;
 
         public int Id { get => id; set => id = value; }
         public int Nota { get => nota; set => nota = value; }
-        public int User { get => user; set => user = value; }
+        public string User { get => user; set => user = value; }
+        public string Part { get => part; set => part = value; }
+        public string Evaluacion { get => evaluacion; set => evaluacion = value; }
 
         public int crear(int Nota, int User)
         {
@@ -132,6 +136,60 @@ namespace CCr.Class
             catch (Exception error)
             {
                 return 0;
+            }
+        }
+
+        public int contarModi()
+        {
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.CommandText = "SELECT COUNT(*) AS Contar FROM Modificaciones";
+            comando.Connection = Class.Conexion.conexionSQL;
+            try
+            {
+                lector = comando.ExecuteReader();
+                while (lector.Read())
+                {
+                    int i = int.Parse(lector["Contar"].ToString());
+                    lector.Close();
+                    return i;
+                }
+                lector.Close();
+                return 0;
+            }
+            catch (Exception error)
+            {
+                return 0;
+            }
+        }
+
+        public List<Modificaciones> obtenerModificaciones()
+        {
+            List<Modificaciones> participantes = new List<Modificaciones>();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.CommandText = "ObtenerModificaciones";
+            comando.Connection = Class.Conexion.conexionSQL;
+            try
+            {
+                lector = comando.ExecuteReader();
+                while (lector.Read())
+                {
+                    Modificaciones comp = new Modificaciones();
+                    comp.Id = int.Parse(lector["Id"].ToString());
+                    comp.Evaluacion = lector["Evaluacion"].ToString();
+                    comp.User = lector["Capacitador"].ToString();
+                    comp.Part = lector["Participante"].ToString();
+                    participantes.Add(comp);
+                }
+                lector.Close();
+                return participantes;
+            }
+            catch (Exception error)
+            {
+                return null;
             }
         }
     }
