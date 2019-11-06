@@ -20,7 +20,7 @@ namespace CCr
             Class.Usuarios us = new Class.Usuarios();
             Class.Conexion conexionSQL = new Class.Conexion();
                 conexionSQL.startConnection();
-                us = us.getUser(1);
+                us = us.getUser(int.Parse(Class.Usuarios.Id));
                 conexionSQL.closeConnection();
                 lblUsername.Text = us.NombreUsuario.ToString();
 

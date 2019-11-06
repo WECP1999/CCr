@@ -199,7 +199,7 @@ namespace CCr
             Class.Usuarios us = new Class.Usuarios();
             Class.Conexion conexionSQL = new Class.Conexion();
             conexionSQL.startConnection();
-            us = us.getUser(3);
+            us = us.getUser(int.Parse(Class.Usuarios.Id));
             conexionSQL.closeConnection();
             lblUsername.Text = us.NombreUsuario.ToString();
 
@@ -235,6 +235,18 @@ namespace CCr
         private void btncontactos_Click(object sender, EventArgs e)
         {
             new AsesorContactos().Show();
+            this.Hide();
+        }
+
+        private void btnCapacitaciones_Click(object sender, EventArgs e)
+        {
+            new AsesorCapacitaciones().Show();
+            this.Hide();
+        }
+
+        private void btntemas_Click(object sender, EventArgs e)
+        {
+            new asesorTemas().Show();
             this.Hide();
         }
     }

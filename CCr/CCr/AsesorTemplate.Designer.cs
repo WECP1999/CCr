@@ -145,6 +145,7 @@
             this.pbxCapacitaciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxCapacitaciones.TabIndex = 27;
             this.pbxCapacitaciones.TabStop = false;
+            this.pbxCapacitaciones.Click += new System.EventHandler(this.btnCapacitaciones_Click);
             this.pbxCapacitaciones.MouseEnter += new System.EventHandler(this.pbxCapacitaciones_MouseEnter);
             this.pbxCapacitaciones.MouseLeave += new System.EventHandler(this.pbxCapacitaciones_MouseLeave);
             // 
@@ -161,6 +162,7 @@
             this.btnCapacitaciones.TabIndex = 26;
             this.btnCapacitaciones.Text = "Capacitaciones";
             this.btnCapacitaciones.UseVisualStyleBackColor = false;
+            this.btnCapacitaciones.Click += new System.EventHandler(this.btnCapacitaciones_Click);
             this.btnCapacitaciones.MouseEnter += new System.EventHandler(this.btnCapacitaciones_MouseEnter);
             this.btnCapacitaciones.MouseLeave += new System.EventHandler(this.pbxCapacitaciones_MouseLeave);
             // 
@@ -373,6 +375,7 @@
             this.pbxtemas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxtemas.TabIndex = 5;
             this.pbxtemas.TabStop = false;
+            this.pbxtemas.Click += new System.EventHandler(this.btntemas_Click);
             this.pbxtemas.MouseEnter += new System.EventHandler(this.pbxtemas_MouseEnter);
             this.pbxtemas.MouseLeave += new System.EventHandler(this.btntemas_MouseLeave);
             // 
@@ -389,6 +392,7 @@
             this.btntemas.TabIndex = 4;
             this.btntemas.Text = "Temas";
             this.btntemas.UseVisualStyleBackColor = false;
+            this.btntemas.Click += new System.EventHandler(this.btntemas_Click);
             this.btntemas.MouseEnter += new System.EventHandler(this.btntemas_MouseEnter);
             this.btntemas.MouseLeave += new System.EventHandler(this.btntemas_MouseLeave);
             // 

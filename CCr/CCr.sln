@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29324.140
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCr", "CCr\CCr.csproj", "{E08BEA35-4A94-49D3-A804-DAA6FBB0165A}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Instalar de DigitalRedCross", "Instalar de DigitalRedCross\Instalar de DigitalRedCross.vdproj", "{105E087C-DFBC-46E5-BFB1-3E3F94DE354A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,13 @@ Global
 		{E08BEA35-4A94-49D3-A804-DAA6FBB0165A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E08BEA35-4A94-49D3-A804-DAA6FBB0165A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E08BEA35-4A94-49D3-A804-DAA6FBB0165A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{105E087C-DFBC-46E5-BFB1-3E3F94DE354A}.Debug|Any CPU.ActiveCfg = Debug
+		{105E087C-DFBC-46E5-BFB1-3E3F94DE354A}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {021D15F0-B8DC-4A4C-B0A9-59447713EA43}
 	EndGlobalSection
 EndGlobal

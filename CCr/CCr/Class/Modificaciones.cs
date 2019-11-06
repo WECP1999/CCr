@@ -144,7 +144,7 @@ namespace CCr.Class
             SqlCommand comando = new SqlCommand();
             SqlDataReader lector;
             comando.CommandType = System.Data.CommandType.Text;
-            comando.CommandText = "SELECT COUNT(*) AS Contar FROM Modificaciones";
+            comando.CommandText = "SELECT COUNT(*) AS Contar FROM Modificaciones WHERE estado = 1";
             comando.Connection = Class.Conexion.conexionSQL;
             try
             {
