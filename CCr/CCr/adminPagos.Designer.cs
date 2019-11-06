@@ -150,6 +150,7 @@
             this.dtpInicio.Name = "dtpInicio";
             this.dtpInicio.Size = new System.Drawing.Size(247, 26);
             this.dtpInicio.TabIndex = 45;
+            this.dtpInicio.ValueChanged += new System.EventHandler(this.dtpInicio_ValueChanged);
             // 
             // btnTotal
             // 

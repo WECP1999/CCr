@@ -238,6 +238,7 @@
             this.pbxcontactos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxcontactos.TabIndex = 16;
             this.pbxcontactos.TabStop = false;
+            this.pbxcontactos.Click += new System.EventHandler(this.btncontactos_Click);
             this.pbxcontactos.MouseEnter += new System.EventHandler(this.pbxcontactos_MouseEnter);
             this.pbxcontactos.MouseLeave += new System.EventHandler(this.pbxcontactos_MouseLeave);
             // 
@@ -254,6 +255,7 @@
             this.btncontactos.TabIndex = 15;
             this.btncontactos.Text = "Contactos";
             this.btncontactos.UseVisualStyleBackColor = false;
+            this.btncontactos.Click += new System.EventHandler(this.btncontactos_Click);
             this.btncontactos.MouseEnter += new System.EventHandler(this.btncontactos_MouseEnter);
             this.btncontactos.MouseLeave += new System.EventHandler(this.pbxcontactos_MouseLeave);
             // 
@@ -298,6 +300,7 @@
             this.pbxpagos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxpagos.TabIndex = 12;
             this.pbxpagos.TabStop = false;
+            this.pbxpagos.Click += new System.EventHandler(this.btnpagos_Click);
             this.pbxpagos.MouseEnter += new System.EventHandler(this.pbxpagos_MouseEnter);
             this.pbxpagos.MouseLeave += new System.EventHandler(this.pbxpagos_MouseLeave);
             // 

@@ -1,16 +1,16 @@
 ﻿namespace CCr
 {
-    partial class adminContactos
+    partial class AsesorContactos
     {
         /// <summary>
-        /// Required designer variable.
+        /// Variable del diseñador necesaria.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Clean up any resources being used.
+        /// Limpiar los recursos que se estén usando.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,14 +20,15 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Código generado por el Diseñador de Windows Forms
 
         /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// Método necesario para admitir el Diseñador. No se puede modificar
+        /// el contenido de este método con el editor de código.
         /// </summary>
         private void InitializeComponent()
         {
+            this.dgvusuarios = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -41,37 +42,33 @@
             this.btningresar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbEmpresa = new System.Windows.Forms.ComboBox();
-            this.dgvusuarios = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxhome)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxempresa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxusuarios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxtemas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxcontactos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxcerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxpagos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxcontactos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxempresa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxtemas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxhome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCapacitaciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxParticipantes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCertificados)).BeginInit();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvusuarios)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnhome
+            // pbxcontactos
             // 
-            this.btnhome.FlatAppearance.BorderSize = 0;
+            this.pbxcontactos.BackColor = System.Drawing.Color.Black;
+            this.pbxcontactos.MouseEnter += new System.EventHandler(this.btncontactos_MouseEnter);
+            this.pbxcontactos.MouseLeave += new System.EventHandler(this.btncontactos_MouseEnter);
             // 
-            // btnempresas
+            // btncontactos
             // 
-            this.btnempresas.FlatAppearance.BorderSize = 0;
-            // 
-            // btnusuarios
-            // 
-            this.btnusuarios.FlatAppearance.BorderSize = 0;
-            // 
-            // btntemas
-            // 
-            this.btntemas.FlatAppearance.BorderSize = 0;
+            this.btncontactos.BackColor = System.Drawing.Color.Black;
+            this.btncontactos.FlatAppearance.BorderSize = 0;
+            this.btncontactos.MouseEnter += new System.EventHandler(this.btncontactos_MouseEnter);
+            this.btncontactos.MouseLeave += new System.EventHandler(this.btncontactos_MouseEnter);
             // 
             // btncerrar
             // 
@@ -81,22 +78,25 @@
             // 
             this.btnpagos.FlatAppearance.BorderSize = 0;
             // 
-            // pbxcontactos
+            // btnempresas
             // 
-            this.pbxcontactos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.pbxcontactos.MouseEnter += new System.EventHandler(this.pbxcontactos_MouseEnter);
-            this.pbxcontactos.MouseLeave += new System.EventHandler(this.pbxcontactos_MouseLeave);
+            this.btnempresas.FlatAppearance.BorderSize = 0;
             // 
-            // btncontactos
+            // btntemas
             // 
-            this.btncontactos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.btncontactos.FlatAppearance.BorderSize = 0;
-            this.btncontactos.MouseEnter += new System.EventHandler(this.btncontactos_MouseEnter);
-            this.btncontactos.MouseLeave += new System.EventHandler(this.btncontactos_MouseLeave);
+            this.btntemas.FlatAppearance.BorderSize = 0;
             // 
-            // btncapacitaciones
+            // btnhome
             // 
-            this.btncapacitaciones.FlatAppearance.BorderSize = 0;
+            this.btnhome.FlatAppearance.BorderSize = 0;
+            // 
+            // btnCapacitaciones
+            // 
+            this.btnCapacitaciones.FlatAppearance.BorderSize = 0;
+            // 
+            // btnParticipantes
+            // 
+            this.btnParticipantes.FlatAppearance.BorderSize = 0;
             // 
             // btnCertificados
             // 
@@ -109,6 +109,18 @@
             // btnminimyze
             // 
             this.btnminimyze.FlatAppearance.BorderSize = 0;
+            // 
+            // dgvusuarios
+            // 
+            this.dgvusuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvusuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.dgvusuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.dgvusuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvusuarios.Location = new System.Drawing.Point(302, 319);
+            this.dgvusuarios.Name = "dgvusuarios";
+            this.dgvusuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvusuarios.Size = new System.Drawing.Size(615, 255);
+            this.dgvusuarios.TabIndex = 8;
             // 
             // groupBox1
             // 
@@ -126,10 +138,10 @@
             this.groupBox1.Controls.Add(this.cmbEmpresa);
             this.groupBox1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.groupBox1.Location = new System.Drawing.Point(244, 45);
+            this.groupBox1.Location = new System.Drawing.Point(244, 42);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(710, 206);
-            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos sobre los contactos de la empresa";
             // 
@@ -183,7 +195,6 @@
             this.txtNumeroe.Name = "txtNumeroe";
             this.txtNumeroe.Size = new System.Drawing.Size(238, 19);
             this.txtNumeroe.TabIndex = 48;
-            this.txtNumeroe.TextChanged += new System.EventHandler(this.txtNumeroe_TextChanged);
             // 
             // panel2
             // 
@@ -265,68 +276,52 @@
             this.cmbEmpresa.Name = "cmbEmpresa";
             this.cmbEmpresa.Size = new System.Drawing.Size(368, 26);
             this.cmbEmpresa.TabIndex = 37;
-            this.cmbEmpresa.SelectedIndexChanged += new System.EventHandler(this.cmbEmpresa_SelectedIndexChanged);
             // 
-            // dgvusuarios
-            // 
-            this.dgvusuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvusuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
-            this.dgvusuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.dgvusuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvusuarios.Location = new System.Drawing.Point(302, 322);
-            this.dgvusuarios.Name = "dgvusuarios";
-            this.dgvusuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvusuarios.Size = new System.Drawing.Size(615, 255);
-            this.dgvusuarios.TabIndex = 6;
-            this.dgvusuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvusuarios_CellContentClick);
-            // 
-            // adminContactos
+            // AsesorContactos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(966, 610);
+            this.ClientSize = new System.Drawing.Size(966, 628);
             this.Controls.Add(this.dgvusuarios);
             this.Controls.Add(this.groupBox1);
-            this.Name = "adminContactos";
-            this.Text = "adminContactos";
-            this.Load += new System.EventHandler(this.adminContactos_Load);
+            this.Name = "AsesorContactos";
+            this.Load += new System.EventHandler(this.AsesorContactos_Load);
             this.Controls.SetChildIndex(this.btnclose, 0);
             this.Controls.SetChildIndex(this.btnminimyze, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.dgvusuarios, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.pbxhome)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxempresa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxusuarios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxtemas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxcontactos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxcerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxpagos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxcontactos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxempresa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxtemas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxhome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCapacitaciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxParticipantes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCertificados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvusuarios)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvusuarios)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.DataGridView dgvusuarios;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btningresar;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmbEmpresa;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txtNumero;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtNumeroe;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dgvusuarios;
+        private System.Windows.Forms.TextBox txtNumero;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btningresar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbEmpresa;
     }
 }

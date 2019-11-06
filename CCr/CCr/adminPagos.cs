@@ -112,6 +112,11 @@ namespace CCr
             {
                 pago.crear(dtpInicio.Value,txtprecio.Value.ToString(), Lista3[cmbCapacitacion.SelectedIndex].Id.ToString());
             }
+
+        }
+
+        private void dtpInicio_ValueChanged(object sender, EventArgs e)
+        {
         }
     }
 }
