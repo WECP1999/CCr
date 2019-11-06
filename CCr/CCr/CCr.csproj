@@ -78,6 +78,12 @@
     <Compile Include="AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminModis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminModis.Designer.cs">
+      <DependentUpon>AdminModis.cs</DependentUpon>
+    </Compile>
     <Compile Include="adminPagos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,11 +102,23 @@
     <Compile Include="AdminUsers.Designer.cs">
       <DependentUpon>AdminUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="AsesorCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AsesorCompany.Designer.cs">
+      <DependentUpon>AsesorCompany.cs</DependentUpon>
+    </Compile>
     <Compile Include="AsesorForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AsesorForm.Designer.cs">
       <DependentUpon>AsesorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AsesorParticipantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AsesorParticipantes.Designer.cs">
+      <DependentUpon>AsesorParticipantes.cs</DependentUpon>
     </Compile>
     <Compile Include="AsesorTemplate.cs">
       <SubType>Form</SubType>
@@ -197,14 +215,23 @@
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminModis.resx">
+      <DependentUpon>AdminModis.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="adminPagos.resx">
       <DependentUpon>adminPagos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminTemplate.resx">
       <DependentUpon>AdminTemplate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AsesorCompany.resx">
+      <DependentUpon>AsesorCompany.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AsesorForm.resx">
       <DependentUpon>AsesorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AsesorParticipantes.resx">
+      <DependentUpon>AsesorParticipantes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AsesorTemplate.resx">
       <DependentUpon>AsesorTemplate.cs</DependentUpon>

@@ -218,5 +218,17 @@ namespace CCr
                 this.Hide();
             }
         }
+
+        private void btnParticipantes_Click(object sender, EventArgs e)
+        {
+            new AsesorParticipantes().Show();
+            this.Hide();
+        }
+
+        private void btnempresas_Click(object sender, EventArgs e)
+        {
+            new AsesorCompany().Show();
+            this.Hide();
+        }
     }
 }
