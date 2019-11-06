@@ -150,6 +150,7 @@
             this.dtpInicio.Name = "dtpInicio";
             this.dtpInicio.Size = new System.Drawing.Size(247, 26);
             this.dtpInicio.TabIndex = 45;
+            this.dtpInicio.ValueChanged += new System.EventHandler(this.dtpInicio_ValueChanged);
             // 
             // btnTotal
             // 
@@ -179,6 +180,7 @@
             this.btningresar.TabIndex = 42;
             this.btningresar.Text = "Ingresar";
             this.btningresar.UseVisualStyleBackColor = false;
+            this.btningresar.Click += new System.EventHandler(this.btningresar_Click);
             // 
             // txtprecio
             // 

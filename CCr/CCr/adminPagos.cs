@@ -105,5 +105,15 @@ namespace CCr
         {
             txtprecio.Value = txtprecio.Maximum;
         }
+
+        private void btningresar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpInicio_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
