@@ -61,6 +61,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnInscribir = new System.Windows.Forms.Button();
             this.dgvCapacitaciones = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxcontactos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxcerrar)).BeginInit();
@@ -105,9 +106,18 @@
             // 
             this.btnhome.FlatAppearance.BorderSize = 0;
             // 
+            // pbxCapacitaciones
+            // 
+            this.pbxCapacitaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.pbxCapacitaciones.MouseEnter += new System.EventHandler(this.pbxCapacitaciones_MouseEnter);
+            this.pbxCapacitaciones.MouseLeave += new System.EventHandler(this.pbxCapacitaciones_MouseLeave);
+            // 
             // btnCapacitaciones
             // 
+            this.btnCapacitaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.btnCapacitaciones.FlatAppearance.BorderSize = 0;
+            this.btnCapacitaciones.MouseEnter += new System.EventHandler(this.btnCapacitaciones_MouseEnter);
+            this.btnCapacitaciones.MouseLeave += new System.EventHandler(this.btnCapacitaciones_MouseLeave);
             // 
             // btnParticipantes
             // 
@@ -148,6 +158,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(675, 309);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -190,6 +201,7 @@
             this.dtpFinal.Name = "dtpFinal";
             this.dtpFinal.Size = new System.Drawing.Size(247, 26);
             this.dtpFinal.TabIndex = 45;
+            this.dtpFinal.ValueChanged += new System.EventHandler(this.dtpFinal_ValueChanged);
             // 
             // label4
             // 
@@ -211,6 +223,7 @@
             this.dtpInicio.Name = "dtpInicio";
             this.dtpInicio.Size = new System.Drawing.Size(247, 26);
             this.dtpInicio.TabIndex = 43;
+            this.dtpInicio.ValueChanged += new System.EventHandler(this.dtpInicio_ValueChanged);
             // 
             // label3
             // 
@@ -273,6 +286,7 @@
             this.btningresar.TabIndex = 38;
             this.btningresar.Text = "Ingresar";
             this.btningresar.UseVisualStyleBackColor = false;
+            this.btningresar.Click += new System.EventHandler(this.btningresar_Click);
             // 
             // label2
             // 
@@ -330,6 +344,7 @@
             this.btnIngresarl.TabIndex = 55;
             this.btnIngresarl.Text = "Ingresar";
             this.btnIngresarl.UseVisualStyleBackColor = false;
+            this.btnIngresarl.Click += new System.EventHandler(this.btnIngresarl_Click);
             // 
             // label6
             // 
@@ -351,6 +366,7 @@
             this.dtpfinl.Name = "dtpfinl";
             this.dtpfinl.Size = new System.Drawing.Size(247, 26);
             this.dtpfinl.TabIndex = 53;
+            this.dtpfinl.ValueChanged += new System.EventHandler(this.dtpfinl_ValueChanged);
             // 
             // label7
             // 
@@ -372,6 +388,7 @@
             this.dtpiniciol.Name = "dtpiniciol";
             this.dtpiniciol.Size = new System.Drawing.Size(247, 26);
             this.dtpiniciol.TabIndex = 51;
+            this.dtpiniciol.ValueChanged += new System.EventHandler(this.dtpiniciol_ValueChanged);
             // 
             // label8
             // 
@@ -420,6 +437,7 @@
             this.cmbTemal.Name = "cmbTemal";
             this.cmbTemal.Size = new System.Drawing.Size(368, 26);
             this.cmbTemal.TabIndex = 47;
+            this.cmbTemal.SelectedIndexChanged += new System.EventHandler(this.cmbTemal_SelectedIndexChanged);
             // 
             // tabPage3
             // 
@@ -460,6 +478,7 @@
             this.cmbCapacita.Name = "cmbCapacita";
             this.cmbCapacita.Size = new System.Drawing.Size(300, 26);
             this.cmbCapacita.TabIndex = 49;
+            this.cmbCapacita.SelectedIndexChanged += new System.EventHandler(this.cmbCapacita_SelectedIndexChanged);
             // 
             // dgvAux
             // 
@@ -475,6 +494,7 @@
             this.dgvAux.Size = new System.Drawing.Size(508, 206);
             this.dgvAux.TabIndex = 33;
             this.dgvAux.Visible = false;
+            this.dgvAux.DoubleClick += new System.EventHandler(this.dgvAux_DoubleClick);
             // 
             // panel2
             // 
@@ -496,6 +516,7 @@
             this.txtbusqueda.Name = "txtbusqueda";
             this.txtbusqueda.Size = new System.Drawing.Size(313, 19);
             this.txtbusqueda.TabIndex = 16;
+            this.txtbusqueda.TextChanged += new System.EventHandler(this.txtbusqueda_TextChanged);
             // 
             // label10
             // 
@@ -529,19 +550,36 @@
             this.dgvCapacitaciones.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.dgvCapacitaciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCapacitaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCapacitaciones.Location = new System.Drawing.Point(285, 386);
+            this.dgvCapacitaciones.Location = new System.Drawing.Point(257, 386);
             this.dgvCapacitaciones.Name = "dgvCapacitaciones";
             this.dgvCapacitaciones.ReadOnly = true;
             this.dgvCapacitaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCapacitaciones.Size = new System.Drawing.Size(628, 219);
+            this.dgvCapacitaciones.Size = new System.Drawing.Size(675, 219);
             this.dgvCapacitaciones.TabIndex = 57;
             this.dgvCapacitaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCapacitaciones_CellContentClick);
+            this.dgvCapacitaciones.DoubleClick += new System.EventHandler(this.dgvCapacitaciones_DoubleClick);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(859, 410);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(95, 38);
+            this.button1.TabIndex = 59;
+            this.button1.Text = "Inscribir";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // AsesorCapacitaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 610);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnInscribir);
             this.Controls.Add(this.dgvCapacitaciones);
             this.Controls.Add(this.groupBox1);
@@ -553,6 +591,7 @@
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.dgvCapacitaciones, 0);
             this.Controls.SetChildIndex(this.btnInscribir, 0);
+            this.Controls.SetChildIndex(this.button1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxcontactos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxcerrar)).EndInit();
@@ -613,5 +652,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnInscribir;
         private System.Windows.Forms.DataGridView dgvCapacitaciones;
+        private System.Windows.Forms.Button button1;
     }
 }
