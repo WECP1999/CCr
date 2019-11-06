@@ -138,9 +138,22 @@ namespace CCr.Class
                 return 0;
             }
         }
-        public bool borrar()
+        public int borrar(Participantes participantes)
         {
-            return true;
+            String queryInsert = "DELETE FROM Participantes WHERE id = @p1";
+            SqlCommand comando = new SqlCommand();
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.CommandText = queryInsert;
+            comando.Connection = Class.Conexion.conexionSQL;
+            try
+            {
+                comando.Parameters.AddWithValue("@p1", participantes.Id);
+                return comando.ExecuteNonQuery();
+            }
+            catch (Exception error)
+            {
+                return 0;
+            }
         }
 
         public bool empresa(string id_usuario, string id_empresa)

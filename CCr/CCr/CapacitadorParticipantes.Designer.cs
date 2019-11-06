@@ -371,6 +371,7 @@
             this.txtdui.Size = new System.Drawing.Size(304, 19);
             this.txtdui.TabIndex = 34;
             this.txtdui.Click += new System.EventHandler(this.textBox2_Click);
+            this.txtdui.TextChanged += new System.EventHandler(this.txtdui_TextChanged);
             // 
             // label3
             // 

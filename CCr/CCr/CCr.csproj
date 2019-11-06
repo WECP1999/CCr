@@ -147,6 +147,9 @@
     <Compile Include="Class\Empresas.cs" />
     <Compile Include="Class\Conexion.cs" />
     <Compile Include="Class\Contactos.cs" />
+    <Compile Include="Class\Evaluacion.cs" />
+    <Compile Include="Class\Modificaciones.cs" />
+    <Compile Include="Class\Notas.cs" />
     <Compile Include="Class\Participantes.cs" />
     <Compile Include="Class\Pagos.cs" />
     <Compile Include="Class\Temas.cs" />
