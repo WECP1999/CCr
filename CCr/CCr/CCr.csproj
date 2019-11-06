@@ -102,19 +102,17 @@
     <Compile Include="AdminUsers.Designer.cs">
       <DependentUpon>AdminUsers.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="AsesorCapacitaciones.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AsesorCapacitaciones.Designer.cs">
       <DependentUpon>AsesorCapacitaciones.cs</DependentUpon>
-=======
+    </Compile>
     <Compile Include="AsesorCompany.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AsesorCompany.Designer.cs">
       <DependentUpon>AsesorCompany.cs</DependentUpon>
->>>>>>> ed22cde3b1fb4872b7cef805cc70fb9370ff6f8b
     </Compile>
     <Compile Include="AsesorContactos.cs">
       <SubType>Form</SubType>
@@ -250,13 +248,11 @@
     <EmbeddedResource Include="AdminTemplate.resx">
       <DependentUpon>AdminTemplate.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
     <EmbeddedResource Include="AsesorCapacitaciones.resx">
       <DependentUpon>AsesorCapacitaciones.cs</DependentUpon>
-=======
+    </EmbeddedResource>
     <EmbeddedResource Include="AsesorCompany.resx">
       <DependentUpon>AsesorCompany.cs</DependentUpon>
->>>>>>> ed22cde3b1fb4872b7cef805cc70fb9370ff6f8b
     </EmbeddedResource>
     <EmbeddedResource Include="AsesorContactos.resx">
       <DependentUpon>AsesorContactos.cs</DependentUpon>

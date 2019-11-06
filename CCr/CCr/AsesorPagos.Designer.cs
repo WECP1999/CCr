@@ -186,6 +186,7 @@
             this.btningresar.TabIndex = 42;
             this.btningresar.Text = "Ingresar";
             this.btningresar.UseVisualStyleBackColor = false;
+            this.btningresar.Click += new System.EventHandler(this.btningresar_Click);
             // 
             // txtprecio
             // 

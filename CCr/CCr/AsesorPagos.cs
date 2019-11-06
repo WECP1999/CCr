@@ -41,9 +41,31 @@ namespace CCr
             cmbCapacitacion.SelectedIndex = 0;
         }
 
+        private void refresh()
+        {
+            try
+            {
+                con.startConnection();
+                Lista2 = pago.leer();
+                con.closeConnection();
+                dgvPagos.DataSource = null;
+                dgvPagos.DataSource = Lista2;
+                dgvPagos.Columns[2].Visible = false;
+                dgvPagos.Columns[3].Visible = false;
+
+                dgvPagos.Columns["Fecha"].Width = 400;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void AsesorPagos_Load(object sender, EventArgs e)
         {
-
+            llenar_combobox();
+            dtpInicio.MaxDate = DateTime.Today;
+            refresh();
         }
 
         private void cmbCapacitacion_SelectedIndexChanged(object sender, EventArgs e)
@@ -51,6 +73,14 @@ namespace CCr
             con.startConnection();
             txtprecio.Maximum = Convert.ToDecimal(pago.deuda(Lista3[cmbCapacitacion.SelectedIndex].Id.ToString(), Convert.ToDouble(Lista3[cmbCapacitacion.SelectedIndex].TipoCapacitacion.Replace("$", ""))));
             con.closeConnection();
+        }
+
+        private void btningresar_Click(object sender, EventArgs e)
+        {
+            if (txtprecio.Value > 0)
+            {
+                pago.crear(dtpInicio.Value, txtprecio.Value.ToString(), Lista3[cmbCapacitacion.SelectedIndex].Id.ToString());
+            }
         }
     }
 }
