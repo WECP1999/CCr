@@ -211,12 +211,16 @@ namespace CCr
 
         private void btnpagos_Click(object sender, EventArgs e)
         {
-
+            adminPagos ac = new adminPagos();
+            ac.Show();
+            this.Hide();
         }
 
         private void pbxpagos_Click(object sender, EventArgs e)
         {
-
+            adminPagos ac = new adminPagos();
+            ac.Show();
+            this.Hide();
         }
 
         private void btncerrar_MouseEnter(object sender, EventArgs e)
@@ -289,12 +293,16 @@ namespace CCr
 
         private void btncontactos_Click(object sender, EventArgs e)
         {
-
+            adminContactos ac = new adminContactos();
+            ac.Show();
+            this.Hide();
         }
 
         private void pbxcontactos_Click(object sender, EventArgs e)
         {
-
+            adminContactos ac = new adminContactos();
+            ac.Show();
+            this.Hide();
         }
 
         private void btncapacitaciones_MouseEnter(object sender, EventArgs e)
@@ -359,6 +367,16 @@ namespace CCr
 
         private void btnCertificados_Click(object sender, EventArgs e)
         {
+            adminCertificados ac = new adminCertificados();
+            ac.Show();
+            this.Hide();
+        }
+
+        private void pbxCertificados_Click(object sender, EventArgs e)
+        {
+            adminCertificados ac = new adminCertificados();
+            ac.Show();
+            this.Hide();
         }
     }
 }

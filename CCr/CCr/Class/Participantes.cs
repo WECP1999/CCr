@@ -83,7 +83,38 @@ namespace CCr.Class
                 return null;
             }
         }
-
+        public List<Participantes> leer(string parametro)
+        {
+            List<Participantes> participantes = new List<Participantes>();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.CommandText = "SELECT * FROM Participantes  WHERE nombre LIKE '%"+parametro+"%' or apellido LIKE '%"+parametro+"%' or dui LIKE '%"+parametro+"%' ORDER BY nombre ASC";
+            comando.Connection = Class.Conexion.conexionSQL;
+            try
+            {
+                lector = comando.ExecuteReader();
+                while (lector.Read())
+                {
+                    Participantes comp = new Participantes();
+                    comp.Id = int.Parse(lector["id"].ToString());
+                    comp.Nombre = lector["nombre"].ToString();
+                    comp.apellido = lector["apellido"].ToString();
+                    comp.Email = lector["correo"].ToString();
+                    comp.Dui = lector["Dui"].ToString();
+                    comp.Telfij = lector["num_casa"].ToString();
+                    comp.Telem = lector["num_tel"].ToString();
+                    comp.Telmov = lector["num_trab"].ToString();
+                    participantes.Add(comp);
+                }
+                lector.Close();
+                return participantes;
+            }
+            catch (Exception error)
+            {
+                return null;
+            }
+        }
         public int actualizar(Participantes participantes)
         {
             String queryInsert = "UPDATE Participantes SET nombre = @p1, apellido = @p2, dui = @p3, correo = @p4, num_tel = @p5, num_casa = @p6, num_trab = @p7 WHERE id = " + participantes.id;
@@ -123,6 +154,64 @@ namespace CCr.Class
             {
                 return 0;
             }
+        }
+
+        public bool empresa(string id_usuario, string id_empresa)
+        {
+            try
+            {
+                SqlCommand comando = new SqlCommand();
+                SqlDataReader lector;
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = "SELECT dd.id_participante, cap.id_empresa FROM Participantes pa INNER JOIN DetallesParticipantesCapacitaciones dd ON dd.id_participante = pa.id INNER JOIN Capacitaciones cap ON dd.id_capacitacion = cap.id INNER JOIN Empresas em ON cap.id_empresa = em.id  WHERE pa.id = "+ id_usuario;
+                comando.Connection = Class.Conexion.conexionSQL;
+                lector = comando.ExecuteReader();
+                if (lector.Read())
+                {
+                    if (id_empresa == lector["id_empresa"].ToString())
+                    {
+                        lector.Close();
+                        return true;
+                    }
+                    else
+                    {
+                        lector.Close();
+                        return false;
+                    }
+                }
+                else
+                {
+                    lector.Close();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        public bool crearDD(List<Participantes> listaA, int capa)
+        {
+            try
+            {
+                foreach (var cc in listaA)
+                {
+                    String queryInsert = "INSERT INTO DetallesParticipantesCapacitaciones(id_participante,id_capacitacion) VALUES (@p1, @p2)";
+                    SqlCommand comando = new SqlCommand();
+                    comando.CommandType = System.Data.CommandType.Text;
+                    comando.CommandText = queryInsert;
+                    comando.Connection = Class.Conexion.conexionSQL;
+                    comando.Parameters.AddWithValue("@p1", cc.Id.ToString());
+                    comando.Parameters.AddWithValue("@p2", capa.ToString());
+                    comando.ExecuteNonQuery();
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            
         }
     }
 }
