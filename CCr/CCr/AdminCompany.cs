@@ -255,5 +255,10 @@ namespace CCr
         {
 
         }
+
+        private void dgvusuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

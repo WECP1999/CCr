@@ -30,5 +30,10 @@ namespace CCr
         {
 
         }
+
+        private void btnParticipantes_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
