@@ -255,7 +255,7 @@
             this.dgvPagos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.dgvPagos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPagos.Enabled = false;
-            this.dgvPagos.Location = new System.Drawing.Point(302, 340);
+            this.dgvPagos.Location = new System.Drawing.Point(284, 328);
             this.dgvPagos.Name = "dgvPagos";
             this.dgvPagos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPagos.Size = new System.Drawing.Size(615, 173);
