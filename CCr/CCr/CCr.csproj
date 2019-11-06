@@ -78,6 +78,12 @@
     <Compile Include="AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminModis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminModis.Designer.cs">
+      <DependentUpon>AdminModis.cs</DependentUpon>
+    </Compile>
     <Compile Include="adminPagos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,11 +102,19 @@
     <Compile Include="AdminUsers.Designer.cs">
       <DependentUpon>AdminUsers.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="AsesorCapacitaciones.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AsesorCapacitaciones.Designer.cs">
       <DependentUpon>AsesorCapacitaciones.cs</DependentUpon>
+=======
+    <Compile Include="AsesorCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AsesorCompany.Designer.cs">
+      <DependentUpon>AsesorCompany.cs</DependentUpon>
+>>>>>>> ed22cde3b1fb4872b7cef805cc70fb9370ff6f8b
     </Compile>
     <Compile Include="AsesorForm.cs">
       <SubType>Form</SubType>
@@ -119,6 +133,12 @@
     </Compile>
     <Compile Include="asesorTemas.Designer.cs">
       <DependentUpon>asesorTemas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AsesorParticipantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AsesorParticipantes.Designer.cs">
+      <DependentUpon>AsesorParticipantes.cs</DependentUpon>
     </Compile>
     <Compile Include="AsesorTemplate.cs">
       <SubType>Form</SubType>
@@ -215,23 +235,35 @@
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminModis.resx">
+      <DependentUpon>AdminModis.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="adminPagos.resx">
       <DependentUpon>adminPagos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminTemplate.resx">
       <DependentUpon>AdminTemplate.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="AsesorCapacitaciones.resx">
       <DependentUpon>AsesorCapacitaciones.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="AsesorCompany.resx">
+      <DependentUpon>AsesorCompany.cs</DependentUpon>
+>>>>>>> ed22cde3b1fb4872b7cef805cc70fb9370ff6f8b
     </EmbeddedResource>
     <EmbeddedResource Include="AsesorForm.resx">
       <DependentUpon>AsesorForm.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="AsesorPagos.resx">
       <DependentUpon>AsesorPagos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="asesorTemas.resx">
       <DependentUpon>asesorTemas.cs</DependentUpon>
+</EmbeddedResource>
+    <EmbeddedResource Include="AsesorParticipantes.resx">
+      <DependentUpon>AsesorParticipantes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AsesorTemplate.resx">
       <DependentUpon>AsesorTemplate.cs</DependentUpon>
