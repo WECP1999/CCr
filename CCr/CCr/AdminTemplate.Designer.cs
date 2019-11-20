@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnmod = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btncapacitaciones = new System.Windows.Forms.Button();
             this.lblUsername = new System.Windows.Forms.Label();
@@ -75,6 +76,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(3)))), ((int)(((byte)(3)))));
+            this.panel1.Controls.Add(this.btnmod);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.btncapacitaciones);
             this.panel1.Controls.Add(this.lblUsername);
@@ -100,6 +102,25 @@
             this.panel1.Size = new System.Drawing.Size(238, 632);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnmod
+            // 
+            this.btnmod.BackColor = System.Drawing.Color.Transparent;
+            this.btnmod.BackgroundImage = global::CCr.Properties.Resources.circ;
+            this.btnmod.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnmod.FlatAppearance.BorderSize = 0;
+            this.btnmod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnmod.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmod.ForeColor = System.Drawing.Color.White;
+            this.btnmod.Location = new System.Drawing.Point(185, 98);
+            this.btnmod.Name = "btnmod";
+            this.btnmod.Size = new System.Drawing.Size(39, 35);
+            this.btnmod.TabIndex = 3;
+            this.btnmod.Text = "0";
+            this.btnmod.UseVisualStyleBackColor = false;
+            this.btnmod.Click += new System.EventHandler(this.btnhome_Click);
+            this.btnmod.Enter += new System.EventHandler(this.btnmod_Enter);
+            this.btnmod.Leave += new System.EventHandler(this.btnmod_Enter);
             // 
             // pictureBox2
             // 
@@ -442,5 +463,6 @@
         private System.Windows.Forms.Label lblTypeUser;
         protected System.Windows.Forms.PictureBox pictureBox2;
         protected System.Windows.Forms.Button btncapacitaciones;
+        private System.Windows.Forms.Button btnmod;
     }
 }

@@ -18,20 +18,24 @@ namespace CCr
         private void AdminTemplate_Load(object sender, EventArgs e)
         {
             Class.Usuarios us = new Class.Usuarios();
+            Class.Modificaciones mod = new Class.Modificaciones();
             Class.Conexion conexionSQL = new Class.Conexion();
-                conexionSQL.startConnection();
-                us = us.getUser(int.Parse(Class.Usuarios.Id));
-                conexionSQL.closeConnection();
-                lblTypeUser.Text = us.NombreUsuario.ToString();
+            conexionSQL.startConnection();
+            us = us.getUser(int.Parse(Class.Usuarios.Id));
+            btnmod.Text = mod.contarModi().ToString();
+            conexionSQL.startConnection();
 
-                if (us.Descripcion == "1")
-                {
-                    lblUsername.Text = "Administrador";
-                }
-                else
-                {
-                    new Login().Show();
-                }
+            lblTypeUser.Text = us.NombreUsuario.ToString();
+
+
+            if (us.Descripcion == "1")
+            {
+                lblUsername.Text = "Administrador";
+            }
+            else
+            {
+                new Login().Show();
+            }
         }
         private void pbxhome_Click(object sender, EventArgs e)
         {
@@ -345,6 +349,16 @@ namespace CCr
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnmod_Enter(object sender, EventArgs e)
+        {
+            btnmod.BackColor = Color.FromArgb(140, 3, 3);
         }
     }
 }
