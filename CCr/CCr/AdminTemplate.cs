@@ -22,11 +22,11 @@ namespace CCr
                 conexionSQL.startConnection();
                 us = us.getUser(int.Parse(Class.Usuarios.Id));
                 conexionSQL.closeConnection();
-                lblUsername.Text = us.NombreUsuario.ToString();
+                lblTypeUser.Text = us.NombreUsuario.ToString();
 
                 if (us.Descripcion == "1")
                 {
-                    lblTypeUser.Text = "Administrador";
+                    lblUsername.Text = "Administrador";
                 }
                 else
                 {
@@ -345,38 +345,6 @@ namespace CCr
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-
-        private void btnCertificados_MouseEnter(object sender, EventArgs e)
-        {
-            btnCertificados.BackColor = Color.FromArgb(115, 3, 3);
-            pbxCertificados.BackColor = Color.FromArgb(140, 3, 3);
-        }
-
-        private void pbxCertificados_MouseEnter(object sender, EventArgs e)
-        {
-            btnCertificados.BackColor = Color.FromArgb(140, 3, 3);
-            pbxCertificados.BackColor = Color.FromArgb(140, 3, 3);
-        }
-
-        private void pbxCertificados_MouseLeave(object sender, EventArgs e)
-        {
-            btnCertificados.BackColor = Color.FromArgb(163, 3, 3);
-            pbxCertificados.BackColor = Color.FromArgb(163, 3, 3);
-        }
-
-        private void btnCertificados_Click(object sender, EventArgs e)
-        {
-            adminCertificados ac = new adminCertificados();
-            ac.Show();
-            this.Hide();
-        }
-
-        private void pbxCertificados_Click(object sender, EventArgs e)
-        {
-            adminCertificados ac = new adminCertificados();
-            ac.Show();
-            this.Hide();
         }
     }
 }

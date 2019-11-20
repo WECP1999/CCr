@@ -158,24 +158,6 @@ namespace CCr
             pbxCapacitaciones.BackColor = Color.FromArgb(160, 3, 3);
         }
 
-        private void btnCertificados_MouseEnter(object sender, EventArgs e)
-        {
-            btnCertificados.BackColor = Color.FromArgb(115, 3, 3);
-            pbxCertificados.BackColor = Color.FromArgb(140, 3, 3);
-        }
-
-        private void pbxCertificados_MouseEnter(object sender, EventArgs e)
-        {
-            btnCertificados.BackColor = Color.FromArgb(140, 3, 3);
-            pbxCertificados.BackColor = Color.FromArgb(140, 3, 3);
-        }
-
-        private void pbxCertificados_MouseLeave(object sender, EventArgs e)
-        {
-            btnCertificados.BackColor = Color.FromArgb(160, 3, 3);
-            pbxCertificados.BackColor = Color.FromArgb(160, 3, 3);
-        }
-
         private void btncerrar_MouseEnter(object sender, EventArgs e)
         {
             btncerrar.BackColor = Color.FromArgb(115, 3, 3);
@@ -201,11 +183,11 @@ namespace CCr
             conexionSQL.startConnection();
             us = us.getUser(int.Parse(Class.Usuarios.Id));
             conexionSQL.closeConnection();
-            lblUsername.Text = us.NombreUsuario.ToString();
+            lblTypeUser.Text = us.NombreUsuario.ToString();
 
-            if (us.Descripcion == "3")
+            if (us.Descripcion == "2")
             {
-                lblTypeUser.Text = "Asesor";
+                lblUsername.Text = "Asesor";
             }
         }
 

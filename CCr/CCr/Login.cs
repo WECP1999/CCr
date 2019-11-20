@@ -89,21 +89,20 @@ namespace CCr
                             if (aux.Descripcion == "1")
                             {
                                 conexionSQL.closeConnection();
-                                MessageBox.Show("Bienvenido " + txtusuario.Text, "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Hide();
                                 adf.Show();
                             }
                             else if (aux.Descripcion == "2")
                             {
                                 conexionSQL.closeConnection();
-                                MessageBox.Show("Bienvenido " + txtusuario.Text, "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Hide();
-                                new CapacitadorForm().Show();
+                                new AsesorForm().Show();
                             }
                             else if (aux.Descripcion == "3")
                             {
                                 conexionSQL.closeConnection();
-                                MessageBox.Show("Bienvenido " + txtusuario.Text, "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Hide();
+                                new CapacitadorForm().Show();
                             }
 
                         }

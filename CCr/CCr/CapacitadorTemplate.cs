@@ -126,13 +126,13 @@ namespace CCr
             Class.Usuarios us = new Class.Usuarios();
             Class.Conexion conexionSQL = new Class.Conexion();
             conexionSQL.startConnection();
-            us = us.getUser(int.Parse(Class.Usuarios.Id));
+            us = us.getUser(4);
             conexionSQL.closeConnection();
-            lblUsername.Text = us.NombreUsuario.ToString();
+            lblTypeUser.Text = us.NombreUsuario.ToString();
 
             if (us.Descripcion == "3")
             {
-                lblTypeUser.Text = "Capacitador";
+                lblUsername.Text = "Capacitador";
             }
             else
             {

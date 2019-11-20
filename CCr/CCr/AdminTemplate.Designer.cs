@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pbxCertificados = new System.Windows.Forms.PictureBox();
-            this.btnCertificados = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btncapacitaciones = new System.Windows.Forms.Button();
             this.lblUsername = new System.Windows.Forms.Label();
@@ -52,7 +50,6 @@
             this.pbxhome = new System.Windows.Forms.PictureBox();
             this.btnhome = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxCertificados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxcontactos)).BeginInit();
@@ -78,8 +75,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(3)))), ((int)(((byte)(3)))));
-            this.panel1.Controls.Add(this.pbxCertificados);
-            this.panel1.Controls.Add(this.btnCertificados);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.btncapacitaciones);
             this.panel1.Controls.Add(this.lblUsername);
@@ -105,37 +100,6 @@
             this.panel1.Size = new System.Drawing.Size(238, 632);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // pbxCertificados
-            // 
-            this.pbxCertificados.BackColor = System.Drawing.Color.Transparent;
-            this.pbxCertificados.Image = global::CCr.Properties.Resources.diploma;
-            this.pbxCertificados.Location = new System.Drawing.Point(3, 387);
-            this.pbxCertificados.Name = "pbxCertificados";
-            this.pbxCertificados.Size = new System.Drawing.Size(32, 28);
-            this.pbxCertificados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxCertificados.TabIndex = 31;
-            this.pbxCertificados.TabStop = false;
-            this.pbxCertificados.Click += new System.EventHandler(this.pbxCertificados_Click);
-            this.pbxCertificados.MouseEnter += new System.EventHandler(this.pbxCertificados_MouseEnter);
-            this.pbxCertificados.MouseLeave += new System.EventHandler(this.pbxCertificados_MouseLeave);
-            // 
-            // btnCertificados
-            // 
-            this.btnCertificados.BackColor = System.Drawing.Color.Transparent;
-            this.btnCertificados.FlatAppearance.BorderSize = 0;
-            this.btnCertificados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCertificados.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCertificados.ForeColor = System.Drawing.Color.White;
-            this.btnCertificados.Location = new System.Drawing.Point(0, 385);
-            this.btnCertificados.Name = "btnCertificados";
-            this.btnCertificados.Size = new System.Drawing.Size(238, 35);
-            this.btnCertificados.TabIndex = 30;
-            this.btnCertificados.Text = "Certificados";
-            this.btnCertificados.UseVisualStyleBackColor = false;
-            this.btnCertificados.Click += new System.EventHandler(this.btnCertificados_Click);
-            this.btnCertificados.MouseEnter += new System.EventHandler(this.btnCertificados_MouseEnter);
-            this.btnCertificados.MouseLeave += new System.EventHandler(this.pbxCertificados_MouseLeave);
             // 
             // pictureBox2
             // 
@@ -441,7 +405,6 @@
             this.Controls.SetChildIndex(this.btnminimyze, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxCertificados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxcontactos)).EndInit();
@@ -479,7 +442,5 @@
         private System.Windows.Forms.Label lblTypeUser;
         protected System.Windows.Forms.PictureBox pictureBox2;
         protected System.Windows.Forms.Button btncapacitaciones;
-        protected System.Windows.Forms.PictureBox pbxCertificados;
-        protected System.Windows.Forms.Button btnCertificados;
     }
 }

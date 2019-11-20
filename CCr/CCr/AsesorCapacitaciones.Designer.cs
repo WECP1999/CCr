@@ -72,7 +72,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxhome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCapacitaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxParticipantes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxCertificados)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -125,7 +124,6 @@
             // 
             // btnCertificados
             // 
-            this.btnCertificados.FlatAppearance.BorderSize = 0;
             // 
             // btnclose
             // 
@@ -602,7 +600,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxhome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCapacitaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxParticipantes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxCertificados)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

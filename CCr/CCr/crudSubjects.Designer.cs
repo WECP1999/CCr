@@ -48,7 +48,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxcontactos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxCertificados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtprecio)).BeginInit();
             this.grpElementos.SuspendLayout();
@@ -97,7 +96,6 @@
             // 
             // btnCertificados
             // 
-            this.btnCertificados.FlatAppearance.BorderSize = 0;
             // 
             // btnclose
             // 
@@ -263,7 +261,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxcontactos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxCertificados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtprecio)).EndInit();
             this.grpElementos.ResumeLayout(false);
